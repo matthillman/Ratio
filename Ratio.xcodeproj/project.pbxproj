@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C94CAA0E17ED132C00F77C03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA0D17ED132C00F77C03 /* Foundation.framework */; };
+		C94CAA1017ED132C00F77C03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA0F17ED132C00F77C03 /* CoreGraphics.framework */; };
+		C94CAA1217ED132C00F77C03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA1117ED132C00F77C03 /* UIKit.framework */; };
+		C94CAA1817ED132C00F77C03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA1617ED132C00F77C03 /* InfoPlist.strings */; };
+		C94CAA1A17ED132C00F77C03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA1917ED132C00F77C03 /* main.m */; };
+		C94CAA1E17ED132C00F77C03 /* RTOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA1D17ED132C00F77C03 /* RTOAppDelegate.m */; };
+		C94CAA2117ED132C00F77C03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA1F17ED132C00F77C03 /* Main.storyboard */; };
+		C94CAA2417ED132C00F77C03 /* RTOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA2317ED132C00F77C03 /* RTOViewController.m */; };
+		C94CAA2617ED132C00F77C03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA2517ED132C00F77C03 /* Images.xcassets */; };
+		C94CAA2D17ED132C00F77C03 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA2C17ED132C00F77C03 /* XCTest.framework */; };
+		C94CAA2E17ED132C00F77C03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA0D17ED132C00F77C03 /* Foundation.framework */; };
+		C94CAA2F17ED132C00F77C03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA1117ED132C00F77C03 /* UIKit.framework */; };
+		C94CAA3717ED132C00F77C03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA3517ED132C00F77C03 /* InfoPlist.strings */; };
+		C94CAA3917ED132C00F77C03 /* RatioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA3817ED132C00F77C03 /* RatioTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C94CAA3017ED132C00F77C03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C94CAA0217ED132C00F77C03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C94CAA0917ED132C00F77C03;
+			remoteInfo = Ratio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C94CAA0A17ED132C00F77C03 /* Ratio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C94CAA0D17ED132C00F77C03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C94CAA0F17ED132C00F77C03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C94CAA1117ED132C00F77C03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C94CAA1517ED132C00F77C03 /* Ratio-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ratio-Info.plist"; sourceTree = "<group>"; };
+		C94CAA1717ED132C00F77C03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C94CAA1917ED132C00F77C03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C94CAA1B17ED132C00F77C03 /* Ratio-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ratio-Prefix.pch"; sourceTree = "<group>"; };
+		C94CAA1C17ED132C00F77C03 /* RTOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTOAppDelegate.h; sourceTree = "<group>"; };
+		C94CAA1D17ED132C00F77C03 /* RTOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTOAppDelegate.m; sourceTree = "<group>"; };
+		C94CAA2017ED132C00F77C03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C94CAA2217ED132C00F77C03 /* RTOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTOViewController.h; sourceTree = "<group>"; };
+		C94CAA2317ED132C00F77C03 /* RTOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTOViewController.m; sourceTree = "<group>"; };
+		C94CAA2517ED132C00F77C03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C94CAA2B17ED132C00F77C03 /* RatioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C94CAA2C17ED132C00F77C03 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C94CAA3417ED132C00F77C03 /* RatioTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RatioTests-Info.plist"; sourceTree = "<group>"; };
+		C94CAA3617ED132C00F77C03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C94CAA3817ED132C00F77C03 /* RatioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatioTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C94CAA0717ED132C00F77C03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C94CAA1017ED132C00F77C03 /* CoreGraphics.framework in Frameworks */,
+				C94CAA1217ED132C00F77C03 /* UIKit.framework in Frameworks */,
+				C94CAA0E17ED132C00F77C03 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C94CAA2817ED132C00F77C03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C94CAA2D17ED132C00F77C03 /* XCTest.framework in Frameworks */,
+				C94CAA2F17ED132C00F77C03 /* UIKit.framework in Frameworks */,
+				C94CAA2E17ED132C00F77C03 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C94CAA0117ED132C00F77C03 = {
+			isa = PBXGroup;
+			children = (
+				C94CAA1317ED132C00F77C03 /* Ratio */,
+				C94CAA3217ED132C00F77C03 /* RatioTests */,
+				C94CAA0C17ED132C00F77C03 /* Frameworks */,
+				C94CAA0B17ED132C00F77C03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C94CAA0B17ED132C00F77C03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C94CAA0A17ED132C00F77C03 /* Ratio.app */,
+				C94CAA2B17ED132C00F77C03 /* RatioTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C94CAA0C17ED132C00F77C03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C94CAA0D17ED132C00F77C03 /* Foundation.framework */,
+				C94CAA0F17ED132C00F77C03 /* CoreGraphics.framework */,
+				C94CAA1117ED132C00F77C03 /* UIKit.framework */,
+				C94CAA2C17ED132C00F77C03 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C94CAA1317ED132C00F77C03 /* Ratio */ = {
+			isa = PBXGroup;
+			children = (
+				C94CAA1C17ED132C00F77C03 /* RTOAppDelegate.h */,
+				C94CAA1D17ED132C00F77C03 /* RTOAppDelegate.m */,
+				C94CAA1F17ED132C00F77C03 /* Main.storyboard */,
+				C94CAA2217ED132C00F77C03 /* RTOViewController.h */,
+				C94CAA2317ED132C00F77C03 /* RTOViewController.m */,
+				C94CAA2517ED132C00F77C03 /* Images.xcassets */,
+				C94CAA1417ED132C00F77C03 /* Supporting Files */,
+			);
+			path = Ratio;
+			sourceTree = "<group>";
+		};
+		C94CAA1417ED132C00F77C03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C94CAA1517ED132C00F77C03 /* Ratio-Info.plist */,
+				C94CAA1617ED132C00F77C03 /* InfoPlist.strings */,
+				C94CAA1917ED132C00F77C03 /* main.m */,
+				C94CAA1B17ED132C00F77C03 /* Ratio-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C94CAA3217ED132C00F77C03 /* RatioTests */ = {
+			isa = PBXGroup;
+			children = (
+				C94CAA3817ED132C00F77C03 /* RatioTests.m */,
+				C94CAA3317ED132C00F77C03 /* Supporting Files */,
+			);
+			path = RatioTests;
+			sourceTree = "<group>";
+		};
+		C94CAA3317ED132C00F77C03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C94CAA3417ED132C00F77C03 /* RatioTests-Info.plist */,
+				C94CAA3517ED132C00F77C03 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C94CAA0917ED132C00F77C03 /* Ratio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C94CAA3C17ED132C00F77C03 /* Build configuration list for PBXNativeTarget "Ratio" */;
+			buildPhases = (
+				C94CAA0617ED132C00F77C03 /* Sources */,
+				C94CAA0717ED132C00F77C03 /* Frameworks */,
+				C94CAA0817ED132C00F77C03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ratio;
+			productName = Ratio;
+			productReference = C94CAA0A17ED132C00F77C03 /* Ratio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C94CAA2A17ED132C00F77C03 /* RatioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C94CAA3F17ED132C00F77C03 /* Build configuration list for PBXNativeTarget "RatioTests" */;
+			buildPhases = (
+				C94CAA2717ED132C00F77C03 /* Sources */,
+				C94CAA2817ED132C00F77C03 /* Frameworks */,
+				C94CAA2917ED132C00F77C03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C94CAA3117ED132C00F77C03 /* PBXTargetDependency */,
+			);
+			name = RatioTests;
+			productName = RatioTests;
+			productReference = C94CAA2B17ED132C00F77C03 /* RatioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C94CAA0217ED132C00F77C03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RTO;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Matthew Hillman";
+				TargetAttributes = {
+					C94CAA2A17ED132C00F77C03 = {
+						TestTargetID = C94CAA0917ED132C00F77C03;
+					};
+				};
+			};
+			buildConfigurationList = C94CAA0517ED132C00F77C03 /* Build configuration list for PBXProject "Ratio" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C94CAA0117ED132C00F77C03;
+			productRefGroup = C94CAA0B17ED132C00F77C03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C94CAA0917ED132C00F77C03 /* Ratio */,
+				C94CAA2A17ED132C00F77C03 /* RatioTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C94CAA0817ED132C00F77C03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C94CAA2617ED132C00F77C03 /* Images.xcassets in Resources */,
+				C94CAA1817ED132C00F77C03 /* InfoPlist.strings in Resources */,
+				C94CAA2117ED132C00F77C03 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C94CAA2917ED132C00F77C03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C94CAA3717ED132C00F77C03 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C94CAA0617ED132C00F77C03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C94CAA1E17ED132C00F77C03 /* RTOAppDelegate.m in Sources */,
+				C94CAA2417ED132C00F77C03 /* RTOViewController.m in Sources */,
+				C94CAA1A17ED132C00F77C03 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C94CAA2717ED132C00F77C03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C94CAA3917ED132C00F77C03 /* RatioTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C94CAA3117ED132C00F77C03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C94CAA0917ED132C00F77C03 /* Ratio */;
+			targetProxy = C94CAA3017ED132C00F77C03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C94CAA1617ED132C00F77C03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C94CAA1717ED132C00F77C03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C94CAA1F17ED132C00F77C03 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C94CAA2017ED132C00F77C03 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C94CAA3517ED132C00F77C03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C94CAA3617ED132C00F77C03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C94CAA3A17ED132C00F77C03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C94CAA3B17ED132C00F77C03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C94CAA3D17ED132C00F77C03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ratio/Ratio-Prefix.pch";
+				INFOPLIST_FILE = "Ratio/Ratio-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C94CAA3E17ED132C00F77C03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ratio/Ratio-Prefix.pch";
+				INFOPLIST_FILE = "Ratio/Ratio-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C94CAA4017ED132C00F77C03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Ratio.app/Ratio";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ratio/Ratio-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RatioTests/RatioTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C94CAA4117ED132C00F77C03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Ratio.app/Ratio";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ratio/Ratio-Prefix.pch";
+				INFOPLIST_FILE = "RatioTests/RatioTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C94CAA0517ED132C00F77C03 /* Build configuration list for PBXProject "Ratio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C94CAA3A17ED132C00F77C03 /* Debug */,
+				C94CAA3B17ED132C00F77C03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C94CAA3C17ED132C00F77C03 /* Build configuration list for PBXNativeTarget "Ratio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C94CAA3D17ED132C00F77C03 /* Debug */,
+				C94CAA3E17ED132C00F77C03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C94CAA3F17ED132C00F77C03 /* Build configuration list for PBXNativeTarget "RatioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C94CAA4017ED132C00F77C03 /* Debug */,
+				C94CAA4117ED132C00F77C03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C94CAA0217ED132C00F77C03 /* Project object */;
+}
