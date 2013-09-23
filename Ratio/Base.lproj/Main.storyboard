@@ -1,21 +1,204 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="UXP-J7-KKB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--All RatiosCVC-->
+        <scene sceneID="UxZ-AX-bWl">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="RTOViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="f7F-Om-gOl" customClass="RTOAllRatiosCVC" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="g20-PT-hbb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9hp-Go-5Pa">
+                            <size key="itemSize" width="75" height="95"/>
+                            <size key="headerReferenceSize" width="320" height="40"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RatioList" id="jkB-nR-mXw" customClass="RTORatioCVC">
+                                <rect key="frame" x="10" y="114" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="75" height="95"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8SP-Ig-ZA0" customClass="RTORatioPieView">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMm-VE-ubT">
+                                            <rect key="frame" x="0.0" y="75" width="75" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="ratioPieView" destination="8SP-Ig-ZA0" id="7h6-SR-QAb"/>
+                                    <outlet property="ratioTitle" destination="FMm-VE-ubT" id="JhY-78-gek"/>
+                                    <segue destination="xLx-6g-Omk" kind="push" identifier="ShowRatio" id="fdG-EA-Lg4"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="xnh-h1-BMK" customClass="RTORatioListHeadCRV">
+                            <rect key="frame" x="0.0" y="64" width="320" height="40"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJJ-mc-dSM">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <connections>
+                                <outlet property="sectionHeading" destination="WJJ-mc-dSM" id="qLi-DP-Oob"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="f7F-Om-gOl" id="Pfv-9h-zDr"/>
+                            <outlet property="delegate" destination="f7F-Om-gOl" id="56M-Qo-mfW"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="OtN-Ec-pjO"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxJ-d7-OXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="-149"/>
+        </scene>
+        <!--RatioVC-->
+        <scene sceneID="kxa-qR-NaA">
+            <objects>
+                <viewController id="xLx-6g-Omk" customClass="RTORatioVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PpN-70-AGe"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZuF-QY-DCA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wpn-WR-5pW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Ct-bm-e1W">
+                                <rect key="frame" x="30" y="86" width="260" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Ratio"/>
+                                    <segment title="Calculator"/>
+                                    <segment title="Details"/>
+                                </segments>
+                            </segmentedControl>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3v7-R9-gcC">
+                                <rect key="frame" x="0.0" y="122" width="320" height="446"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="446" id="Dw8-ss-e4h"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3h6-oE-F7B">
+                                    <size key="itemSize" width="320" height="210"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Ratio" id="H6x-ey-VGD" customClass="RTORatioCVC">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yc8-6u-pa1" customClass="RTORatioPieView">
+                                                    <rect key="frame" x="50" y="0.0" width="220" height="220"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="320" height="220"/>
+                                        <connections>
+                                            <outlet property="ratioPieView" destination="Yc8-6u-pa1" id="xHd-vA-1RV"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="List" id="FCX-XK-1sV" customClass="RTOListCVC">
+                                        <rect key="frame" x="0.0" y="230" width="320" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GC0-35-Blm" customClass="RTORatioPieView">
+                                                    <rect key="frame" x="50" y="0.0" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredient" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whO-Ms-Ig9">
+                                                    <rect key="frame" x="85" y="0.0" width="185" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="320" height="30"/>
+                                        <connections>
+                                            <outlet property="ingredientLabel" destination="whO-Ms-Ig9" id="lBG-sE-3rx"/>
+                                            <outlet property="ratioPieView" destination="GC0-35-Blm" id="Cvi-h2-8lg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="xLx-6g-Omk" id="uFE-vq-Rvp"/>
+                                    <outlet property="delegate" destination="xLx-6g-Omk" id="SBv-Aw-vqR"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3v7-R9-gcC" firstAttribute="leading" secondItem="Wpn-WR-5pW" secondAttribute="leading" id="Hng-kY-I9o"/>
+                            <constraint firstItem="3v7-R9-gcC" firstAttribute="centerX" secondItem="9Ct-bm-e1W" secondAttribute="centerX" id="J9a-Ua-Rgc"/>
+                            <constraint firstItem="3v7-R9-gcC" firstAttribute="top" secondItem="9Ct-bm-e1W" secondAttribute="bottom" constant="8" symbolic="YES" id="d1v-Kd-8V7"/>
+                            <constraint firstItem="9Ct-bm-e1W" firstAttribute="leading" secondItem="Wpn-WR-5pW" secondAttribute="leading" constant="30" id="qyN-jV-99O"/>
+                            <constraint firstAttribute="bottom" secondItem="3v7-R9-gcC" secondAttribute="bottom" id="rXe-2H-1Qr"/>
+                            <constraint firstAttribute="trailing" secondItem="3v7-R9-gcC" secondAttribute="trailing" id="zeI-wS-yIn"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zIF-Nr-jfX"/>
+                    <connections>
+                        <outlet property="ratioCollectionView" destination="3v7-R9-gcC" id="B9s-hk-2YK"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ia-GV-Dd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1368" y="-149"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qbk-h8-HXB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UXP-J7-KKB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x9l-se-GdL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f7F-Om-gOl" kind="relationship" relationship="rootViewController" id="Lea-Xd-Jt5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7NY-AN-wd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="435" y="-149"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

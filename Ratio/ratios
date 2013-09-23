@@ -1,0 +1,2035 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ratios</key>
+	<array>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>200</integer>
+					<key>defaultAmount</key>
+					<integer>20</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>water</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>120</integer>
+					<key>defaultAmount</key>
+					<integer>12</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>salt</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>4</integer>
+					<key>defaultAmount</key>
+					<real>0.4</real>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>dry yeast</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<real>0.1</real>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Mix all ingredients together till dough can be stretched to translucency.  Allow the dough to rise to about double its size.  Re-knead the dough to release the gases and redistribute the yeast.  Allow dough to rest 15 minutes, then shape it as desired.  The dough can be refrigerated for up to a day at this point, covered.  After shaping (or removing from the refrigerator), allow the dough to rise for about an hour, then bake in a hot oven until done (about 200° F./93° C. internal temperature).</string>
+			<key>title</key>
+			<string>Bread</string>
+			<key>hideTotal</key>
+			<true/>
+			<key>share</key>
+			<string>I&apos;m making Bread. It&apos;s just 5 parts flour and 3 parts water. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict/>
+			<key>variations</key>
+			<string>Use ¼ tsp yeast and ½ tsp salt for every 5 oz/150 grams/cup of flour.
+
+Use ½ that amount of yeast for flatbreads.
+
+Baking this dough in a Dutch oven, covered for half an hour and uncovered for the remainder, results in a delectable crust and airy crumb.
+
+Can add to the dough: eggs to enrich, olive or other oils to flavor, honey to sweeten, wheat germ for fiber.
+
+20 oz of flour (or 600 grams) will result in two pounds of dough or a good-sized loaf. 
+
+10 oz of flour (or 300 grams) will result in one small loaf or medium pizza dough.
+
+Flavoring and garnish suggestions to add while mixing: Chopped rosemary, roasted garlic and a little olive oil, chopped kalamata olives and walnuts, fresh corn and diced jalapeno chillis.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>3</integer>
+					<key>defaultAmount</key>
+					<integer>9</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine flour and egg and knead until dough is as smooth as a baby’s bottom.  Cover with plastic wrap and let rest at least 15 minutes.  This can be refrigerated for up to a day.  Dust with flour, roll out to desired thickness and cut.  
+If you don’t have a scale, you can use 2 eggs per cup of flour or 3-4 eggs for 2 cups flour.</string>
+			<key>title</key>
+			<string>Pasta Dough</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Pasta Dough. It&apos;s just 3 parts flour and 2 parts egg. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<integer>2</integer>
+				<key>label</key>
+				<string>servings</string>
+				<key>ingredient</key>
+				<string>eggs</string>
+				<key>measure</key>
+				<string>ounces</string>
+				<key>action</key>
+				<string>trunk</string>
+			</dict>
+			<key>variations</key>
+			<string>For all-egg yolk pasta use same ratio, plus a little olive oil, and water if needed.
+
+For pasta verde, change ratio to 2:1, plus ½ part blanched and chopped spinach.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>3</integer>
+					<key>defaultAmount</key>
+					<integer>12</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>fat</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>water</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Cut fat into flour till fat is in pea-sized chunks, then add enough water for it to come together. Work the flour-fat-water as little as possible, just until it comes together.  Wrap in plastic and refrigerate till thoroughly chilled for at least 20 minutes and up to a full day, then roll out on a floured surface.</string>
+			<key>title</key>
+			<string>Pie Dough</string>
+			<key>hideTotal</key>
+			<true/>
+			<key>share</key>
+			<string>I&apos;m making Pie Dough. It&apos;s just 3 parts flour, 2 parts fat and 1 part water. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict/>
+			<key>variations</key>
+			<string>12 oz (350 grams) flour will give you enough dough for one pie with top, one quiche shell, or two 9-inch tart shells.
+
+Add a half tsp of salt for every 10 to 12 oz of flour.
+
+For sweet doughs, add a couple Tbs of sugar.
+
+For a nut crust, add a cup of pulverized nuts to 12 oz flour, plus an egg.
+
+This dough can be used for sweet pies, savory pies, tarts, even empanadas.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>3</integer>
+					<key>defaultAmount</key>
+					<integer>9</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>fat</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>3</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>liquid</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Cut fat into flour till fat is in pea-sized chunks, then add enough water or milk for it to come together.  Add 1 tsp baking powder per 5 oz/150 grams/cup of flour. Bake at 400° F./200° C. till done, about 20 minutes.</string>
+			<key>title</key>
+			<string>Biscuit</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Biscuits. It&apos;s just 3 parts flour, 1 part fat and 2 parts liquid. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1.5</real>
+				<key>label</key>
+				<string>biscuits</string>
+				<key>ingredient</key>
+				<string>liquid</string>
+				<key>measure</key>
+				<string>ounces</string>
+				<key>action</key>
+				<string>trunk</string>
+			</dict>
+			<key>variations</key>
+			<string>For especially flaky biscuits, roll out the dough, fold it in thirds and re-roll; repeat two more times.  
+
+For cheesy biscuits, roll out the dough, sprinkle with grated cheese, fold in thirds and roll out.
+
+To make fantastic biscuits with sausage gravy using more ratios, cook sausage and chopped onion in a skillet, pour milk into the pan and add enough cold roux to thicken as desired.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>sugar</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>2</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>fat</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>3</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Cream sugar and butter together (add liquid flavor such as vanilla here), then stir in flour.  Roll into cylinder to slice or shape and bake at 350° F./175° C. until done.</string>
+			<key>title</key>
+			<string>Cookie Dough</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Cookie Dough. It&apos;s just 1 part sugar, 2 parts fat and 3 parts flour. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<integer>1</integer>
+				<key>label</key>
+				<string>cookies</string>
+				<key>ingredient</key>
+				<string>flour</string>
+				<key>measure</key>
+				<string>ounces</string>
+				<key>action</key>
+				<string>trunk</string>
+			</dict>
+			<key>variations</key>
+			<string>Flavor with vanilla, citrus, pistachio, almonds.
+
+Can add one tsp of baking powder per 5 oz/150 grams/cup flour for leavening.
+
+For drop cookies, use equal parts sugar, flour, butter and an egg for every 8 oz/250 grams/1½ cup flour, plus garnish (chocolate chips, nuts).</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>water</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>butter</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>4</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Bring water and butter to simmer, add flour, cook till it’s a paste that pulls cleanly away from the sides. Add eggs one at a time, stirring till the egg is incorporated.
+For dumplings or gnocchi, add fresh chopped herbs: parsley, tarragon, chives, even basil. Pipe, cut or spoon the dough into boiling water or stock; these can be eaten as is or cooled and sautéed in butter to reheat.
+For doughnuts, pipe or cut into 350° F./175° C. oil.
+For gougeres or cream puffs, pipe or spoon onto a baking sheet and bake at 425° F./220° C. for 10 minutes, reduce heat to 350° F./175° C. and bake until done, about 30 more minutes.</string>
+			<key>title</key>
+			<string>Pâte à Choux</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Pâte à Choux. It&apos;s just 2 parts water, 1 part butter, 1 part flour and 2 parts egg. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<integer>2</integer>
+				<key>label</key>
+				<string>servings</string>
+				<key>ingredient</key>
+				<string>eggs</string>
+				<key>measure</key>
+				<string>ounces</string>
+				<key>action</key>
+				<string>trunk</string>
+			</dict>
+			<key>variations</key>
+			<string>Add Parmigiano-Reggiano or gruyere for savory preparations such as gougeres or dumplings.
+ 
+For sweet doughs and fritters, add about a Tbs of sugar for every cup of water.
+ 
+For doughnuts, dust with cinnamon sugar or powdered sugar.
+ 
+This dough makes fantastic dumplings for chicken-and-dumplings! Simply pipe into your creamy chicken stew a few minutes before serving.
+
+To calculate number of gougeres or cream puffs, figure 6 gougeres or puffs for every egg.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>butter</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>sugar</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>4</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Cream butter and sugar, beat in eggs, fold in flour. Bake in a buttered loaf pan in a medium hot oven (350° F./175° C.) until cooked through.</string>
+			<key>title</key>
+			<string>Pound Cake</string>
+			<key>hideTotal</key>
+			<true/>
+			<key>share</key>
+			<string>I&apos;m making Pound Cake. It&apos;s just 1 part butter, 1 part sugar, 1 park egg and 1 part flour. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict/>
+			<key>variations</key>
+			<string>Using 8 oz of each of the ingredients will give you enough batter to fill a 9-inch loaf pan. 
+
+Flavor batter with vanilla extract, almond extract, or citrus juice and zest.  
+
+Make a citrus glaze: 1 part lemon or lime juice, 1 part sugar. Heat to melt, brush on pound cake after unmolding.
+
+Butter can be reduced by up to half (but why would you want to?!). </string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>sugar</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>4</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>butter</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Whip eggs and sugar till tripled in volume.  Fold in sifted flour (and 1 tsp baking powder per 5 oz/150 grams/cup flour if using), fold in melted and cooled butter.  Pour batter into buttered cake pans and bake at 350° F./175° C. until done.</string>
+			<key>title</key>
+			<string>Sponge Cake</string>
+			<key>hideTotal</key>
+			<true/>
+			<key>share</key>
+			<string>I&apos;m making Sponge Cake. It&apos;s just 1 part egg, 1 part sugar, 1 part flour and 1 part butter. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict/>
+			<key>variations</key>
+			<string>8 oz each of the main ingredients will give you enough batter to fill one 9-inch cake pan to a depth of 2 inches/5 cm.
+
+Flavor batter with vanilla extract, almond extract, or citrus juice and zest.  
+
+Butter can be reduced by up to half (but why would you want to?!).
+
+For delicious vanilla frosting, make Anglaise sauce using 8 oz milk and cream, thicken with 3 Tbs cornstarch and allow to cool to room temperature. Beat 8 oz of room temperature butter into this mixture.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>egg whites</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>3</integer>
+					<key>defaultAmount</key>
+					<integer>12</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>sugar</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>3</integer>
+					<key>defaultAmount</key>
+					<integer>12</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Beat egg whites till frothy, then add salt, vanilla, lemon juice or cream of tartar (all good, but optional), then drizzle in half the sugar while whipping to soft peaks, just past pourable. Combine remaining sugar and flour in food processor and pulse 3 times; fold flour-sugar into whites.  After baking, invert and cool completely.  </string>
+			<key>title</key>
+			<string>Angel Food Cake</string>
+			<key>hideTotal</key>
+			<true/>
+			<key>share</key>
+			<string>I&apos;m making Angel Food Cake. It&apos;s just 3 parts egg whites, 3 parts sugar and 1 part flour. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict/>
+			<key>variations</key>
+			<string>12 oz of egg white will give you enough batter for one 9-inch pan.
+
+Angel food cake will sink considerably in the center if using a regular cake pan, which is why such cakes are typically baked in a ring mold pan.  You can improvise such a pan with a spring form pan and a sturdy glass by simply filling the pan with meringue and pressing a glass down into the center.
+
+This ratio of sugar to egg white also results in a perfect meringue; simply omit the flour for all-purpose meringue.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>liquid</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>butter</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>4</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine wet and dry ingredients separately, then mix both together, whisking just long enough to incorporate dry into wet.  Use 1 tsp baking powder for every 5 oz/150 grams/cup flour.  Bake in a 350° F./175° C. oven.</string>
+			<key>title</key>
+			<string>Quick Bread</string>
+			<key>hideTotal</key>
+			<true/>
+			<key>share</key>
+			<string>I&apos;m making Quick Bread. It&apos;s just 2 parts flour, 2 parts liquid, 1 part egg and 1 part butter. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict/>
+			<key>variations</key>
+			<string>8 oz of flour and liquid will give you about 8 muffins or a good-sized loaf.
+
+Variations are limited only by your imagination.  For sweet muffins and quick breads, add fruit, berries and sweet spices.
+
+Quick breads also work well when taken in savory directions. Season quick bread with curry, add peas or corn for garnish.  Make bacon and onion quick bread, seasoning batter with some of the rendered bacon fat.
+
+To make cornbread, substitute half the flour with corn meal.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>liquid</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>3</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>butter</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>3</integer>
+					<key>color</key>
+					<integer>4</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine wet and dry ingredients separately, then mix both together, whisking just long enough to incorporate dry into wet.  Use 1 tsp baking powder for every 5 oz/150 grams/cup flour.  Bake in a 350° F./175° C. oven.</string>
+			<key>title</key>
+			<string>Muffin</string>
+			<key>hideTotal</key>
+			<true/>
+			<key>share</key>
+			<string>I&apos;m making Muffins. It&apos;s just 2 parts flour, 2 parts liquid, 1 part egg and 1 part butter. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict/>
+			<key>variations</key>
+			<string>8 oz of flour and liquid will give you about 8 muffins or a good-sized loaf.
+
+Variations are limited only by your imagination.  For sweet muffins and quick breads, add fruit, berries and sweet spices.
+
+Quick breads also work well when taken in savory directions. Season quick bread with curry, add peas or corn for garnish.  Make bacon and onion quick bread, seasoning batter with some of the rendered bacon fat.
+
+To make cornbread, substitute half the flour with corn meal.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>liquid</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>2</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine wet and dry ingredients separately, using 1 tsp baking powder for every 5 oz/150 grams/cup flour.  When ready to cook, mix wet and dry together, whisking just long enough to incorporate dry into wet. Pan-fry or deep-fry in 350 F./175° C. oil.</string>
+			<key>title</key>
+			<string>Fritter</string>
+			<key>hideTotal</key>
+			<true/>
+			<key>share</key>
+			<string>I&apos;m making Fritters. It&apos;s just 2 parts flour, 2 parts liquid and 1 part egg. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict/>
+			<key>variations</key>
+			<string>4 oz each of flour and liquid will bind about two cups of garnish and give you enough for eight hearty fritters.
+
+For sweet fritters, add a Tbs of sugar.
+
+Savory fritter batter carries spices well—curry powders, coriander, cumin, chilli powders.
+
+You may use stock or juices as your liquid, depending on the fritter.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>4</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>liquid</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>4</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>butter</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>2</integer>
+					<key>color</key>
+					<integer>4</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine wet and dry ingredients separately, using 1 tsp baking powder for every 5 oz/150 grams/cup flour. Add sugar and vanilla for sweetness and flavor, if you wish.  Combine wet and dry, whisking just long enough to incorporate them. Cook in a lightly oiled pan over medium heat.</string>
+			<key>title</key>
+			<string>Pancake</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Pancakes. It&apos;s just 4 parts flour, 4 parts liquid, 2 parts eggs and 1 part butter. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<integer>2</integer>
+				<key>label</key>
+				<string>servings</string>
+				<key>ingredient</key>
+				<string>eggs</string>
+				<key>measure</key>
+				<string>ounces</string>
+				<key>action</key>
+				<string>trunk</string>
+			</dict>
+			<key>variations</key>
+			<string>Replace half the milk with buttermilk or unsweetened yogurt for a more complex flavor.
+
+Replace 25% of the flour with corn meal, whole wheat or other grains and cereals for varying flavors and textures.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>liquid</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine ingredients and blend with a whisk to combine. If possible, let the batter rest for ½ hour or more to allow flour to hydrate. Heat a popover or muffin pan in a 450° F./230° C. oven.  When ready to cook, put a teaspoon or two of butter into each cup. Pour in batter and bake for 10 minutes.  Reduce oven temperature to 375° F./190° C. and continue cooking till they’re done, about 20 minutes longer.</string>
+			<key>title</key>
+			<string>Popover</string>
+			<key>hideTotal</key>
+			<true/>
+			<key>share</key>
+			<string>I&apos;m making Popovers. It&apos;s just 2 parts liquid, 1 part egg and 1 part flour. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict/>
+			<key>variations</key>
+			<string>These can be served with sweet accompaniments, jams and marmalades for breakfast.
+
+Popovers can be savory and served as a bread.
+
+Yorkshire pudding is a popover batter cooked in hot beef fat, delicious with roast beef.
+
+Sprinkle with grated cheese during the final minutes of cooking and serve them as a canapé.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>liquid</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>4</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine ingredients and blend with a whisk.  Pour into a medium-hot pan wiped with oil, just enough to coat the bottom, and cook gently until done.</string>
+			<key>title</key>
+			<string>Crepe</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Crepes. It&apos;s just 2 parts liquid, 2 parts egg and 1 part flour. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<integer>1</integer>
+				<key>label</key>
+				<string>crepes</string>
+				<key>ingredient</key>
+				<string>eggs</string>
+				<key>measure</key>
+				<string>ounces</string>
+				<key>action</key>
+				<string>trunk</string>
+			</dict>
+			<key>variations</key>
+			<string>Vary your liquid depending on use: water, milk, juice, stock.
+
+Use crepes to enclose leftovers and trim, braised or roasted meats, or to turn leftovers into an elegant course.
+
+Season crepe batter with fresh herbs or spices for savory dishes.
+
+Crepes can be made ahead and reheated.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>water</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>3</integer>
+					<key>defaultAmount</key>
+					<integer>9</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>bones</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine bones and water, bring to 180-190° F./82°-87° C. and cook at that temperature for 4-10 hours.  Add 20% mirepoix (onions, carrots, celery) by weight.  Add herbs, tomato paste and appropriate spices and cook for 1-2 more hours.  Strain through cloth.</string>
+			<key>title</key>
+			<string>Stock</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making stock. It&apos;s just 3 parts water and 2 parts bones. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1.333</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>water</string>
+				<key>measure</key>
+				<string>volume</string>
+				<key>action</key>
+				<string>trunk</string>
+			</dict>
+			<key>variations</key>
+			<string>Remember that the gentler the stock cooks, the clearer and cleaner it will be; I prefer to cook mine uncovered in a 180° F./82° C oven.  
+
+Bones can be roasted first for a deeper flavor.
+
+Beef and veal bones should be either roasted or blanched before using.
+
+Good aromatics include thyme, parsley, garlic, bay leaf and cracked peppercorns.
+
+Stock will keep for a week refrigerated, or freeze for up to three months.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>stock</string>
+					<key>defaultUnit</key>
+					<string>pounds</string>
+					<key>ratio</key>
+					<integer>12</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>meat</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>3</integer>
+					<key>defaultAmount</key>
+					<integer>18</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>mirepoix</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>egg whites</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>4</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine all ingredients and stir continuously over medium-high heat until the egg white and meat forms a raft that floats to the surface.  Reduce heat, simmer for 45-60 minutes, strain through coffee filter. Can be chilled and reheated.</string>
+			<key>title</key>
+			<string>Consommé</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Consommé. It&apos;s just 12 parts stock, 3 parts meat, 1 part mirepoix and 1 part egg whites. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1.5</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>stock</string>
+				<key>measure</key>
+				<string>volume</string>
+				<key>action</key>
+				<string>trunk</string>
+			</dict>
+			<key>variations</key>
+			<string>Consommé is stock perfected; an elegant, easy preparation.
+			
+Use any kind of garnish: cooked meat appropriate to the stock, julienned vegetable, mushrooms, fresh herbs.
+
+Consommé can be chilled and served cold in hot weather.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>3</integer>
+					<key>defaultAmount</key>
+					<integer>9</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>fat</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine fat and flour in a pan and cook until the flour loses its raw flour smell.  Whisk it into whatever you want thickened.  For best results, add cold roux to hot liquid or hot roux to cold liquid.</string>
+			<key>title</key>
+			<string>Roux</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Roux. It&apos;s just 3 parts flour and 2 parts fat. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>all</string>
+				<key>measure</key>
+				<string>weight</string>
+				<key>action</key>
+				<string>sum</string>
+			</dict>
+			<key>variations</key>
+			<string>Roux is traditionally made with clarified butter, but at home, melt the butter first till most of the water has cooked off, then add enough flour to create a paste and cook it till it loses its raw flour smell, a few minutes. 
+
+Roux can be made in large batches and kept in the fridge to use as needed, a la minute.
+
+Roux can be cooked until the flour becomes a dark brown to add more flavor to sauce or soup but the darker it gets, the less thickening power it will have.</string>
+		</dict>
+		<dict>
+			<key>share</key>
+			<string>I&apos;m thickening a sauce by adding 1 part roux for every 10 parts of liquid. http://bit.ly/ratioapp </string>
+			<key>variations</key>
+			<string>When using larger quantities of roux, such as for making a cream soup, cook the liquid for at least ten minutes and skim to get rid of any floury taste or gritty texture.
+
+Having a little roux on hand and a little fresh stock makes gravy a last-minute snap.</string>
+			<key>title</key>
+			<string>Thickening Ratio</string>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>liquid</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>10</integer>
+					<key>defaultAmount</key>
+					<integer>60</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>roux</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>1 oz of roux will thicken 10 oz of liquid.  Whisk cold roux into hot liquid or cold liquid into hot roux to prevent lumps. </string>
+			<key>hideTotal</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>flour</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>butter</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>French for kneaded butter, beurre manié is flour and butter, in equal parts by volume, kneaded together into a homogenous paste—in effect, an uncooked roux. It’s used for last minute thickening of sauces. One Tbs of beurre manié will thicken 1 cup of liquid.</string>
+			<key>title</key>
+			<string>Beurre Manié</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Buerre Manié. 1 tbsp of it will thicken 1 cup of liquid.  It&apos;s just 1 part flour and 1 part butter. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>0.6666</real>
+				<key>label</key>
+				<string>weight</string>
+				<key>ingredient</key>
+				<string>butter</string>
+				<key>measure</key>
+				<string>weight</string>
+				<key>action</key>
+				<string>trunk</string>
+			</dict>
+			<key>variations</key>
+			<string>This can be used just like roux, but because the flour is uncooked, it shouldn’t be used in large quantities, only in small quantities to give some body to a la minute sauces.
+
+A larger quantity can be made in advance and kept in the fridge to be used as needed.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>cornstarch</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>water</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Slurry is a mixture of cornstarch and water (or other liquid) in equal parts by volume, not weight, used to thicken sauces at the last minute.</string>
+			<key>title</key>
+			<string>Slurry</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making a slurry for thickening sauces. It&apos;s just 1 part cornstarch and 1 part water. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1</real>
+				<key>label</key>
+				<string>weight</string>
+				<key>ingredient</key>
+				<string>all</string>
+				<key>measure</key>
+				<string>weight</string>
+				<key>action</key>
+				<string>sum</string>
+			</dict>
+			<key>variations</key>
+			<string>Slurry can be mixed by eye to the consistency of heavy cream.  
+
+One Tbs of cornstarch mixed with a Tbs of water will thicken one cup of liquid. 
+
+Slurry acts fast so add it gradually to your sauce to avoid over-thickening it. </string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>meat</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>3</integer>
+					<key>defaultAmount</key>
+					<integer>18</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>fat</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Season the meat and fat with salt and any other seasonings you’re using. Refrigerate, overnight if possible.  Grind the mixture, mix to distribute seasonings and to make the meat sticky so it all stays together, then shape or stuff into casing.</string>
+			<key>title</key>
+			<string>Sausage</string>
+			<key>hideTotal</key>
+			<true/>
+			<key>share</key>
+			<string>I&apos;m making sausage. It&apos;s just 3 parts meat and 1 part fat. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict/>
+			<key>variations</key>
+			<string>The most important act in sausage-making after measuring properly is to keep your meat and fat very, very cold during the grinding and mixing stage. They can be nearly frozen.
+
+Don’t skimp on the fat; that’s where the flavor is.
+
+When mixing—preferably in a standing mixer with the paddle attachment—you can add some ice cold wine which adds both flavor and moisture to the sausage; up to 10% of the total weight or ½ cup for every 2½ pounds of sausage, 50 milliliters for every 500 grams.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>meat/fat</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>60</integer>
+					<key>defaultAmount</key>
+					<integer>60</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>salt</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>1</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Salting the meat a day or more ahead of time helps to ensure even seasoning and also results in a better bind and texture. Salt levels can vary from palette to palette, but this is a good starting point (60 : 1 = 1.6% by weight or about .25 ounces per pound of raw meat or of course 1 gram for every 60 grams of meat).</string>
+			<key>title</key>
+			<string>Sausage Seasoning</string>
+			<key>hideTotal</key>
+			<true/>
+			<key>share</key>
+			<string>I&apos;m making sausage seasoning. It&apos;s just 1 part salt for every 60 parts of meat &amp; fat. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict/>
+			<key>variations</key>
+			<string>Always use kosher or non-iodized sea salt.
+
+Can combine other seasonings and aromatic with the meat if you are seasoning in advance.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>meat</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>8</integer>
+					<key>defaultAmount</key>
+					<integer>16</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>cream</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>4</integer>
+					<key>defaultAmount</key>
+					<integer>8</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>2</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Mousseline is a puree of meat or fish, egg and cream that, when cooked, results in a light finely textured stuffing. It’s the easy, quick preparation at home. Combine meat or fish, egg and salt in a food processor.  With the blade running, pour in the cream in a thin stream. For very white mousselines, or for mousselines that may need a little more, such as scallop, use egg white only. </string>
+			<key>title</key>
+			<string>Mousseline</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Mousseline. It&apos;s just 8 parts meat, 4 parts cream and 1 part egg. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>all</string>
+				<key>measure</key>
+				<string>weight</string>
+				<key>action</key>
+				<string>sum</string>
+			</dict>
+			<key>variations</key>
+			<string>Make sure all ingredients are very cold.  
+
+Mousselines can be cooked in water or stock as low as 180° F./85° C.  
+
+Cook fish mousselines to an internal temperature of 145° F./63° C, poultry to 160° F./70° C.
+
+This mousseline can be used to make dumplings, sausage, or stuffing for anything from meat to pasta.
+
+Quantities vary depending on how you intend to use the mousseline, but generally you should plan to have 4 oz or 150 grams per serving.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>water</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>20</integer>
+					<key>defaultAmount</key>
+					<integer>20</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>salt</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>1</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Brines are an extraordinary tool; they season meat, help to flavor it and keep it juicy.  Combine salt and water and heat until the salt is completely dissolved, then chill before using.</string>
+			<key>title</key>
+			<string>Brine</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Brine. It&apos;s just 20 parts water and 1 part salt. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>all</string>
+				<key>measure</key>
+				<string>volume</string>
+				<key>action</key>
+				<string>sum</string>
+			</dict>
+			<key>variations</key>
+			<string>The 20:1 ratio makes a 5% brine; just the right strength for traditional brining of meats.
+
+Add aromatics when cooking the brine for additional flavor (rosemary, tarragon, sage, garlic, for instance).
+
+Be sure always to cool brine completely before adding the meat to it.
+
+To reduce the cooling time, measure out the salt and half the water, bring it to a simmer to dissolve salt.  In another container, weigh out the remaining water in the form of ice cubes and pour the hot brine over them.
+
+Never re-use a brine.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>oil</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>20</integer>
+					<key>defaultAmount</key>
+					<integer>20</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>liquid</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>1</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>egg yolk</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>1</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Mayonnaise is an emulsified sauce—a large amount of oil emulsified into a little bit of water to create a thick creamy sauce.  Combine liquid (water and lemon juice), a pinch of salt and egg yolk.  Drizzle in oil slowly while whisking continuously.</string>
+			<key>title</key>
+			<string>Mayonnaise</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Mayonnaise. It&apos;s just 20 parts oil, 1 part liquid and 1 part egg yolk. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>all</string>
+				<key>measure</key>
+				<string>weight</string>
+				<key>action</key>
+				<string>sum</string>
+			</dict>
+			<key>variations</key>
+			<string>The most important piece of the mayonnaise puzzle is the water, which separates the droplets of oil. You need some yolk for helping with the emulsification but yolks also add color and flavor. 
+
+Add shallot and more lemon for more flavor, cayenne for a little heat.  
+
+If your mayonnaise breaks on you, don’t admit defeat. Re-emulsify in a tsp or two of water, drizzling in the broken mayonnaise as you would the oil.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>oil</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>3</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>vinegar</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>2</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine vinegar and any other ingredients in a bowl, then slowly whisk in the oil.</string>
+			<key>title</key>
+			<string>Vinaigrette</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Vinaigrette. It&apos;s just 3 parts oil and 1 part vinegar. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>all</string>
+				<key>measure</key>
+				<string>weight</string>
+				<key>action</key>
+				<string>sum</string>
+			</dict>
+			<key>variations</key>
+			<string>Vinaigrettes can be emulsified to the consistency of mayonnaise or left loose.
+
+A little Dijon mustard helps the emulsion; you can add something sweet (sugar, shallot) to balance acidity.  
+
+For different vinaigrettes, vary your acid (lemon, lime, verjus, sherry vinegar) and your fat (olive oil, walnut oil, warm bacon fat). 
+
+Consider using the vinaigrette as a sauce for meat and fish.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>butter</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>5</integer>
+					<key>defaultAmount</key>
+					<integer>30</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>egg yolks</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>liquid</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>The emulsified butter sauce is one of the splendors of the saucier’s craft. They’re trickier because, like the mayonnaise, they require enough liquid to keep the oil emulsified, but because you’re cooking the water out while you’re making the sauce, you need to be careful. Combine yolk, liquid (usually a reduction of vinegar and aromatics to which one part water has been added), a pinch of salt, and whip over low heat or over simmering water until the eggs are frothy and hot.  Off the heat, drizzle in melted butter while whisking continuously.</string>
+			<key>title</key>
+			<string>Hollandaise</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Hollandaise. It&apos;s just 5 parts butter, 1 part egg yolk and 1 part liquid. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>all</string>
+				<key>measure</key>
+				<string>weight</string>
+				<key>action</key>
+				<string>sum</string>
+			</dict>
+			<key>variations</key>
+			<string>Always keep a little cool water on hand to add if you suspect imminent breakage.
+
+Can make ahead and hold, covered and off heat, for up to an hour.
+
+Leftover sauce can be refrigerated, melted and re-emulsified.
+
+Hollandaise is flavored with lemon, Béarnaise with tarragon, Charon with tarragon and tomato, but less traditional ingredients such as fines herbs, mint, chillis and cumin can also be used in this style of sauce.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>liquid</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>2</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>eggs</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>3</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Combine liquid and egg, thoroughly blend.  Cook in a low oven (300° F./150° C) in a water bath, or, if cooking in a crust, 325° F./163° C.</string>
+			<key>title</key>
+			<string>Free-Standing Custard</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Custard. It&apos;s just 2 parts liquid and 1 part egg. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>all</string>
+				<key>measure</key>
+				<string>weight</string>
+				<key>action</key>
+				<string>sum</string>
+			</dict>
+			<key>variations</key>
+			<string>Custards can be savory, as in a quiche, or sweet, as in a crème caramel. 
+
+Vary the liquid for different effects—stock for savory custards, milk/cream for sweet.
+
+Regarding quantity, 4 oz per serving is a good rule of thumb.
+
+For a 9-x-2 inch ring mold for quiche, use 16 oz liquid and 8 oz (4 large) eggs.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>cream</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>4</integer>
+					<key>defaultAmount</key>
+					<integer>24</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>egg yolks</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>sugar</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Heat milk/cream with any seasonings, such as vanilla bean. Combine yolk and sugar and whisk. Add the hot liquid to the yolks, a little bit at first, while whisking. Return the mixture to the pot and continue to cook until the custard thickens. Strain crème Anglaise into a bowl set in an ice bath to halt the cooking.</string>
+			<key>title</key>
+			<string>Crème Anglaise</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Crème Anglaise. It&apos;s just 4 parts cream, 1 part egg yolk and 1 part sugar. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>all</string>
+				<key>measure</key>
+				<string>weight</string>
+				<key>action</key>
+				<string>sum</string>
+			</dict>
+			<key>variations</key>
+			<string>This sauce can be used warm or cold, frozen into ice cream, or thickened into pastry cream with cornstarch/milk slurry.
+
+If using a vanilla bean, let it steep in the hot cream at least 15 minutes; then scrape the beans from the pod into the cream.  
+
+For vanilla ice cream, cool the mixture overnight in the fridge before freezing.
+
+For crème brulee, combine cold, vanilla-infused milk/cream with yolks and sugar and bake in a water bath.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>chocolate</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>cream</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Heat cream, pour over chopped chocolate, allow chocolate to melt, then stir.</string>
+			<key>title</key>
+			<string>Chocolate Sauce</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Chocolate Sauce. It&apos;s just 1 part chocolate and 1 part cream. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>all</string>
+				<key>measure</key>
+				<string>weight</string>
+				<key>action</key>
+				<string>sum</string>
+			</dict>
+			<key>variations</key>
+			<string>This sauce, sometimes referred to as ganache, will set up to a stiff consistency when chilled.
+
+It can be rolled into balls and coated with cocoa powder to make “truffles.”
+
+Vary the amount of chocolate for thicker or thinner sauce.</string>
+		</dict>
+		<dict>
+			<key>ingredients</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>sugar</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>cream</string>
+					<key>defaultUnit</key>
+					<string>ounces</string>
+					<key>ratio</key>
+					<integer>1</integer>
+					<key>defaultAmount</key>
+					<integer>6</integer>
+					<key>color</key>
+					<integer>1</integer>
+				</dict>
+			</array>
+			<key>instructions</key>
+			<string>Melt sugar in a large heavy pot until it reaches desired color (a nice, caramel hue). Stir in the cream (careful, the cream will begin to boil on contact with the sugar).</string>
+			<key>title</key>
+			<string>Caramel Sauce</string>
+			<key>hideTotal</key>
+			<false/>
+			<key>share</key>
+			<string>I&apos;m making Caramel Sauce. It&apos;s just 1 part sugar and 1 part cream. http://bit.ly/ratioapp </string>
+			<key>total</key>
+			<dict>
+				<key>amount</key>
+				<real>1</real>
+				<key>label</key>
+				<string>&lt;same&gt;</string>
+				<key>ingredient</key>
+				<string>all</string>
+				<key>measure</key>
+				<string>weight</string>
+				<key>action</key>
+				<string>sum</string>
+			</dict>
+			<key>variations</key>
+			<string>Adding water to your sugar at the outset, enough to make it look like wet sand, can help melt the sugar more evenly. 
+
+A drop or two of lemon juice can help balance the sweetness.
+
+For butterscotch, melt brown sugar with ½ part butter and proceed as with caramel sauce.  Season with lemon juice or cider vinegar, vanilla, and salt.</string>
+		</dict>
+	</array>
+</dict>
+</plist>

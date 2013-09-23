@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[RTORatioPieView drawRect:]:RTORatioPieView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.ratio.ingredients">
+            </PersistentString>
+            <PersistentString
+               value = "self.ratio">
+            </PersistentString>
+            <PersistentString
+               value = "self.indexPath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RTOAllRatiosCVC collectionView:numberOfItemsInSection:]:RTOAllRatiosCVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[self ratiosForSection:section] count]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RTOAllRatiosCVC collectionView:cellForItemAtIndexPath:]:RTOAllRatiosCVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[indexPath section]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

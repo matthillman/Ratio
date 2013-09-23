@@ -14,13 +14,22 @@
 		C94CAA1A17ED132C00F77C03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA1917ED132C00F77C03 /* main.m */; };
 		C94CAA1E17ED132C00F77C03 /* RTOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA1D17ED132C00F77C03 /* RTOAppDelegate.m */; };
 		C94CAA2117ED132C00F77C03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA1F17ED132C00F77C03 /* Main.storyboard */; };
-		C94CAA2417ED132C00F77C03 /* RTOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA2317ED132C00F77C03 /* RTOViewController.m */; };
 		C94CAA2617ED132C00F77C03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA2517ED132C00F77C03 /* Images.xcassets */; };
 		C94CAA2D17ED132C00F77C03 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA2C17ED132C00F77C03 /* XCTest.framework */; };
 		C94CAA2E17ED132C00F77C03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA0D17ED132C00F77C03 /* Foundation.framework */; };
 		C94CAA2F17ED132C00F77C03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA1117ED132C00F77C03 /* UIKit.framework */; };
 		C94CAA3717ED132C00F77C03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA3517ED132C00F77C03 /* InfoPlist.strings */; };
 		C94CAA3917ED132C00F77C03 /* RatioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA3817ED132C00F77C03 /* RatioTests.m */; };
+		C94CAA4417ED286C00F77C03 /* Ratios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA4217ED286C00F77C03 /* Ratios.xcdatamodeld */; };
+		C94CAA4717EE1B7B00F77C03 /* RTORatioPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA4617EE1B7B00F77C03 /* RTORatioPieView.m */; };
+		C94CAA4A17EE21A500F77C03 /* RTORatio.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA4917EE21A500F77C03 /* RTORatio.m */; };
+		C94CAA4E17EE23B200F77C03 /* RTOIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA4D17EE23B200F77C03 /* RTOIngredient.m */; };
+		C94CAA5417EE33F100F77C03 /* RTORatioVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA5317EE33F100F77C03 /* RTORatioVC.m */; };
+		C94CAA5717EE366700F77C03 /* RTORatioCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA5617EE366700F77C03 /* RTORatioCVC.m */; };
+		C94CAA5A17EE367B00F77C03 /* RTOListCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA5917EE367B00F77C03 /* RTOListCVC.m */; };
+		C94CAA5F17EE9D0700F77C03 /* ratios in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA5E17EE9D0700F77C03 /* ratios */; };
+		C94CAA6217EEA11300F77C03 /* RTOAllRatiosCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA6117EEA11300F77C03 /* RTOAllRatiosCVC.m */; };
+		C94CAA6517EFC06D00F77C03 /* RTORatioListHeadCRV.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA6417EFC06D00F77C03 /* RTORatioListHeadCRV.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +54,30 @@
 		C94CAA1C17ED132C00F77C03 /* RTOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTOAppDelegate.h; sourceTree = "<group>"; };
 		C94CAA1D17ED132C00F77C03 /* RTOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTOAppDelegate.m; sourceTree = "<group>"; };
 		C94CAA2017ED132C00F77C03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C94CAA2217ED132C00F77C03 /* RTOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTOViewController.h; sourceTree = "<group>"; };
-		C94CAA2317ED132C00F77C03 /* RTOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTOViewController.m; sourceTree = "<group>"; };
 		C94CAA2517ED132C00F77C03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C94CAA2B17ED132C00F77C03 /* RatioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94CAA2C17ED132C00F77C03 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C94CAA3417ED132C00F77C03 /* RatioTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RatioTests-Info.plist"; sourceTree = "<group>"; };
 		C94CAA3617ED132C00F77C03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C94CAA3817ED132C00F77C03 /* RatioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatioTests.m; sourceTree = "<group>"; };
+		C94CAA4317ED286C00F77C03 /* Ratios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ratios.xcdatamodel; sourceTree = "<group>"; };
+		C94CAA4517EE1B7B00F77C03 /* RTORatioPieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTORatioPieView.h; sourceTree = "<group>"; };
+		C94CAA4617EE1B7B00F77C03 /* RTORatioPieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTORatioPieView.m; sourceTree = "<group>"; };
+		C94CAA4817EE21A500F77C03 /* RTORatio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTORatio.h; sourceTree = "<group>"; };
+		C94CAA4917EE21A500F77C03 /* RTORatio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTORatio.m; sourceTree = "<group>"; };
+		C94CAA4C17EE23B200F77C03 /* RTOIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOIngredient.h; sourceTree = "<group>"; };
+		C94CAA4D17EE23B200F77C03 /* RTOIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOIngredient.m; sourceTree = "<group>"; };
+		C94CAA5217EE33F100F77C03 /* RTORatioVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTORatioVC.h; path = ../RTORatioVC.h; sourceTree = "<group>"; };
+		C94CAA5317EE33F100F77C03 /* RTORatioVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTORatioVC.m; path = ../RTORatioVC.m; sourceTree = "<group>"; };
+		C94CAA5517EE366700F77C03 /* RTORatioCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTORatioCVC.h; sourceTree = "<group>"; };
+		C94CAA5617EE366700F77C03 /* RTORatioCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTORatioCVC.m; sourceTree = "<group>"; };
+		C94CAA5817EE367B00F77C03 /* RTOListCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOListCVC.h; sourceTree = "<group>"; };
+		C94CAA5917EE367B00F77C03 /* RTOListCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOListCVC.m; sourceTree = "<group>"; };
+		C94CAA5E17EE9D0700F77C03 /* ratios */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ratios; sourceTree = "<group>"; };
+		C94CAA6017EEA11300F77C03 /* RTOAllRatiosCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOAllRatiosCVC.h; sourceTree = "<group>"; };
+		C94CAA6117EEA11300F77C03 /* RTOAllRatiosCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOAllRatiosCVC.m; sourceTree = "<group>"; };
+		C94CAA6317EFC06D00F77C03 /* RTORatioListHeadCRV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTORatioListHeadCRV.h; sourceTree = "<group>"; };
+		C94CAA6417EFC06D00F77C03 /* RTORatioListHeadCRV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTORatioListHeadCRV.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +137,22 @@
 		C94CAA1317ED132C00F77C03 /* Ratio */ = {
 			isa = PBXGroup;
 			children = (
-				C94CAA1C17ED132C00F77C03 /* RTOAppDelegate.h */,
-				C94CAA1D17ED132C00F77C03 /* RTOAppDelegate.m */,
 				C94CAA1F17ED132C00F77C03 /* Main.storyboard */,
-				C94CAA2217ED132C00F77C03 /* RTOViewController.h */,
-				C94CAA2317ED132C00F77C03 /* RTOViewController.m */,
+				C94CAA6317EFC06D00F77C03 /* RTORatioListHeadCRV.h */,
+				C94CAA6417EFC06D00F77C03 /* RTORatioListHeadCRV.m */,
+				C94CAA6017EEA11300F77C03 /* RTOAllRatiosCVC.h */,
+				C94CAA6117EEA11300F77C03 /* RTOAllRatiosCVC.m */,
+				C94CAA5217EE33F100F77C03 /* RTORatioVC.h */,
+				C94CAA5317EE33F100F77C03 /* RTORatioVC.m */,
+				C94CAA5517EE366700F77C03 /* RTORatioCVC.h */,
+				C94CAA5617EE366700F77C03 /* RTORatioCVC.m */,
+				C94CAA5817EE367B00F77C03 /* RTOListCVC.h */,
+				C94CAA5917EE367B00F77C03 /* RTOListCVC.m */,
+				C94CAA4517EE1B7B00F77C03 /* RTORatioPieView.h */,
+				C94CAA4617EE1B7B00F77C03 /* RTORatioPieView.m */,
 				C94CAA2517ED132C00F77C03 /* Images.xcassets */,
 				C94CAA1417ED132C00F77C03 /* Supporting Files */,
+				C94CAA4B17EE21AC00F77C03 /* Model */,
 			);
 			path = Ratio;
 			sourceTree = "<group>";
@@ -126,6 +160,9 @@
 		C94CAA1417ED132C00F77C03 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C94CAA4217ED286C00F77C03 /* Ratios.xcdatamodeld */,
+				C94CAA1C17ED132C00F77C03 /* RTOAppDelegate.h */,
+				C94CAA1D17ED132C00F77C03 /* RTOAppDelegate.m */,
 				C94CAA1517ED132C00F77C03 /* Ratio-Info.plist */,
 				C94CAA1617ED132C00F77C03 /* InfoPlist.strings */,
 				C94CAA1917ED132C00F77C03 /* main.m */,
@@ -150,6 +187,18 @@
 				C94CAA3517ED132C00F77C03 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C94CAA4B17EE21AC00F77C03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C94CAA5E17EE9D0700F77C03 /* ratios */,
+				C94CAA4817EE21A500F77C03 /* RTORatio.h */,
+				C94CAA4917EE21A500F77C03 /* RTORatio.m */,
+				C94CAA4C17EE23B200F77C03 /* RTOIngredient.h */,
+				C94CAA4D17EE23B200F77C03 /* RTOIngredient.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94CAA5F17EE9D0700F77C03 /* ratios in Resources */,
 				C94CAA2617ED132C00F77C03 /* Images.xcassets in Resources */,
 				C94CAA1817ED132C00F77C03 /* InfoPlist.strings in Resources */,
 				C94CAA2117ED132C00F77C03 /* Main.storyboard in Resources */,
@@ -250,8 +300,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94CAA5A17EE367B00F77C03 /* RTOListCVC.m in Sources */,
+				C94CAA5717EE366700F77C03 /* RTORatioCVC.m in Sources */,
+				C94CAA4717EE1B7B00F77C03 /* RTORatioPieView.m in Sources */,
+				C94CAA6217EEA11300F77C03 /* RTOAllRatiosCVC.m in Sources */,
 				C94CAA1E17ED132C00F77C03 /* RTOAppDelegate.m in Sources */,
-				C94CAA2417ED132C00F77C03 /* RTOViewController.m in Sources */,
+				C94CAA4417ED286C00F77C03 /* Ratios.xcdatamodeld in Sources */,
+				C94CAA4A17EE21A500F77C03 /* RTORatio.m in Sources */,
+				C94CAA6517EFC06D00F77C03 /* RTORatioListHeadCRV.m in Sources */,
+				C94CAA4E17EE23B200F77C03 /* RTOIngredient.m in Sources */,
+				C94CAA5417EE33F100F77C03 /* RTORatioVC.m in Sources */,
 				C94CAA1A17ED132C00F77C03 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +529,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C94CAA4217ED286C00F77C03 /* Ratios.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C94CAA4317ED286C00F77C03 /* Ratios.xcdatamodel */,
+			);
+			currentVersion = C94CAA4317ED286C00F77C03 /* Ratios.xcdatamodel */;
+			path = Ratios.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C94CAA0217ED132C00F77C03 /* Project object */;
 }
