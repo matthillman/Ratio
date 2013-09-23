@@ -10,15 +10,11 @@
 
 @implementation RTORatio
 
-- (NSString *)name
+- (id)initWithTestData
 {
-    if (!_name) _name = @"Cookie Dough";
-    return _name;
-}
-
-- (NSArray *)ingredients
-{
-    if (!_ingredients) {
+    self = [self init];
+    if (self) {
+        _name = @"Cookie Dough";
         RTOIngredient *flour = [[RTOIngredient alloc] init];
         flour.name = @"Flour";
         flour.amount = [NSNumber numberWithInt:3];
@@ -36,8 +32,24 @@
         
         _ingredients = @[flour, fat, sugar];
     }
-    
-    return _ingredients;
+    return self;
+}
+
+- (id)initWithRatioDict:(NSDictionary *)dict
+{
+    self = [self init];
+    if (self) {
+        _name = dict[@"title"];
+        _instructions = dict[@"instructions"];
+        _variations = dict[@"variations"];
+        NSMutableArray *ingredients = [[NSMutableArray alloc] init];
+        for (NSDictionary *ingredient in dict[@"ingredients"]) {
+            RTOIngredient *i = [[RTOIngredient alloc] initWithIngredientDict:ingredient];
+            [ingredients addObject:i];
+        }
+        _ingredients = ingredients;
+    }
+    return self;
 }
 
 @synthesize ratioTotal = _ratioTotal;
@@ -61,7 +73,7 @@
     for (RTOIngredient *ing in self.ingredients) {
         CGFloat endAngle = startAngle + (2*M_PI * [ing.amount floatValue] / self.ratioTotal);
         
-        if ([ing.name isEqualToString:ingredient.name]) {
+        if ([ing.name isEqualToString:ingredient.name] && [ing.amount floatValue] > 0) {
             slice = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
             [slice addLineToPoint:center];
             [slice closePath];

@@ -12,4 +12,6 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) NSNumber *amount;
 @property (nonatomic, strong) UIColor *color;
+
+- (id)initWithIngredientDict:(NSDictionary *)dict;
 @end

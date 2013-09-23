@@ -15,5 +15,7 @@
 @property (nonatomic, strong) NSString *instructions;
 @property (nonatomic, strong) NSString *variations;
 
+- (id)initWithRatioDict:(NSDictionary *)dict;
+- (id)initWithTestData;
 - (UIBezierPath *)sliceForIngredient:(RTOIngredient *)ingredient withCenter:(CGPoint)center andRadius:(CGFloat)radius;
 @end

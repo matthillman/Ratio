@@ -3,6 +3,22 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[RTOAllRatiosCVC collectionView:didSelectItemAtIndexPath:]:RTOAllRatiosCVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[selected.bounds origin]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RTOAllRatiosCVC collectionView:numberOfItemsInSection:]:RTOAllRatiosCVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[self ratiosForSection:section] count]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[RTORatioPieView drawRect:]:RTORatioPieView.m">
          <PersistentStrings>
             <PersistentString
@@ -17,12 +33,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[RTOAllRatiosCVC collectionView:numberOfItemsInSection:]:RTOAllRatiosCVC.m">
+         contextName = "-[RTOIngredient initWithIngredientDict:]:RTOIngredient.m">
          <PersistentStrings>
             <PersistentString
-               value = "[[self ratiosForSection:section] count]">
+               value = "[NSString stringWithFormat:@&quot;%@&quot;, dict[@&quot;color&quot;]]">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RTOIngredient description]:RTOIngredient.m">
       </ContextState>
       <ContextState
          contextName = "-[RTOAllRatiosCVC collectionView:cellForItemAtIndexPath:]:RTOAllRatiosCVC.m">

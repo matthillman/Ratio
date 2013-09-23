@@ -27,9 +27,13 @@
 		C94CAA5417EE33F100F77C03 /* RTORatioVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA5317EE33F100F77C03 /* RTORatioVC.m */; };
 		C94CAA5717EE366700F77C03 /* RTORatioCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA5617EE366700F77C03 /* RTORatioCVC.m */; };
 		C94CAA5A17EE367B00F77C03 /* RTOListCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA5917EE367B00F77C03 /* RTOListCVC.m */; };
-		C94CAA5F17EE9D0700F77C03 /* ratios in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA5E17EE9D0700F77C03 /* ratios */; };
+		C94CAA5F17EE9D0700F77C03 /* ratiosxml in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA5E17EE9D0700F77C03 /* ratiosxml */; };
 		C94CAA6217EEA11300F77C03 /* RTOAllRatiosCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA6117EEA11300F77C03 /* RTOAllRatiosCVC.m */; };
 		C94CAA6517EFC06D00F77C03 /* RTORatioListHeadCRV.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA6417EFC06D00F77C03 /* RTORatioListHeadCRV.m */; };
+		C9A4C04C17F073D900C68E92 /* menus.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A4C04A17F073D900C68E92 /* menus.plist */; };
+		C9A4C04D17F073D900C68E92 /* ratios.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A4C04B17F073D900C68E92 /* ratios.plist */; };
+		C9A4C05017F09F4E00C68E92 /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4C04F17F09F4E00C68E92 /* UIColor+RGB.m */; };
+		C9A4C05417F0D3DA00C68E92 /* RTOAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4C05317F0D3DA00C68E92 /* RTOAnimatedTransitioning.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,11 +77,17 @@
 		C94CAA5617EE366700F77C03 /* RTORatioCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTORatioCVC.m; sourceTree = "<group>"; };
 		C94CAA5817EE367B00F77C03 /* RTOListCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOListCVC.h; sourceTree = "<group>"; };
 		C94CAA5917EE367B00F77C03 /* RTOListCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOListCVC.m; sourceTree = "<group>"; };
-		C94CAA5E17EE9D0700F77C03 /* ratios */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ratios; sourceTree = "<group>"; };
+		C94CAA5E17EE9D0700F77C03 /* ratiosxml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ratiosxml; sourceTree = "<group>"; };
 		C94CAA6017EEA11300F77C03 /* RTOAllRatiosCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOAllRatiosCVC.h; sourceTree = "<group>"; };
 		C94CAA6117EEA11300F77C03 /* RTOAllRatiosCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOAllRatiosCVC.m; sourceTree = "<group>"; };
 		C94CAA6317EFC06D00F77C03 /* RTORatioListHeadCRV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTORatioListHeadCRV.h; sourceTree = "<group>"; };
 		C94CAA6417EFC06D00F77C03 /* RTORatioListHeadCRV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTORatioListHeadCRV.m; sourceTree = "<group>"; };
+		C9A4C04A17F073D900C68E92 /* menus.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = menus.plist; sourceTree = "<group>"; };
+		C9A4C04B17F073D900C68E92 /* ratios.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ratios.plist; sourceTree = "<group>"; };
+		C9A4C04E17F09F4E00C68E92 /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGB.h"; sourceTree = "<group>"; };
+		C9A4C04F17F09F4E00C68E92 /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGB.m"; sourceTree = "<group>"; };
+		C9A4C05217F0D3DA00C68E92 /* RTOAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOAnimatedTransitioning.h; sourceTree = "<group>"; };
+		C9A4C05317F0D3DA00C68E92 /* RTOAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOAnimatedTransitioning.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,19 +148,15 @@
 			isa = PBXGroup;
 			children = (
 				C94CAA1F17ED132C00F77C03 /* Main.storyboard */,
-				C94CAA6317EFC06D00F77C03 /* RTORatioListHeadCRV.h */,
-				C94CAA6417EFC06D00F77C03 /* RTORatioListHeadCRV.m */,
 				C94CAA6017EEA11300F77C03 /* RTOAllRatiosCVC.h */,
 				C94CAA6117EEA11300F77C03 /* RTOAllRatiosCVC.m */,
 				C94CAA5217EE33F100F77C03 /* RTORatioVC.h */,
 				C94CAA5317EE33F100F77C03 /* RTORatioVC.m */,
-				C94CAA5517EE366700F77C03 /* RTORatioCVC.h */,
-				C94CAA5617EE366700F77C03 /* RTORatioCVC.m */,
-				C94CAA5817EE367B00F77C03 /* RTOListCVC.h */,
-				C94CAA5917EE367B00F77C03 /* RTOListCVC.m */,
 				C94CAA4517EE1B7B00F77C03 /* RTORatioPieView.h */,
 				C94CAA4617EE1B7B00F77C03 /* RTORatioPieView.m */,
 				C94CAA2517ED132C00F77C03 /* Images.xcassets */,
+				C9A4C05117F0D39A00C68E92 /* Transitions */,
+				C9A4C04917F06B6800C68E92 /* Collection Sub-views */,
 				C94CAA1417ED132C00F77C03 /* Supporting Files */,
 				C94CAA4B17EE21AC00F77C03 /* Model */,
 			);
@@ -160,6 +166,8 @@
 		C94CAA1417ED132C00F77C03 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C9A4C04E17F09F4E00C68E92 /* UIColor+RGB.h */,
+				C9A4C04F17F09F4E00C68E92 /* UIColor+RGB.m */,
 				C94CAA4217ED286C00F77C03 /* Ratios.xcdatamodeld */,
 				C94CAA1C17ED132C00F77C03 /* RTOAppDelegate.h */,
 				C94CAA1D17ED132C00F77C03 /* RTOAppDelegate.m */,
@@ -192,13 +200,37 @@
 		C94CAA4B17EE21AC00F77C03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C94CAA5E17EE9D0700F77C03 /* ratios */,
+				C9A4C04A17F073D900C68E92 /* menus.plist */,
+				C9A4C04B17F073D900C68E92 /* ratios.plist */,
+				C94CAA5E17EE9D0700F77C03 /* ratiosxml */,
 				C94CAA4817EE21A500F77C03 /* RTORatio.h */,
 				C94CAA4917EE21A500F77C03 /* RTORatio.m */,
 				C94CAA4C17EE23B200F77C03 /* RTOIngredient.h */,
 				C94CAA4D17EE23B200F77C03 /* RTOIngredient.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		C9A4C04917F06B6800C68E92 /* Collection Sub-views */ = {
+			isa = PBXGroup;
+			children = (
+				C94CAA6317EFC06D00F77C03 /* RTORatioListHeadCRV.h */,
+				C94CAA6417EFC06D00F77C03 /* RTORatioListHeadCRV.m */,
+				C94CAA5817EE367B00F77C03 /* RTOListCVC.h */,
+				C94CAA5917EE367B00F77C03 /* RTOListCVC.m */,
+				C94CAA5517EE366700F77C03 /* RTORatioCVC.h */,
+				C94CAA5617EE366700F77C03 /* RTORatioCVC.m */,
+			);
+			name = "Collection Sub-views";
+			sourceTree = "<group>";
+		};
+		C9A4C05117F0D39A00C68E92 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				C9A4C05217F0D3DA00C68E92 /* RTOAnimatedTransitioning.h */,
+				C9A4C05317F0D3DA00C68E92 /* RTOAnimatedTransitioning.m */,
+			);
+			name = Transitions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,8 +310,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C94CAA5F17EE9D0700F77C03 /* ratios in Resources */,
+				C94CAA5F17EE9D0700F77C03 /* ratiosxml in Resources */,
 				C94CAA2617ED132C00F77C03 /* Images.xcassets in Resources */,
+				C9A4C04D17F073D900C68E92 /* ratios.plist in Resources */,
+				C9A4C04C17F073D900C68E92 /* menus.plist in Resources */,
 				C94CAA1817ED132C00F77C03 /* InfoPlist.strings in Resources */,
 				C94CAA2117ED132C00F77C03 /* Main.storyboard in Resources */,
 			);
@@ -307,8 +341,10 @@
 				C94CAA1E17ED132C00F77C03 /* RTOAppDelegate.m in Sources */,
 				C94CAA4417ED286C00F77C03 /* Ratios.xcdatamodeld in Sources */,
 				C94CAA4A17EE21A500F77C03 /* RTORatio.m in Sources */,
+				C9A4C05017F09F4E00C68E92 /* UIColor+RGB.m in Sources */,
 				C94CAA6517EFC06D00F77C03 /* RTORatioListHeadCRV.m in Sources */,
 				C94CAA4E17EE23B200F77C03 /* RTOIngredient.m in Sources */,
+				C9A4C05417F0D3DA00C68E92 /* RTOAnimatedTransitioning.m in Sources */,
 				C94CAA5417EE33F100F77C03 /* RTORatioVC.m in Sources */,
 				C94CAA1A17ED132C00F77C03 /* main.m in Sources */,
 			);
@@ -519,6 +555,7 @@
 				C94CAA3E17ED132C00F77C03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C94CAA3F17ED132C00F77C03 /* Build configuration list for PBXNativeTarget "RatioTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +564,7 @@
 				C94CAA4117ED132C00F77C03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
