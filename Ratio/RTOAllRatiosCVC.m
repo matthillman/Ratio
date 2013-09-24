@@ -28,8 +28,7 @@
     if ([selected isKindOfClass:[RTORatioCVC class]] && [next isKindOfClass:[RTORatioVC class]]) {
         RTORatioPieView *pie = ((RTORatioCVC *)selected).ratioPieView;
         RTORatioVC *n = (RTORatioVC *)next;
-        CGPoint pieCenter = CGPointMake((pie.bounds.origin.x + pie.bounds.size.width)/2.0, (pie.bounds.origin.y + pie.bounds.size.height)/2.0);
-        n.animationCenter = [pie convertPoint:pieCenter toView:nil];
+        n.animationCenter = [pie convertPoint:pie.center toView:nil];
     }
     [self.navigationController pushViewController:next animated:YES];
 }
@@ -47,11 +46,8 @@
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
     RTOAnimatedTransitioning *transitioning = nil;
-    if ([toVC isKindOfClass:[RTORatioVC class]]) {
+    if (([toVC isKindOfClass:[RTORatioVC class]] || [fromVC isKindOfClass:[RTORatioVC class]]) && ([toVC isKindOfClass:[RTOAllRatiosCVC class]] || [fromVC isKindOfClass:[RTOAllRatiosCVC class]])) {
         transitioning = [RTOAnimatedTransitioning new];
-        if (operation == UINavigationControllerOperationPop) {
-            transitioning.reverse = YES;
-        }
     }
     return transitioning;
 }

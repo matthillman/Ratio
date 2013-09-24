@@ -34,6 +34,8 @@
 		C9A4C04D17F073D900C68E92 /* ratios.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A4C04B17F073D900C68E92 /* ratios.plist */; };
 		C9A4C05017F09F4E00C68E92 /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4C04F17F09F4E00C68E92 /* UIColor+RGB.m */; };
 		C9A4C05417F0D3DA00C68E92 /* RTOAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4C05317F0D3DA00C68E92 /* RTOAnimatedTransitioning.m */; };
+		C9A4C05A17F1E82B00C68E92 /* RTOCacluationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4C05917F1E82B00C68E92 /* RTOCacluationCell.m */; };
+		C9A4C05D17F206BB00C68E92 /* RTOCalculateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4C05C17F206BB00C68E92 /* RTOCalculateVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,10 @@
 		C9A4C04F17F09F4E00C68E92 /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGB.m"; sourceTree = "<group>"; };
 		C9A4C05217F0D3DA00C68E92 /* RTOAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOAnimatedTransitioning.h; sourceTree = "<group>"; };
 		C9A4C05317F0D3DA00C68E92 /* RTOAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOAnimatedTransitioning.m; sourceTree = "<group>"; };
+		C9A4C05817F1E82B00C68E92 /* RTOCacluationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOCacluationCell.h; sourceTree = "<group>"; };
+		C9A4C05917F1E82B00C68E92 /* RTOCacluationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOCacluationCell.m; sourceTree = "<group>"; };
+		C9A4C05B17F206BB00C68E92 /* RTOCalculateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOCalculateVC.h; sourceTree = "<group>"; };
+		C9A4C05C17F206BB00C68E92 /* RTOCalculateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOCalculateVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				C94CAA1F17ED132C00F77C03 /* Main.storyboard */,
+				C9A4C05B17F206BB00C68E92 /* RTOCalculateVC.h */,
+				C9A4C05C17F206BB00C68E92 /* RTOCalculateVC.m */,
 				C94CAA6017EEA11300F77C03 /* RTOAllRatiosCVC.h */,
 				C94CAA6117EEA11300F77C03 /* RTOAllRatiosCVC.m */,
 				C94CAA5217EE33F100F77C03 /* RTORatioVC.h */,
@@ -220,6 +228,8 @@
 				C94CAA5917EE367B00F77C03 /* RTOListCVC.m */,
 				C94CAA5517EE366700F77C03 /* RTORatioCVC.h */,
 				C94CAA5617EE366700F77C03 /* RTORatioCVC.m */,
+				C9A4C05817F1E82B00C68E92 /* RTOCacluationCell.h */,
+				C9A4C05917F1E82B00C68E92 /* RTOCacluationCell.m */,
 			);
 			name = "Collection Sub-views";
 			sourceTree = "<group>";
@@ -339,9 +349,11 @@
 				C94CAA4717EE1B7B00F77C03 /* RTORatioPieView.m in Sources */,
 				C94CAA6217EEA11300F77C03 /* RTOAllRatiosCVC.m in Sources */,
 				C94CAA1E17ED132C00F77C03 /* RTOAppDelegate.m in Sources */,
+				C9A4C05D17F206BB00C68E92 /* RTOCalculateVC.m in Sources */,
 				C94CAA4417ED286C00F77C03 /* Ratios.xcdatamodeld in Sources */,
 				C94CAA4A17EE21A500F77C03 /* RTORatio.m in Sources */,
 				C9A4C05017F09F4E00C68E92 /* UIColor+RGB.m in Sources */,
+				C9A4C05A17F1E82B00C68E92 /* RTOCacluationCell.m in Sources */,
 				C94CAA6517EFC06D00F77C03 /* RTORatioListHeadCRV.m in Sources */,
 				C94CAA4E17EE23B200F77C03 /* RTOIngredient.m in Sources */,
 				C9A4C05417F0D3DA00C68E92 /* RTOAnimatedTransitioning.m in Sources */,

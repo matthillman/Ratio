@@ -9,5 +9,4 @@
 #import <Foundation/Foundation.h>
 
 @interface RTOAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning>
-@property (nonatomic) BOOL reverse;
 @end
