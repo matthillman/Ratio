@@ -11,4 +11,6 @@
 
 @interface RTORatioVC : UIViewController
 @property (nonatomic, strong) RTORatio *ratio;
+@property (nonatomic) CGPoint animationCenter;
+@property (weak, nonatomic) IBOutlet UICollectionView *ratioCollectionView;
 @end

@@ -24,12 +24,13 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UIViewController *next = [self nextViewControllerAtIndexPath:indexPath];
-//    UICollectionViewCell *selected = [self.collectionView cellForItemAtIndexPath:indexPath];
-//    CGFloat scalex = selected.bounds.size.width / self.view.bounds.size.width;
-//    CGFloat scaley = selected.bounds.size.height / self.view.bounds.size.height;
-//    CGAffineTransform t = CGAffineTransformMakeScale(scalex, scaley);
-//    t = CGAffineTransformTranslate(t, selected.bounds.origin.x, selected.bounds.origin.y);
-//    next.view.transform = t;
+    UICollectionViewCell *selected = [self.collectionView cellForItemAtIndexPath:indexPath];
+    if ([selected isKindOfClass:[RTORatioCVC class]] && [next isKindOfClass:[RTORatioVC class]]) {
+        RTORatioPieView *pie = ((RTORatioCVC *)selected).ratioPieView;
+        RTORatioVC *n = (RTORatioVC *)next;
+        CGPoint pieCenter = CGPointMake((pie.bounds.origin.x + pie.bounds.size.width)/2.0, (pie.bounds.origin.y + pie.bounds.size.height)/2.0);
+        n.animationCenter = [pie convertPoint:pieCenter toView:nil];
+    }
     [self.navigationController pushViewController:next animated:YES];
 }
 
@@ -45,9 +46,12 @@
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
-    RTOAnimatedTransitioning *transitioning = [RTOAnimatedTransitioning new];
-    if (operation == UINavigationControllerOperationPop) {
-        transitioning.reverse = YES;
+    RTOAnimatedTransitioning *transitioning = nil;
+    if ([toVC isKindOfClass:[RTORatioVC class]]) {
+        transitioning = [RTOAnimatedTransitioning new];
+        if (operation == UINavigationControllerOperationPop) {
+            transitioning.reverse = YES;
+        }
     }
     return transitioning;
 }

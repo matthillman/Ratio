@@ -7,6 +7,7 @@
 //
 
 #import "RTOAnimatedTransitioning.h"
+#import "RTORatioVC.h"
 
 @implementation RTOAnimatedTransitioning
 
@@ -19,7 +20,19 @@
     if (self.reverse) {
         [containter insertSubview:toVC.view belowSubview:fromVC.view];
     } else {
-        toVC.view.transform = CGAffineTransformMakeScale(.5, .5);
+        if ([toVC isKindOfClass:[RTORatioVC class]]) {
+            RTORatioVC *rvc = (RTORatioVC *)toVC;
+            CGFloat scale = 90.0/220.0;
+            UICollectionView *pieCv = rvc.ratioCollectionView;
+            CGPoint pieCenter = CGPointMake((pieCv.bounds.origin.x + pieCv.bounds.size.width)/2.0, 152+110);
+            CGFloat deltax = rvc.animationCenter.x - pieCenter.x;
+            CGFloat deltay = rvc.animationCenter.y - pieCenter.y;
+            
+            toVC.view.transform = CGAffineTransformMakeTranslation(deltax, deltay);
+            toVC.view.transform = CGAffineTransformScale(toVC.view.transform, scale, scale);
+        } else {
+            toVC.view.transform = CGAffineTransformMakeScale(0, 0);
+        }
         [containter addSubview:toVC.view];
     }
     

@@ -11,7 +11,6 @@
 #import "RTOListCVC.h"
 
 @interface RTORatioVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
-@property (weak, nonatomic) IBOutlet UICollectionView *ratioCollectionView;
 @end
 
 @implementation RTORatioVC
