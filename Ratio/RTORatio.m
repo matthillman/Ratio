@@ -40,8 +40,8 @@
     self = [self init];
     if (self) {
         _name = dict[@"title"];
-        _instructions = dict[@"instructions"];
-        _variations = dict[@"variations"];
+        _instructions = [dict[@"instructions"] stringByReplacingOccurrencesOfString:@"\n\n" withString:@"\n"];
+        _variations = [dict[@"variations"] stringByReplacingOccurrencesOfString:@"\n\n" withString:@"\n"];
         NSMutableArray *ingredients = [[NSMutableArray alloc] init];
         for (NSDictionary *ingredient in dict[@"ingredients"]) {
             RTOIngredient *i = [[RTOIngredient alloc] initWithIngredientDict:ingredient];

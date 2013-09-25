@@ -51,6 +51,7 @@
         [containter addSubview:toVC.view];
     }
     rvc.calculateTableView.alpha = 0;
+    rvc.instructionsTextView.alpha = 0;
     
     [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext] delay:0 options:0 animations:^{
         if ([fromVC isKindOfClass:[RTORatioVC class]]) {
@@ -76,6 +77,7 @@
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:finished];
         rvc.calculateTableView.alpha = 1;
+        rvc.instructionsTextView.alpha = 1;
     }];
 }
 

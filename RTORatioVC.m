@@ -75,8 +75,10 @@
         RTOCacluationCell *rcc = (RTOCacluationCell *)cell;
         RTOIngredient *ingredient = self.ratio.ingredients[indexPath.item-1];
         rcc.quantity.text = [ingredient.amount stringValue];
-        rcc.unitButton.titleLabel.text = @"Grams";
+        rcc.unitButton.titleLabel.text = @"Parts";
         rcc.ingredientLabel.text = ingredient.name;
+        rcc.ratioPieView.ratio = self.ratio;
+        rcc.ratioPieView.indexPath = indexPath;
     }
     return cell;
 }
@@ -94,7 +96,7 @@
         RTOListCVC *lcvc = (RTOListCVC *)cell;
         lcvc.ratioPieView.ratio = self.ratio;
         lcvc.ratioPieView.indexPath = indexPath;
-        lcvc.ingredientLabel.text = [((RTOIngredient *)self.ratio.ingredients[indexPath.item-1]) description];
+        lcvc.ingredientLabel.text = [[((RTOIngredient *)self.ratio.ingredients[indexPath.item-1]) description] capitalizedString];
     }
     
     return cell;
@@ -106,34 +108,52 @@
     return CGSizeMake(w, h);
 }
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [self.ratio.ingredients count] + 1;
+}
+
 #pragma mark View Life Cycle
 
 - (void)setup
 {
+    NSMutableParagraphStyle *head = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    head.alignment = NSTextAlignmentCenter;
+    head.paragraphSpacing = 14;
+    NSMutableParagraphStyle *body = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    body.paragraphSpacing = 14;
+    body.lineSpacing = 7;
+    
+    NSDictionary *headStyle = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17],
+                                NSParagraphStyleAttributeName: head,
+                                NSKernAttributeName: [NSNumber numberWithInt:1]};
+    NSDictionary *bodyStyle = @{NSParagraphStyleAttributeName : body};
+    NSMutableAttributedString *instructionsTxt = [[NSMutableAttributedString alloc] initWithString:@"Instructions\n" attributes:headStyle];
+    NSArray *paragraphs = [self.ratio.instructions componentsSeparatedByString:@"\n"];
+    [instructionsTxt appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"•  %@", [paragraphs componentsJoinedByString:@"\n•  "]] attributes:bodyStyle]];
+    [instructionsTxt appendAttributedString:[[NSAttributedString alloc] initWithString:@"\nVariations\n" attributes:headStyle]];
+    paragraphs = [self.ratio.variations componentsSeparatedByString:@"\n"];
+    [instructionsTxt appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"•  %@", [paragraphs componentsJoinedByString:@"\n•  "]] attributes:bodyStyle]];
+    
+    self.instructionsTextView.attributedText = instructionsTxt;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     self.calculateTableView.alpha = 1;
     self.calculateTableView.layer.position = CGPointMake(self.calculateTableView.layer.position.x + self.view.bounds.size.width, self.calculateTableView.layer.position.y);
     self.instructionsTextView.alpha = 1;
     self.instructionsTextView.layer.position = CGPointMake(self.instructionsTextView.layer.position.x + 2 * self.view.bounds.size.width, self.instructionsTextView.layer.position.y);
     [self changeRatioViewWithIndex:self.viewSelectSegmentedControl.selectedSegmentIndex animated:NO];
 }
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self setup];
-}
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self setup];
     self.calculateTableView.alpha = 0;
     self.instructionsTextView.alpha = 0;
     
-    self.instructionsTextView.text = self.ratio.instructions;
-}
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return [self.ratio.ingredients count] + 1;
-
 }
 
 
