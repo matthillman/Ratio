@@ -15,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *viewSelectSegmentedControl;
 @property (weak, nonatomic) IBOutlet UICollectionView *ratioCollectionView;
 @property (weak, nonatomic) IBOutlet UITableView *calculateTableView;
+@property (weak, nonatomic) IBOutlet UITextView *instructionsTextView;
+- (void)changeRatioViewWithIndex:(NSInteger)index animated:(BOOL)animated;
 @end

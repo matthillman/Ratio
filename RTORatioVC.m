@@ -9,67 +9,79 @@
 #import "RTORatioVC.h"
 #import "RTORatioCVC.h"
 #import "RTOListCVC.h"
-#import "RTOCalculateVC.h"
+#import "RTOCacluationCell.h"
 
-@interface RTORatioVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface RTORatioVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate>
 @end
 
 @implementation RTORatioVC
 - (IBAction)changeRatioView
 {
-    CGFloat tx = 0;
-    switch (self.viewSelectSegmentedControl.selectedSegmentIndex) {
-        case 1:
-            tx = -1 * self.ratioCollectionView.bounds.size.width;
-            break;
-        case 2:
-        case 0:
-        default:
-            tx = 0;
-            self.viewSelectSegmentedControl.selectedSegmentIndex = 0;
-            break;
+    [self changeRatioViewWithIndex:self.viewSelectSegmentedControl.selectedSegmentIndex animated:YES];
+}
+
+#define ANIMATION_DURATION 0.25
+
+- (void)changeRatioViewWithIndex:(NSInteger)index animated:(BOOL)animated
+{
+    CGFloat dx = -1 * index * self.view.bounds.size.width;
+    CGFloat dy = 0;
+    
+    if (animated) {
+        CABasicAnimation *ra = [CABasicAnimation animationWithKeyPath:@"transform"];
+        ra.autoreverses = NO;
+        ra.duration = ANIMATION_DURATION;
+        ra.fromValue = [NSValue valueWithCATransform3D:self.ratioCollectionView.layer.transform];
+        ra.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(self.ratioCollectionView.layer.bounds.origin.x + dx, dy, 0)];
+        
+        CABasicAnimation *ta = [CABasicAnimation animationWithKeyPath:@"transform"];
+        ta.autoreverses = NO;
+        ta.duration = ANIMATION_DURATION;
+        ta.fromValue = [NSValue valueWithCATransform3D:self.calculateTableView.layer.transform];
+        ta.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(self.calculateTableView.layer.bounds.origin.x + dx, dy, 0)];
+        
+        CABasicAnimation *txta = [CABasicAnimation animationWithKeyPath:@"transform"];
+        txta.autoreverses = NO;
+        txta.duration = ANIMATION_DURATION;
+        txta.fromValue = [NSValue valueWithCATransform3D:self.instructionsTextView.layer.transform];
+        txta.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(self.instructionsTextView.layer.bounds.origin.x + dx, dy, 0)];
+        
+        [self.ratioCollectionView.layer addAnimation:ra forKey:nil];
+        [self.calculateTableView.layer addAnimation:ta forKey:nil];
+        [self.instructionsTextView.layer addAnimation:txta forKey:nil];
     }
     
-    CABasicAnimation *ba = [CABasicAnimation animationWithKeyPath:@"transform"];
-    ba.autoreverses = NO;
-    ba.duration = 0.33f;
-    ba.fromValue = [NSValue valueWithCATransform3D:self.ratioCollectionView.layer.transform];
-    ba.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(tx, 0, 0)];
-    [self.ratioCollectionView.layer addAnimation:ba forKey:nil];
-    self.ratioCollectionView.layer.transform = CATransform3DMakeTranslation(tx, 0, 0);
-    
-
-//    [UIView animateWithDuration:1.5f animations:^{
-//        NSLog(@"%f %f", self.ratioCollectionView.bounds.origin.x, self.ratioCollectionView.bounds.origin.y);
-//        NSLog(@"%f %f", self.ratioCollectionView.frame.origin.x, self.ratioCollectionView.frame.origin.y);
-//        NSLog(@"%f %f", self.ratioCollectionView.transform.tx, self.ratioCollectionView.transform.ty);
-//        self.ratioCollectionView.transform = CGAffineTransformMakeTranslation(tx, 0);
-//        NSLog(@"%f %f", self.ratioCollectionView.bounds.origin.x, self.ratioCollectionView.bounds.origin.y);
-//        NSLog(@"%f %f", self.ratioCollectionView.frame.origin.x, self.ratioCollectionView.frame.origin.y);
-//        NSLog(@"%f %f", self.ratioCollectionView.transform.tx, self.ratioCollectionView.transform.ty);
-//    }];
+    self.ratioCollectionView.layer.transform = CATransform3DMakeTranslation(self.ratioCollectionView.layer.bounds.origin.x + dx, 0, 0);
+    self.calculateTableView.layer.transform = CATransform3DMakeTranslation(self.calculateTableView.layer.bounds.origin.x + dx, 0, 0);
+    self.instructionsTextView.layer.transform = CATransform3DMakeTranslation(self.instructionsTextView.layer.bounds.origin.x + dx, 0, 0);
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"showCalculator"]) {
-        RTOCalculateVC *cvc = (RTOCalculateVC *)segue.destinationViewController;
-        cvc.ratio = self.ratio;
-        cvc.viewSelectSegmentedControl.selectedSegmentIndex = self.viewSelectSegmentedControl.selectedSegmentIndex;
-    }
-}
+#pragma mark Table View
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.viewSelectSegmentedControl.selectedSegmentIndex = 0;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.ratio.ingredients count] + 1;
-
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return self.ratio.name;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.calculateTableView dequeueReusableCellWithIdentifier:indexPath.item == 0 ? @"calcHeading" : @"calcRow"];
+    if ([cell isKindOfClass:[RTOCacluationCell class]]) {
+        RTOCacluationCell *rcc = (RTOCacluationCell *)cell;
+        RTOIngredient *ingredient = self.ratio.ingredients[indexPath.item-1];
+        rcc.quantity.text = [ingredient.amount stringValue];
+        rcc.unitButton.titleLabel.text = @"Grams";
+        rcc.ingredientLabel.text = ingredient.name;
+    }
+    return cell;
+}
+
+#pragma mark Collection View
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -93,5 +105,36 @@
     CGFloat w = self.view.bounds.size.width, h = indexPath.item == 0 ? 220 : 30;
     return CGSizeMake(w, h);
 }
+
+#pragma mark View Life Cycle
+
+- (void)setup
+{
+    self.calculateTableView.alpha = 1;
+    self.calculateTableView.layer.position = CGPointMake(self.calculateTableView.layer.position.x + self.view.bounds.size.width, self.calculateTableView.layer.position.y);
+    self.instructionsTextView.alpha = 1;
+    self.instructionsTextView.layer.position = CGPointMake(self.instructionsTextView.layer.position.x + 2 * self.view.bounds.size.width, self.instructionsTextView.layer.position.y);
+    [self changeRatioViewWithIndex:self.viewSelectSegmentedControl.selectedSegmentIndex animated:NO];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self setup];
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.calculateTableView.alpha = 0;
+    self.instructionsTextView.alpha = 0;
+    
+    self.instructionsTextView.text = self.ratio.instructions;
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [self.ratio.ingredients count] + 1;
+
+}
+
 
 @end

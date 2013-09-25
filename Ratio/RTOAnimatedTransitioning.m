@@ -34,6 +34,7 @@
     t = CGAffineTransformScale(t, scale, scale);
     
     if ([fromVC isKindOfClass:[RTORatioVC class]]) {
+        [rvc changeRatioViewWithIndex:0 animated:NO];
         [containter insertSubview:toVC.view belowSubview:fromVC.view];
     } else {
         rvc.view.transform = t;
@@ -49,6 +50,7 @@
         
         [containter addSubview:toVC.view];
     }
+    rvc.calculateTableView.alpha = 0;
     
     [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext] delay:0 options:0 animations:^{
         if ([fromVC isKindOfClass:[RTORatioVC class]]) {
@@ -73,6 +75,7 @@
         }
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:finished];
+        rvc.calculateTableView.alpha = 1;
     }];
 }
 
