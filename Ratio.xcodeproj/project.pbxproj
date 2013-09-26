@@ -34,6 +34,9 @@
 		C9A4C05017F09F4E00C68E92 /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4C04F17F09F4E00C68E92 /* UIColor+RGB.m */; };
 		C9A4C05417F0D3DA00C68E92 /* RTOAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4C05317F0D3DA00C68E92 /* RTOAnimatedTransitioning.m */; };
 		C9A4C05A17F1E82B00C68E92 /* RTOCacluationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4C05917F1E82B00C68E92 /* RTOCacluationCell.m */; };
+		C9A4F74417F48913008BCC2C /* RTOAmount.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4F74317F48913008BCC2C /* RTOAmount.m */; };
+		C9A4F74617F48D1A008BCC2C /* units.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A4F74517F48D1A008BCC2C /* units.plist */; };
+		C9A4F74917F4928B008BCC2C /* RTOUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4F74817F4928B008BCC2C /* RTOUnitConverter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,11 @@
 		C9A4C05317F0D3DA00C68E92 /* RTOAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOAnimatedTransitioning.m; sourceTree = "<group>"; };
 		C9A4C05817F1E82B00C68E92 /* RTOCacluationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOCacluationCell.h; sourceTree = "<group>"; };
 		C9A4C05917F1E82B00C68E92 /* RTOCacluationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOCacluationCell.m; sourceTree = "<group>"; };
+		C9A4F74217F48913008BCC2C /* RTOAmount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOAmount.h; sourceTree = "<group>"; };
+		C9A4F74317F48913008BCC2C /* RTOAmount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOAmount.m; sourceTree = "<group>"; };
+		C9A4F74517F48D1A008BCC2C /* units.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = units.plist; sourceTree = "<group>"; };
+		C9A4F74717F4928B008BCC2C /* RTOUnitConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOUnitConverter.h; sourceTree = "<group>"; };
+		C9A4F74817F4928B008BCC2C /* RTOUnitConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOUnitConverter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +208,7 @@
 		C94CAA4B17EE21AC00F77C03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C9A4F74517F48D1A008BCC2C /* units.plist */,
 				C9A4C04A17F073D900C68E92 /* menus.plist */,
 				C9A4C04B17F073D900C68E92 /* ratios.plist */,
 				C94CAA5E17EE9D0700F77C03 /* ratiosxml */,
@@ -207,6 +216,10 @@
 				C94CAA4917EE21A500F77C03 /* RTORatio.m */,
 				C94CAA4C17EE23B200F77C03 /* RTOIngredient.h */,
 				C94CAA4D17EE23B200F77C03 /* RTOIngredient.m */,
+				C9A4F74217F48913008BCC2C /* RTOAmount.h */,
+				C9A4F74317F48913008BCC2C /* RTOAmount.m */,
+				C9A4F74717F4928B008BCC2C /* RTOUnitConverter.h */,
+				C9A4F74817F4928B008BCC2C /* RTOUnitConverter.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -318,6 +331,7 @@
 				C9A4C04C17F073D900C68E92 /* menus.plist in Resources */,
 				C94CAA1817ED132C00F77C03 /* InfoPlist.strings in Resources */,
 				C94CAA2117ED132C00F77C03 /* Main.storyboard in Resources */,
+				C9A4F74617F48D1A008BCC2C /* units.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +353,7 @@
 				C94CAA5A17EE367B00F77C03 /* RTOListCVC.m in Sources */,
 				C94CAA5717EE366700F77C03 /* RTORatioCVC.m in Sources */,
 				C94CAA4717EE1B7B00F77C03 /* RTORatioPieView.m in Sources */,
+				C9A4F74417F48913008BCC2C /* RTOAmount.m in Sources */,
 				C94CAA6217EEA11300F77C03 /* RTOAllRatiosCVC.m in Sources */,
 				C94CAA1E17ED132C00F77C03 /* RTOAppDelegate.m in Sources */,
 				C94CAA4A17EE21A500F77C03 /* RTORatio.m in Sources */,
@@ -349,6 +364,7 @@
 				C9A4C05417F0D3DA00C68E92 /* RTOAnimatedTransitioning.m in Sources */,
 				C94CAA5417EE33F100F77C03 /* RTORatioVC.m in Sources */,
 				C94CAA1A17ED132C00F77C03 /* main.m in Sources */,
+				C9A4F74917F4928B008BCC2C /* RTOUnitConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

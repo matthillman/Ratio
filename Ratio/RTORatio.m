@@ -8,6 +8,10 @@
 
 #import "RTORatio.h"
 
+@interface RTORatio ()
+@property (nonatomic, strong) NSDictionary *total;
+@end
+
 @implementation RTORatio
 
 - (id)initWithTestData
@@ -48,8 +52,26 @@
             [ingredients addObject:i];
         }
         _ingredients = ingredients;
+        _total = dict[@"total"];
     }
     return self;
+}
+
+- (NSString *)totalAsString
+{
+    NSString *totalString = nil;
+    if (self.total) {
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber *amount = [f numberFromString:[NSString stringWithFormat:@"%@", self.total[@"amount"]]];
+        NSString *label = self.total[@"label"];
+//        NSArray *includedIngredients = [self.total[@"ingredient"] isEqualToString:@"all"] ? self.ingredients : @[[self ingredientWithName:self.total[@"ingredient"]]];
+//        NSString *measure = self.total[@"measure"];
+//        NSString *action = self.total[@"action"];
+        
+        totalString = [NSString stringWithFormat:@"Makes %@ %@", amount, label];
+    }
+    return totalString;
 }
 
 @synthesize ratioTotal = _ratioTotal;
@@ -83,5 +105,15 @@
     }
     
     return slice;
+}
+
+- (RTOIngredient *)ingredientWithName:(NSString *)name
+{
+    for (RTOIngredient *ingredient in self.ingredients) {
+        if ([ingredient.name isEqualToString:name]) {
+            return ingredient;
+        }
+    }
+    return nil;
 }
 @end

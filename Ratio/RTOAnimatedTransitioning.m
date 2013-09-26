@@ -26,7 +26,7 @@
     
     CGFloat scale = 90.0/220.0;
     UICollectionView *pieCv = rvc.ratioCollectionView;
-    CGPoint pieCenter = CGPointMake((pieCv.bounds.origin.x + pieCv.bounds.size.width)/2.0, 152+110);
+    CGPoint pieCenter = CGPointMake((pieCv.bounds.origin.x + pieCv.bounds.size.width)/2.0, 172+110);
     CGFloat deltax = rvc.animationCenter.x - pieCenter.x;
     CGFloat deltay = rvc.animationCenter.y - pieCenter.y;
     

@@ -8,8 +8,11 @@
 
 #import "RTOIngredient.h"
 #import "UIColor+RGB.h"
+#import "RTOUnitConverter.h"
 
 @interface RTOIngredient()
+@property (nonatomic, strong) NSNumber *defaultAmount;
+@property (nonatomic, strong) NSString *defaultUnits;
 @end
 
 @implementation RTOIngredient
@@ -54,7 +57,24 @@
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
         _amount = [f numberFromString:[NSString stringWithFormat:@"%@", dict[@"ratio"]]];
         _color = [RTOIngredient colorForCode:[[NSString stringWithFormat:@"%@", dict[@"color"]] integerValue]];
+        _defaultAmount = [f numberFromString:[NSString stringWithFormat:@"%@", dict[@"defaultAmount"]]];
+        _defaultUnits = [NSString stringWithFormat:@"%@", dict[@"defaultUnit"]];
     }
     return self;
 }
+
+- (RTOAmount *)amountInRecipe
+{
+    if (!_amountInRecipe) {
+        _amountInRecipe = [RTOAmount amountForQuantity:self.defaultAmount unit:self.defaultUnits];
+    }
+    
+    return _amountInRecipe;
+}
+
+- (void)setRecipeUnits:(NSString *)units
+{
+    self.amountInRecipe = [RTOUnitConverter convertAmount:self.amountInRecipe of:self toUnit:units];
+}
+
 @end

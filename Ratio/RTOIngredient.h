@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "RTOAmount.h"
 @interface RTOIngredient : NSObject
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic) NSNumber *amount;
+@property (nonatomic, strong) NSNumber *amount;
 @property (nonatomic, strong) UIColor *color;
+@property (nonatomic, strong) RTOAmount *amountInRecipe;
 
 - (id)initWithIngredientDict:(NSDictionary *)dict;
+- (void)setRecipeUnits:(NSString *)units;
 @end

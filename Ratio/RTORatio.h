@@ -17,5 +17,6 @@
 
 - (id)initWithRatioDict:(NSDictionary *)dict;
 - (id)initWithTestData;
+- (NSString *)totalAsString;
 - (UIBezierPath *)sliceForIngredient:(RTOIngredient *)ingredient withCenter:(CGPoint)center andRadius:(CGFloat)radius;
 @end

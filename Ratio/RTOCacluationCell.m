@@ -7,23 +7,31 @@
 //
 
 #import "RTOCacluationCell.h"
+#import "RTOUnitConverter.h"
+
+@interface RTOCacluationCell () <UIActionSheetDelegate>
+@property (nonatomic, strong) UIActionSheet *unitsSheet;
+@end
 
 @implementation RTOCacluationCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (IBAction)changeUnit
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
+    self.unitsSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Change Units for %@", self.ingredientLabel.text] delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    for (NSString *unit in [RTOUnitConverter unitListForIngredientNamed:self.ingredientLabel.text]) {
+        [self.unitsSheet addButtonWithTitle:[unit capitalizedString]];
     }
-    return self;
+    [self.unitsSheet addButtonWithTitle:@"Cancel"];
+    self.unitsSheet.cancelButtonIndex = self.unitsSheet.numberOfButtons-1;
+    [self.unitsSheet showInView:self.superview];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
+        [self.unitButton setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
+        [self.delegate calculationRow:self updatedUnitTo:[actionSheet buttonTitleAtIndex:buttonIndex]];
+    }
 }
 
 @end

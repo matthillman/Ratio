@@ -10,8 +10,10 @@
 #import "RTORatioCVC.h"
 #import "RTOListCVC.h"
 #import "RTOCacluationCell.h"
+#import "RTOUnitConverter.h"
 
-@interface RTORatioVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate>
+@interface RTORatioVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate, RTOCalculationDelegate>
+@property (nonatomic, strong) UIActionSheet *unitsSheet;
 @end
 
 @implementation RTORatioVC
@@ -74,13 +76,22 @@
     if ([cell isKindOfClass:[RTOCacluationCell class]]) {
         RTOCacluationCell *rcc = (RTOCacluationCell *)cell;
         RTOIngredient *ingredient = self.ratio.ingredients[indexPath.item-1];
-        rcc.quantity.text = [ingredient.amount stringValue];
-        rcc.unitButton.titleLabel.text = @"Parts";
-        rcc.ingredientLabel.text = ingredient.name;
+        rcc.quantity.text = [ingredient.amountInRecipe.quantity stringValue];
+        [rcc.unitButton setTitle:[ingredient.amountInRecipe.unit capitalizedString] forState:UIControlStateNormal];
+        rcc.ingredientLabel.text = [ingredient.name capitalizedString];
         rcc.ratioPieView.ratio = self.ratio;
         rcc.ratioPieView.indexPath = indexPath;
+        rcc.delegate = self;
     }
     return cell;
+}
+
+- (void)calculationRow:(RTOCacluationCell *)sender updatedUnitTo:(NSString *)unit
+{
+    NSIndexPath *indexPath = [self.calculateTableView indexPathForCell:sender];
+    RTOIngredient *ingredient = self.ratio.ingredients[indexPath.item-1];
+    [ingredient setRecipeUnits:unit];
+    [self.calculateTableView reloadData];
 }
 
 #pragma mark Collection View
@@ -124,7 +135,7 @@
     body.paragraphSpacing = 14;
     body.lineSpacing = 7;
     
-    NSDictionary *headStyle = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17],
+    NSDictionary *headStyle = @{NSFontAttributeName: [UIFont fontWithName:@"Avenir Black Oblique" size:17],
                                 NSParagraphStyleAttributeName: head,
                                 NSKernAttributeName: [NSNumber numberWithInt:1]};
     NSDictionary *bodyStyle = @{NSParagraphStyleAttributeName : body};
@@ -138,15 +149,21 @@
     self.instructionsTextView.attributedText = instructionsTxt;
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewDidLayoutSubviews
 {
-    [super viewDidAppear:animated];
-    self.calculateTableView.alpha = 1;
+    [super viewDidLayoutSubviews];
     self.calculateTableView.layer.position = CGPointMake(self.calculateTableView.layer.position.x + self.view.bounds.size.width, self.calculateTableView.layer.position.y);
-    self.instructionsTextView.alpha = 1;
     self.instructionsTextView.layer.position = CGPointMake(self.instructionsTextView.layer.position.x + 2 * self.view.bounds.size.width, self.instructionsTextView.layer.position.y);
     [self changeRatioViewWithIndex:self.viewSelectSegmentedControl.selectedSegmentIndex animated:NO];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];    
+    self.calculateTableView.alpha = 1;
+    self.instructionsTextView.alpha = 1;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
