@@ -3,12 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[RTOAllRatiosCVC collectionView:didSelectItemAtIndexPath:]:RTOAllRatiosCVC.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[selected.bounds origin]">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[RTOIngredient description]:RTOIngredient.m">
       </ContextState>
       <ContextState
          contextName = "-[RTOAllRatiosCVC collectionView:numberOfItemsInSection:]:RTOAllRatiosCVC.m">
@@ -41,13 +36,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[RTOIngredient description]:RTOIngredient.m">
-      </ContextState>
-      <ContextState
          contextName = "-[RTOAllRatiosCVC collectionView:cellForItemAtIndexPath:]:RTOAllRatiosCVC.m">
          <PersistentStrings>
             <PersistentString
                value = "[indexPath section]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RTOAllRatiosCVC collectionView:didSelectItemAtIndexPath:]:RTOAllRatiosCVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[selected.bounds origin]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RTOAmount quantityAsString]:RTOAmount.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[f numberFromString:@&quot;234&quot;]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

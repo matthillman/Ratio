@@ -13,5 +13,5 @@
 @interface RTOUnitConverter : NSObject
 + (RTOAmount *)convertAmount:(RTOAmount *)amount of:(RTOIngredient *)ingredient toUnit:(NSString *)unit;
 + (NSArray *)unitListForIngredientNamed:(NSString *)name;
-+ (NSString *)formatForUnit:(NSString *)unit;
++ (NSNumberFormatter *)formatterForUnit:(NSString *)unit;
 @end

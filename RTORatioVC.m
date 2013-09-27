@@ -76,7 +76,7 @@
     if ([cell isKindOfClass:[RTOCacluationCell class]]) {
         RTOCacluationCell *rcc = (RTOCacluationCell *)cell;
         RTOIngredient *ingredient = self.ratio.ingredients[indexPath.item-1];
-        rcc.quantity.text = [ingredient.amountInRecipe.quantity stringValue];
+        rcc.quantity.text = [ingredient.amountInRecipe quantityAsString];
         [rcc.unitButton setTitle:[ingredient.amountInRecipe.unit capitalizedString] forState:UIControlStateNormal];
         rcc.ingredientLabel.text = [ingredient.name capitalizedString];
         rcc.ratioPieView.ratio = self.ratio;

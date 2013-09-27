@@ -26,7 +26,7 @@
 
 - (NSString *)quantityAsString
 {
-    return [NSString stringWithFormat:[RTOUnitConverter formatForUnit:self.unit], self.quantity];
+    return [[RTOUnitConverter formatterForUnit:self.unit] stringFromNumber:self.quantity];
 }
 
 - (NSString *)unit

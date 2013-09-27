@@ -69,9 +69,12 @@
     return converter.unitLists[converter.ingredients[[name lowercaseString]][@"unitList"]];
 }
 
-+ (NSString *)formatForUnit:(NSString *)unit
++ (NSNumberFormatter *)formatterForUnit:(NSString *)unit
 {
-    return [[RTOUnitConverter sharedConverter] unitFormats][unit];
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.maximumFractionDigits = [[NSString stringWithFormat:@"%@", [[RTOUnitConverter sharedConverter] unitFormats][unit]] integerValue];
+    f.roundingMode = NSNumberFormatterRoundHalfUp;
+    return f;
 }
 
 @end
