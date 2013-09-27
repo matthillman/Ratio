@@ -7,6 +7,7 @@
 //
 
 #import "RTOAmount.h"
+#import "RTOUnitConverter.h"
 
 @implementation RTOAmount
 + (RTOAmount *)amountForQuantity:(NSNumber *)quantity unit:(NSString *)unit
@@ -25,7 +26,7 @@
 
 - (NSString *)quantityAsString
 {
-    return @"";
+    return [NSString stringWithFormat:[RTOUnitConverter formatForUnit:self.unit], self.quantity];
 }
 
 - (NSString *)unit
