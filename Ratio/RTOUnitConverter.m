@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSDictionary *volumeScales;
 @property (nonatomic, strong) NSDictionary *weightScales;
 @property (nonatomic, strong) NSDictionary *unitLists;
+@property (nonatomic, strong) NSDictionary *unitFormats;
 @end
 
 @implementation RTOUnitConverter
@@ -27,6 +28,7 @@
         self.volumeScales = unitPlist[@"converter"][@"volume"];
         self.weightScales = unitPlist[@"converter"][@"weight"];
         self.ingredients = unitPlist[@"ingredients"];
+        self.unitFormats = unitPlist[@"formats"];
     }
     return self;
 }
@@ -65,6 +67,11 @@
 {
     RTOUnitConverter *converter = [RTOUnitConverter sharedConverter];
     return converter.unitLists[converter.ingredients[[name lowercaseString]][@"unitList"]];
+}
+
++ (NSString *)formatForUnit:(NSString *)unit
+{
+    return [[RTOUnitConverter sharedConverter] unitFormats][unit];
 }
 
 @end
