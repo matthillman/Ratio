@@ -46,6 +46,7 @@
 + (RTOAmount *)convertAmount:(RTOAmount *)amount of:(RTOIngredient *)ingredient toUnit:(NSString *)unit
 {
     unit = [unit lowercaseString];
+    if ([unit isEqualToString:amount.unit]) return amount; // already in the same units
     RTOUnitConverter *converter = [RTOUnitConverter sharedConverter];
     NSDictionary *scale = converter.volumeScales[unit] ? converter.volumeScales : converter.weightScales;
     CGFloat quantity = [amount.quantity floatValue];

@@ -7,6 +7,7 @@
 //
 
 #import "RTORatio.h"
+#import "RTOUnitConverter.h"
 
 @interface RTORatio ()
 @property (nonatomic, strong) NSDictionary *total;
@@ -60,16 +61,45 @@
 - (NSString *)totalAsString
 {
     NSString *totalString = nil;
-    if (self.total) {
+    if ([self.total count]) {
         NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
         NSNumber *amount = [f numberFromString:[NSString stringWithFormat:@"%@", self.total[@"amount"]]];
+        NSArray *includedIngredients = [self.total[@"ingredient"] isEqualToString:@"all"] ? self.ingredients : @[[self ingredientWithName:self.total[@"ingredient"]]];
+
         NSString *label = self.total[@"label"];
-//        NSArray *includedIngredients = [self.total[@"ingredient"] isEqualToString:@"all"] ? self.ingredients : @[[self ingredientWithName:self.total[@"ingredient"]]];
-//        NSString *measure = self.total[@"measure"];
-//        NSString *action = self.total[@"action"];
+        NSString *firstItemUnit = [[(RTOIngredient *)includedIngredients[0] amountInRecipe] unit];
         
-        totalString = [NSString stringWithFormat:@"Makes %@ %@", amount, label];
+        if ([label isEqualToString:@"weight"] || [label isEqualToString:@"<same>"]) {
+            label = firstItemUnit;
+        }
+        NSString *action = self.total[@"action"];
+        NSString *total = nil;
+        
+        if ([action isEqualToString:@"sum"]) {
+            CGFloat t = 0;
+            for (RTOIngredient *i in includedIngredients) {
+                RTOAmount *a = [i.amountInRecipe convertAmountOf:i toUnit:firstItemUnit];
+                t += [a.quantity floatValue];
+            }
+            total = [[RTOUnitConverter formatterForUnit:firstItemUnit] stringFromNumber:[[NSNumber alloc] initWithFloat:t]];
+        } else {
+            NSString *measure = self.total[@"measure"];
+            RTOAmount *a = [[(RTOIngredient *)includedIngredients[0] amountInRecipe] convertAmountOf:includedIngredients[0] toUnit:measure];
+            a.quantity = [NSNumber numberWithFloat:[a.quantity floatValue] / [amount floatValue]];
+            NSNumberFormatter *f = nil;
+            if ([label isEqualToString:firstItemUnit]) {
+                f = [RTOUnitConverter formatterForUnit:firstItemUnit];
+                a = [a convertAmountOf:includedIngredients[0] toUnit:firstItemUnit];
+            } else {
+                f = [[NSNumberFormatter alloc] init];
+                [f setRoundingMode:NSNumberFormatterRoundFloor];
+                [f setMaximumFractionDigits:0];
+            }
+            total = [f stringFromNumber:a.quantity];
+        }
+        
+        totalString = [NSString stringWithFormat:@"Makes %@ %@", total, label];
     }
     return totalString;
 }

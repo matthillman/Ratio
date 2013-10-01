@@ -67,6 +67,9 @@
 {
     if (!_amountInRecipe) {
         _amountInRecipe = [RTOAmount amountForQuantity:self.defaultAmount unit:self.defaultUnits];
+        if (![self.defaultUnits isEqualToString:@"grams"]) {
+            _amountInRecipe = [RTOUnitConverter convertAmount:_amountInRecipe of:self toUnit:@"grams"];
+        }
     }
     
     return _amountInRecipe;

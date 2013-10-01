@@ -43,7 +43,10 @@
     return nextVC;
 }
 
-- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                  animationControllerForOperation:(UINavigationControllerOperation)operation
+                                               fromViewController:(UIViewController *)fromVC
+                                                 toViewController:(UIViewController *)toVC
 {
     RTOAnimatedTransitioning *transitioning = nil;
     if (([toVC isKindOfClass:[RTORatioVC class]] || [fromVC isKindOfClass:[RTORatioVC class]]) && ([toVC isKindOfClass:[RTOAllRatiosCVC class]] || [fromVC isKindOfClass:[RTOAllRatiosCVC class]])) {

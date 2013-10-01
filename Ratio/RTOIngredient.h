@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RTOAmount.h"
+
 @interface RTOIngredient : NSObject
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSNumber *amount;

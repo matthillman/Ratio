@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class RTOIngredient;
+
 @interface RTOAmount : NSObject
 @property (nonatomic, strong) NSNumber *quantity;
 @property (nonatomic, strong) NSString *unit;
 
 + (RTOAmount *)amountForQuantity:(NSNumber *)quantity unit:(NSString *)unit;
 - (RTOAmount *)initWithQuantity:(NSNumber *)quantity unit:(NSString *)unit;
+- (RTOAmount *)convertAmountOf:(RTOIngredient *)ingredient toUnit:(NSString *)unit;
 - (NSString *)quantityAsString;
 @end

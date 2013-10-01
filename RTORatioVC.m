@@ -12,7 +12,7 @@
 #import "RTOCacluationCell.h"
 #import "RTOUnitConverter.h"
 
-@interface RTORatioVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate, RTOCalculationDelegate>
+@interface RTORatioVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate, RTOCalculationDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) UIActionSheet *unitsSheet;
 @end
 
@@ -67,7 +67,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return self.ratio.name;
+    return [self.ratio totalAsString];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,6 +77,8 @@
         RTOCacluationCell *rcc = (RTOCacluationCell *)cell;
         RTOIngredient *ingredient = self.ratio.ingredients[indexPath.item-1];
         rcc.quantity.text = [ingredient.amountInRecipe quantityAsString];
+        rcc.quantity.inputAccessoryView = [self inputAccessoryView:rcc.quantity];
+        rcc.quantity.delegate = self;
         [rcc.unitButton setTitle:[ingredient.amountInRecipe.unit capitalizedString] forState:UIControlStateNormal];
         rcc.ingredientLabel.text = [ingredient.name capitalizedString];
         rcc.ratioPieView.ratio = self.ratio;
@@ -86,12 +88,44 @@
     return cell;
 }
 
+- (UIView *)inputAccessoryView:(UITextField *)sender {
+    CGRect accessFrame = CGRectMake(0.0, 0.0, self.view.bounds.size.width, 44.0);
+    UIView *inputAccessoryView = [[UIView alloc] initWithFrame:accessFrame];
+    inputAccessoryView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    UIButton *compButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    compButton.frame = CGRectMake(self.view.bounds.size.width - 88.0, 5.0, 70.0, 34.0);
+    [compButton setTitle: @"Done" forState:UIControlStateNormal];
+    [compButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+    [compButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
+    [compButton addTarget:sender action:@selector(resignFirstResponder) forControlEvents:UIControlEventTouchUpInside];
+    [inputAccessoryView addSubview:compButton];
+    return inputAccessoryView;
+}
+
 - (void)calculationRow:(RTOCacluationCell *)sender updatedUnitTo:(NSString *)unit
 {
     NSIndexPath *indexPath = [self.calculateTableView indexPathForCell:sender];
     RTOIngredient *ingredient = self.ratio.ingredients[indexPath.item-1];
     [ingredient setRecipeUnits:unit];
     [self.calculateTableView reloadData];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    UIView *parentCell = textField.superview;
+    while (parentCell.superview && ![parentCell isKindOfClass:[RTOCacluationCell class]]) {
+        parentCell = parentCell.superview;
+    }
+    
+    if (parentCell.superview) {
+        NSIndexPath *indexPath = [self.calculateTableView indexPathForCell:(RTOCacluationCell *)parentCell];
+        RTOIngredient *updated = self.ratio.ingredients[indexPath.item-1];
+        CGFloat ratio = [textField.text floatValue] / [updated.amountInRecipe.quantity floatValue];
+        for (RTOIngredient *i in self.ratio.ingredients) {
+            i.amountInRecipe.quantity = [NSNumber numberWithFloat:[i.amountInRecipe.quantity floatValue] * ratio];
+        }
+        [self.calculateTableView reloadData];
+    }
 }
 
 #pragma mark Collection View

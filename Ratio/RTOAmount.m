@@ -8,6 +8,7 @@
 
 #import "RTOAmount.h"
 #import "RTOUnitConverter.h"
+#import "RTOIngredient.h"
 
 @implementation RTOAmount
 + (RTOAmount *)amountForQuantity:(NSNumber *)quantity unit:(NSString *)unit
@@ -22,6 +23,11 @@
         self.unit = unit;
     }
     return self;
+}
+
+- (RTOAmount *)convertAmountOf:(RTOIngredient *)ingredient toUnit:(NSString *)unit
+{
+    return [RTOUnitConverter convertAmount:self of:ingredient toUnit:unit];
 }
 
 - (NSString *)quantityAsString
