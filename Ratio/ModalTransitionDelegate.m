@@ -106,9 +106,11 @@
 {
     id<UIViewControllerContextTransitioning> transitionContext = self.transitionContext;
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     double delayInSeconds = [self transitionDuration:self.transitionContext];
-    UIView * animating = self.snapshot ? self.snapshot : self.presenting ? fromViewController.view : toViewController.view;
+    UIView *animating = self.presenting ? self.snapshot : fromViewController.view;
+    UIView *snapshot = self.snapshot;
+    UIView *bottom = self.interactiveSettings;
+    BOOL presenting = self.presenting;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         id<UIViewControllerContextTransitioning> blockContext = self.transitionContext;
@@ -116,6 +118,10 @@
         if (blockAnimator && blockContext == transitionContext) {
             [transitionContext completeTransition:YES];
             animating.frame = endFrame;
+            if (!presenting) {
+                [snapshot removeFromSuperview];
+                [bottom removeFromSuperview];
+            }
         }
     });
 }
@@ -131,6 +137,7 @@
         [self.dismissTap.view removeGestureRecognizer:self.dismissTap];
         self.dismissTap = nil;
         self.sender.navigationController.topViewController.navigationItem.leftBarButtonItem.enabled = YES;
+        [self.snapshot removeFromSuperview];
     } else {
         UIView *panView = self.snapshot ? self.snapshot : self.sender.view;
         UIScreenEdgePanGestureRecognizer *pgr = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(userDidPan:)];
@@ -145,6 +152,7 @@
     self.completing = NO;
     self.interactiveTransitionInteracting = NO;
     self.interactiveTransitionUnderway = NO;
+    self.main.alpha = 1;
     
     [self.animator removeAllBehaviors], self.animator.delegate = nil, self.animator = nil;
 }
@@ -176,6 +184,8 @@
         if (self.presenting) {
             bottom = toViewController.view;
             animating = [fromViewController.view resizableSnapshotViewFromRect:startFrame afterScreenUpdates:NO withCapInsets:UIEdgeInsetsZero];
+//            animating = [[UIView alloc] initWithFrame:startFrame];
+//            animating.backgroundColor = [UIColor redColor];
             self.main = fromViewController.view;
             
             UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:fromViewController.view.bounds];
@@ -193,20 +203,22 @@
             sFrame.origin.x -= dx;
             bottom.frame = sFrame;
             bottom.alpha = 0.5;
+            
+            self.snapshot = animating;
         } else {
             startFrame.origin.x += CGRectGetWidth(self.transitionContext.containerView.bounds) - 50;
-            toViewController.view.frame = startFrame;
+            toViewController.view.frame = endFrame;
             fromViewController.view.frame = endFrame;
-            animating = toViewController.view;
+            animating = self.snapshot;
+            animating.frame = startFrame;
             bottom = fromViewController.view;
             dx = -20;
             fa = 0.5;
         }
         [transitionContext.containerView addSubview:self.main];
+        self.main.alpha = 0;
         [transitionContext.containerView addSubview:bottom];
         [transitionContext.containerView addSubview:animating];
-        self.snapshot = animating;
-        
         CGPoint anchor = (self.isPresenting) ? CGPointMake((2 * CGRectGetWidth(animating.bounds)) - 50, animating.center.y) : CGPointMake(0, animating.center.y);
         self.b = [[BouncingViewBehavior alloc] initWithItem:animating anchor:anchor];
         [self.animator addBehavior:self.b];
@@ -277,6 +289,8 @@
     if (self.presenting) {
         bottom = toViewController.view;
         animating = [fromViewController.view resizableSnapshotViewFromRect:frame afterScreenUpdates:NO withCapInsets:UIEdgeInsetsZero];
+//        animating = [[UIView alloc] initWithFrame:frame];
+//        animating.backgroundColor = [UIColor redColor];
         self.main = fromViewController.view;
         self.dismissTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(completeModal)];
         [animating addGestureRecognizer:self.dismissTap];
@@ -292,12 +306,16 @@
         sFrame.origin.x -= dx;
         bottom.frame = sFrame;
         bottom.alpha = 0.5;
+        self.snapshot = animating;
     } else {
-        animating = toViewController.view;
+        animating = self.snapshot;
+        self.main = toViewController.view;
+        self.main.frame = frame;
         bottom = fromViewController.view;
         frame.origin.x += CGRectGetWidth([[transitionContext containerView] bounds]) - 50;
     }
     [transitionContext.containerView addSubview:self.main];
+    self.main.alpha = 0;
     [transitionContext.containerView addSubview:bottom];
     [transitionContext.containerView addSubview:animating];
     
@@ -323,7 +341,6 @@
     [self.animator addBehavior:collisionBehaviour];
     [self.animator addBehavior:itemBehaviour];
     [self.animator addBehavior:self.ab];
-    self.snapshot = animating;
     self.interactiveSettings = bottom;
 }
 
