@@ -14,6 +14,8 @@
 
 @interface RTORatioVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate, RTOCalculationDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) UIActionSheet *unitsSheet;
+@property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipe;
+@property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipe;
 @end
 
 @implementation RTORatioVC
@@ -58,6 +60,28 @@
     self.instructionsTextView.layer.transform = CATransform3DMakeTranslation(self.instructionsTextView.layer.bounds.origin.x + dx, 0, 0);
 }
 
+- (void)changeViewWithSwipe:(UISwipeGestureRecognizer *)sender
+{
+    NSInteger starting = self.viewSelectSegmentedControl.selectedSegmentIndex;
+    switch (sender.direction) {
+        case UISwipeGestureRecognizerDirectionLeft:
+            if (self.viewSelectSegmentedControl.selectedSegmentIndex < 2) self.viewSelectSegmentedControl.selectedSegmentIndex++;
+            break;
+            
+        case UISwipeGestureRecognizerDirectionRight:
+            if (self.viewSelectSegmentedControl.selectedSegmentIndex > 0) self.viewSelectSegmentedControl.selectedSegmentIndex--;
+            break;
+            
+        default:
+            break;
+    }
+    
+    if (starting != self.viewSelectSegmentedControl.selectedSegmentIndex) {
+        [self changeRatioView];
+    }
+    
+}
+
 #pragma mark Table View
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -77,6 +101,7 @@
         RTOCacluationCell *rcc = (RTOCacluationCell *)cell;
         RTOIngredient *ingredient = self.ratio.ingredients[indexPath.item-1];
         rcc.quantity.text = [ingredient.amountInRecipe quantityAsString];
+        rcc.quantity.placeholder = rcc.quantity.text;
         rcc.quantity.inputAccessoryView = [self inputAccessoryView:rcc.quantity];
         rcc.quantity.delegate = self;
         [rcc.unitButton setTitle:[ingredient.amountInRecipe.unit capitalizedString] forState:UIControlStateNormal];
@@ -181,6 +206,13 @@
     [instructionsTxt appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"•  %@", [paragraphs componentsJoinedByString:@"\n•  "]] attributes:bodyStyle]];
     
     self.instructionsTextView.attributedText = instructionsTxt;
+    
+    self.rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(changeViewWithSwipe:)];
+    self.rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
+    self.leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(changeViewWithSwipe:)];
+    self.leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:self.rightSwipe];
+    [self.view addGestureRecognizer:self.leftSwipe];
 }
 
 - (void)viewDidLayoutSubviews

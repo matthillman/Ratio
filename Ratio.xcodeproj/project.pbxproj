@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93A80B418007CB40029502E /* BackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C93A80B318007CB40029502E /* BackButton.m */; };
 		C94CAA0E17ED132C00F77C03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA0D17ED132C00F77C03 /* Foundation.framework */; };
 		C94CAA1017ED132C00F77C03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA0F17ED132C00F77C03 /* CoreGraphics.framework */; };
 		C94CAA1217ED132C00F77C03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94CAA1117ED132C00F77C03 /* UIKit.framework */; };
@@ -29,6 +30,8 @@
 		C94CAA5F17EE9D0700F77C03 /* ratiosxml in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA5E17EE9D0700F77C03 /* ratiosxml */; };
 		C94CAA6217EEA11300F77C03 /* RTOAllRatiosCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA6117EEA11300F77C03 /* RTOAllRatiosCVC.m */; };
 		C94CAA6517EFC06D00F77C03 /* RTORatioListHeadCRV.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA6417EFC06D00F77C03 /* RTORatioListHeadCRV.m */; };
+		C9712D9D17FDD1F6002C5E6A /* BouncingViewBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C9712D9C17FDD1F6002C5E6A /* BouncingViewBehavior.m */; };
+		C9712DA017FDEDEB002C5E6A /* ModalTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9712D9F17FDEDEB002C5E6A /* ModalTransitionDelegate.m */; };
 		C9A4C04C17F073D900C68E92 /* menus.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A4C04A17F073D900C68E92 /* menus.plist */; };
 		C9A4C04D17F073D900C68E92 /* ratios.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A4C04B17F073D900C68E92 /* ratios.plist */; };
 		C9A4C05017F09F4E00C68E92 /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4C04F17F09F4E00C68E92 /* UIColor+RGB.m */; };
@@ -50,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C93A80B218007CB40029502E /* BackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackButton.h; sourceTree = "<group>"; };
+		C93A80B318007CB40029502E /* BackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackButton.m; sourceTree = "<group>"; };
 		C94CAA0A17ED132C00F77C03 /* Ratio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94CAA0D17ED132C00F77C03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C94CAA0F17ED132C00F77C03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -84,6 +89,10 @@
 		C94CAA6117EEA11300F77C03 /* RTOAllRatiosCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOAllRatiosCVC.m; sourceTree = "<group>"; };
 		C94CAA6317EFC06D00F77C03 /* RTORatioListHeadCRV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTORatioListHeadCRV.h; sourceTree = "<group>"; };
 		C94CAA6417EFC06D00F77C03 /* RTORatioListHeadCRV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTORatioListHeadCRV.m; sourceTree = "<group>"; };
+		C9712D9B17FDD1F6002C5E6A /* BouncingViewBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BouncingViewBehavior.h; sourceTree = "<group>"; };
+		C9712D9C17FDD1F6002C5E6A /* BouncingViewBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BouncingViewBehavior.m; sourceTree = "<group>"; };
+		C9712D9E17FDEDEB002C5E6A /* ModalTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalTransitionDelegate.h; sourceTree = "<group>"; };
+		C9712D9F17FDEDEB002C5E6A /* ModalTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalTransitionDelegate.m; sourceTree = "<group>"; };
 		C9A4C04A17F073D900C68E92 /* menus.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = menus.plist; sourceTree = "<group>"; };
 		C9A4C04B17F073D900C68E92 /* ratios.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ratios.plist; sourceTree = "<group>"; };
 		C9A4C04E17F09F4E00C68E92 /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGB.h"; sourceTree = "<group>"; };
@@ -183,6 +192,8 @@
 				C94CAA1617ED132C00F77C03 /* InfoPlist.strings */,
 				C94CAA1917ED132C00F77C03 /* main.m */,
 				C94CAA1B17ED132C00F77C03 /* Ratio-Prefix.pch */,
+				C93A80B218007CB40029502E /* BackButton.h */,
+				C93A80B318007CB40029502E /* BackButton.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -242,8 +253,12 @@
 		C9A4C05117F0D39A00C68E92 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				C9712D9B17FDD1F6002C5E6A /* BouncingViewBehavior.h */,
+				C9712D9C17FDD1F6002C5E6A /* BouncingViewBehavior.m */,
 				C9A4C05217F0D3DA00C68E92 /* RTOAnimatedTransitioning.h */,
 				C9A4C05317F0D3DA00C68E92 /* RTOAnimatedTransitioning.m */,
+				C9712D9E17FDEDEB002C5E6A /* ModalTransitionDelegate.h */,
+				C9712D9F17FDEDEB002C5E6A /* ModalTransitionDelegate.m */,
 			);
 			name = Transitions;
 			sourceTree = "<group>";
@@ -351,9 +366,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C94CAA5A17EE367B00F77C03 /* RTOListCVC.m in Sources */,
+				C9712D9D17FDD1F6002C5E6A /* BouncingViewBehavior.m in Sources */,
 				C94CAA5717EE366700F77C03 /* RTORatioCVC.m in Sources */,
 				C94CAA4717EE1B7B00F77C03 /* RTORatioPieView.m in Sources */,
 				C9A4F74417F48913008BCC2C /* RTOAmount.m in Sources */,
+				C93A80B418007CB40029502E /* BackButton.m in Sources */,
 				C94CAA6217EEA11300F77C03 /* RTOAllRatiosCVC.m in Sources */,
 				C94CAA1E17ED132C00F77C03 /* RTOAppDelegate.m in Sources */,
 				C94CAA4A17EE21A500F77C03 /* RTORatio.m in Sources */,
@@ -361,6 +378,7 @@
 				C9A4C05A17F1E82B00C68E92 /* RTOCacluationCell.m in Sources */,
 				C94CAA6517EFC06D00F77C03 /* RTORatioListHeadCRV.m in Sources */,
 				C94CAA4E17EE23B200F77C03 /* RTOIngredient.m in Sources */,
+				C9712DA017FDEDEB002C5E6A /* ModalTransitionDelegate.m in Sources */,
 				C9A4C05417F0D3DA00C68E92 /* RTOAnimatedTransitioning.m in Sources */,
 				C94CAA5417EE33F100F77C03 /* RTORatioVC.m in Sources */,
 				C94CAA1A17ED132C00F77C03 /* main.m in Sources */,

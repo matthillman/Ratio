@@ -39,7 +39,7 @@
     } else {
         rvc.view.transform = t;
         rvc.viewSelectSegmentedControl.alpha = 0;
-        rvc.viewSelectSegmentedControl.tintColor = [UIColor colorWithRed:189/255.0 green:44/255.0 blue:11/255.0 alpha:1];
+        rvc.viewSelectSegmentedControl.tintColor = [UIColor colorWithRed:255/255.0 green:102/255.0 blue:103/255.0 alpha:1];
         rvc.view.backgroundColor = [UIColor clearColor];
         
         for (UICollectionViewCell *cell in [rvc.ratioCollectionView visibleCells]) {
@@ -66,7 +66,7 @@
         } else {
             rvc.view.transform = CGAffineTransformIdentity;
             rvc.viewSelectSegmentedControl.alpha = 1;
-            rvc.viewSelectSegmentedControl.tintColor = [UIColor colorWithRed:189/255.0 green:44/255.0 blue:11/255.0 alpha:1];
+            rvc.viewSelectSegmentedControl.tintColor = [UIColor colorWithRed:255/255.0 green:102/255.0 blue:103/255.0 alpha:1];
             rvc.view.backgroundColor = [UIColor whiteColor];
             for (UICollectionViewCell *cell in [rvc.ratioCollectionView visibleCells]) {
                 if ([cell isKindOfClass:[RTOListCVC class]]) {

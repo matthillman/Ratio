@@ -13,10 +13,20 @@
 #import "RTORatioListHeadCRV.h"
 #import "RTORatioVC.h"
 #import "RTOAnimatedTransitioning.h"
+#import "BouncingViewBehavior.h"
+#import "ModalTransitionDelegate.h"
+#import "BackButton.h"
 
 @interface RTOAllRatiosCVC () <UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) NSDictionary *ratios; // of section : NSArray <RTORatio *>
 @property (nonatomic, strong) NSArray *orderedSections; // of NSString *
+@property (nonatomic, strong) UIView *settings;
+@property (nonatomic, strong) UIGestureRecognizer *tgr;
+@property (strong, nonatomic) IBOutlet UICollectionView *list;
+@property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (nonatomic, strong) UIAttachmentBehavior *attachment;
+@property (nonatomic, strong) BouncingViewBehavior *behavior;
+@property (nonatomic, strong) ModalTransitionDelegate *td;
 @end
 
 @implementation RTOAllRatiosCVC
@@ -52,6 +62,7 @@
     if (([toVC isKindOfClass:[RTORatioVC class]] || [fromVC isKindOfClass:[RTORatioVC class]]) && ([toVC isKindOfClass:[RTOAllRatiosCVC class]] || [fromVC isKindOfClass:[RTOAllRatiosCVC class]])) {
         transitioning = [RTOAnimatedTransitioning new];
     }
+    
     return transitioning;
 }
 
@@ -110,6 +121,16 @@
     }
 }
 
+- (void)settingsTapped
+{
+    [self showSettings];
+}
+
+- (void)showSettings
+{
+    [self.td presentMenu];
+}
+
 - (void)setup
 {
     self.navigationController.delegate = self;
@@ -139,6 +160,21 @@
     
     self.ratios = groupedRatios;
     self.orderedSections = sections;
+    
+    
+    UIButton *arrow = [[BackButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    arrow.backgroundColor = [UIColor clearColor];
+    [arrow addTarget:self action:@selector(settingsTapped) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btnSettings = [[UIBarButtonItem alloc] initWithCustomView:arrow];
+    self.navigationController.topViewController.navigationItem.leftBarButtonItem = btnSettings;
+    btnSettings.enabled=TRUE;
+    
+    
+    self.td = [[ModalTransitionDelegate alloc] initWithSender:self.navigationController storyboardViewControlerToPresent:@"settingstvc" callback:nil];
+
+    UIScreenEdgePanGestureRecognizer *gestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self.td action:@selector(userDidPan:)];
+    gestureRecognizer.edges = UIRectEdgeLeft;
+    [self.view addGestureRecognizer:gestureRecognizer];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
