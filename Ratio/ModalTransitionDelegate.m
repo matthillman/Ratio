@@ -43,6 +43,16 @@
     return self;
 }
 
+- (instancetype)initWithSender:(UIViewController *)sender viewControlerToPresent:(UIViewController *)controller callback:(void (^)(void))callback
+{
+    if (self = [super init]) {
+        self.sender = sender;
+        self.callback = callback;
+        self.controllerToPresent = controller;
+    }
+    return self;
+}
+
 #pragma mark Guesture Recognizer
 -(void)userDidPan:(UIScreenEdgePanGestureRecognizer *)recognizer
 {
@@ -93,9 +103,13 @@
 -(void)presentMenu
 {
     self.presenting = YES;
-    
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *settings = [sb instantiateViewControllerWithIdentifier:self.storyboardViewId];
+    UIViewController *settings;
+    if (self.controllerToPresent) {
+        settings = self.controllerToPresent;
+    } else {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        settings = [sb instantiateViewControllerWithIdentifier:self.storyboardViewId];
+    }
     settings.modalPresentationStyle = UIModalPresentationCustom;
     settings.transitioningDelegate = self;
     

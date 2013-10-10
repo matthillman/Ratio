@@ -146,4 +146,11 @@
     }
     return nil;
 }
+
+- (void)resetAmounts
+{
+    for (RTOIngredient *ingredient in self.ingredients) {
+        ingredient.amountInRecipe = nil;
+    }
+}
 @end

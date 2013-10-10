@@ -13,6 +13,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
+    [standardDefaults registerDefaults:@{
+                                         @"useMetric":  [NSNumber numberWithBool:YES],
+                                         @"useWeight":  [NSNumber numberWithBool:YES],
+                                         @"useEggs":    [NSNumber numberWithBool:NO]
+                                        }];
+    [standardDefaults synchronize];
     return YES;
 }
 							

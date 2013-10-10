@@ -16,8 +16,9 @@
 #import "BouncingViewBehavior.h"
 #import "ModalTransitionDelegate.h"
 #import "BackButton.h"
+#import "RTOSettingsVC.h"
 
-@interface RTOAllRatiosCVC () <UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate>
+@interface RTOAllRatiosCVC () <UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, RTOSettingsDelegate>
 @property (nonatomic, strong) NSDictionary *ratios; // of section : NSArray <RTORatio *>
 @property (nonatomic, strong) NSArray *orderedSections; // of NSString *
 @property (nonatomic, strong) UIView *settings;
@@ -131,6 +132,15 @@
     [self.td presentMenu];
 }
 
+- (void)defaultsChanged
+{
+    for (NSArray *section in self.ratios) {
+        for (RTORatio *ratio in self.ratios[section]) {
+            [ratio resetAmounts];
+        }
+    }
+}
+
 - (void)setup
 {
     self.navigationController.delegate = self;
@@ -170,8 +180,13 @@
     btnSettings.enabled=TRUE;
     
     
-    self.td = [[ModalTransitionDelegate alloc] initWithSender:self.navigationController storyboardViewControlerToPresent:@"settingstvc" callback:nil];
-
+//    self.td = [[ModalTransitionDelegate alloc] initWithSender:self.navigationController storyboardViewControlerToPresent:@"settingstvc" callback:nil];
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RTOSettingsVC *s = [sb instantiateViewControllerWithIdentifier:@"settingstvc"];
+    s.delegate = self;
+    self.td = [[ModalTransitionDelegate alloc] initWithSender:self.navigationController viewControlerToPresent:s callback:nil];
+    
     UIScreenEdgePanGestureRecognizer *gestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self.td action:@selector(userDidPan:)];
     gestureRecognizer.edges = UIRectEdgeLeft;
     [self.view addGestureRecognizer:gestureRecognizer];

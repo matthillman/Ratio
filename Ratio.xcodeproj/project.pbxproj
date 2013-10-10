@@ -40,6 +40,8 @@
 		C9A4F74417F48913008BCC2C /* RTOAmount.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4F74317F48913008BCC2C /* RTOAmount.m */; };
 		C9A4F74617F48D1A008BCC2C /* units.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A4F74517F48D1A008BCC2C /* units.plist */; };
 		C9A4F74917F4928B008BCC2C /* RTOUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4F74817F4928B008BCC2C /* RTOUnitConverter.m */; };
+		C9C408751804B83800E3D9FE /* RTOSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C408741804B83800E3D9FE /* RTOSettingsVC.m */; };
+		C9C408781804F50A00E3D9FE /* RTOSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C408771804F50A00E3D9FE /* RTOSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,10 @@
 		C9A4F74517F48D1A008BCC2C /* units.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = units.plist; sourceTree = "<group>"; };
 		C9A4F74717F4928B008BCC2C /* RTOUnitConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOUnitConverter.h; sourceTree = "<group>"; };
 		C9A4F74817F4928B008BCC2C /* RTOUnitConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOUnitConverter.m; sourceTree = "<group>"; };
+		C9C408731804B83800E3D9FE /* RTOSettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOSettingsVC.h; sourceTree = "<group>"; };
+		C9C408741804B83800E3D9FE /* RTOSettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOSettingsVC.m; sourceTree = "<group>"; };
+		C9C408761804F50A00E3D9FE /* RTOSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOSettings.h; sourceTree = "<group>"; };
+		C9C408771804F50A00E3D9FE /* RTOSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOSettings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,8 @@
 				C94CAA5317EE33F100F77C03 /* RTORatioVC.m */,
 				C94CAA4517EE1B7B00F77C03 /* RTORatioPieView.h */,
 				C94CAA4617EE1B7B00F77C03 /* RTORatioPieView.m */,
+				C9C408731804B83800E3D9FE /* RTOSettingsVC.h */,
+				C9C408741804B83800E3D9FE /* RTOSettingsVC.m */,
 				C94CAA2517ED132C00F77C03 /* Images.xcassets */,
 				C9A4C05117F0D39A00C68E92 /* Transitions */,
 				C9A4C04917F06B6800C68E92 /* Collection Sub-views */,
@@ -184,16 +192,20 @@
 		C94CAA1417ED132C00F77C03 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C9C408761804F50A00E3D9FE /* RTOSettings.h */,
+				C9C408771804F50A00E3D9FE /* RTOSettings.m */,
+				C9A4F74717F4928B008BCC2C /* RTOUnitConverter.h */,
+				C9A4F74817F4928B008BCC2C /* RTOUnitConverter.m */,
 				C9A4C04E17F09F4E00C68E92 /* UIColor+RGB.h */,
 				C9A4C04F17F09F4E00C68E92 /* UIColor+RGB.m */,
+				C93A80B218007CB40029502E /* BackButton.h */,
+				C93A80B318007CB40029502E /* BackButton.m */,
 				C94CAA1C17ED132C00F77C03 /* RTOAppDelegate.h */,
 				C94CAA1D17ED132C00F77C03 /* RTOAppDelegate.m */,
 				C94CAA1517ED132C00F77C03 /* Ratio-Info.plist */,
 				C94CAA1617ED132C00F77C03 /* InfoPlist.strings */,
 				C94CAA1917ED132C00F77C03 /* main.m */,
 				C94CAA1B17ED132C00F77C03 /* Ratio-Prefix.pch */,
-				C93A80B218007CB40029502E /* BackButton.h */,
-				C93A80B318007CB40029502E /* BackButton.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -229,8 +241,6 @@
 				C94CAA4D17EE23B200F77C03 /* RTOIngredient.m */,
 				C9A4F74217F48913008BCC2C /* RTOAmount.h */,
 				C9A4F74317F48913008BCC2C /* RTOAmount.m */,
-				C9A4F74717F4928B008BCC2C /* RTOUnitConverter.h */,
-				C9A4F74817F4928B008BCC2C /* RTOUnitConverter.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -367,6 +377,7 @@
 			files = (
 				C94CAA5A17EE367B00F77C03 /* RTOListCVC.m in Sources */,
 				C9712D9D17FDD1F6002C5E6A /* BouncingViewBehavior.m in Sources */,
+				C9C408781804F50A00E3D9FE /* RTOSettings.m in Sources */,
 				C94CAA5717EE366700F77C03 /* RTORatioCVC.m in Sources */,
 				C94CAA4717EE1B7B00F77C03 /* RTORatioPieView.m in Sources */,
 				C9A4F74417F48913008BCC2C /* RTOAmount.m in Sources */,
@@ -374,6 +385,7 @@
 				C94CAA6217EEA11300F77C03 /* RTOAllRatiosCVC.m in Sources */,
 				C94CAA1E17ED132C00F77C03 /* RTOAppDelegate.m in Sources */,
 				C94CAA4A17EE21A500F77C03 /* RTORatio.m in Sources */,
+				C9C408751804B83800E3D9FE /* RTOSettingsVC.m in Sources */,
 				C9A4C05017F09F4E00C68E92 /* UIColor+RGB.m in Sources */,
 				C9A4C05A17F1E82B00C68E92 /* RTOCacluationCell.m in Sources */,
 				C94CAA6517EFC06D00F77C03 /* RTORatioListHeadCRV.m in Sources */,

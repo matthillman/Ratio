@@ -9,6 +9,7 @@
 #import "RTOIngredient.h"
 #import "UIColor+RGB.h"
 #import "RTOUnitConverter.h"
+#import "RTOSettings.h"
 
 @interface RTOIngredient()
 @property (nonatomic, strong) NSNumber *defaultAmount;
@@ -67,12 +68,36 @@
 {
     if (!_amountInRecipe) {
         _amountInRecipe = [RTOAmount amountForQuantity:self.defaultAmount unit:self.defaultUnits];
-        if (![self.defaultUnits isEqualToString:@"grams"]) {
-            _amountInRecipe = [RTOUnitConverter convertAmount:_amountInRecipe of:self toUnit:@"grams"];
-        }
+        [self convertToDefaultUnits];
     }
     
     return _amountInRecipe;
+}
+
+- (void)convertToDefaultUnits
+{
+    BOOL metric = [RTOSettings useMetric];
+    BOOL weight = [RTOSettings useWeight];
+    NSString *units = self.amountInRecipe.unit;
+    if (metric) {
+        if (weight) {
+            units = @"grams";
+        } else {
+            units = @"milliliters";
+        }
+    } else {
+        if (weight) {
+            units = @"ounces";
+        } else {
+            units = @"cups";
+        }
+    }
+    
+    if ([[self.name lowercaseString] isEqualToString:@"eggs"] && [RTOSettings useEggs]) {
+        units = @"eggs";
+    }
+    
+    [self setRecipeUnits:units];
 }
 
 - (void)setRecipeUnits:(NSString *)units
