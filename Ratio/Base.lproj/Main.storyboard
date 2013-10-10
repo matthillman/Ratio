@@ -181,11 +181,53 @@
                         <outlet property="useEggsSwitch" destination="CE9-Hh-Bwm" id="ESr-Et-saB"/>
                         <outlet property="useMetricSwitch" destination="chJ-3V-hbx" id="YL8-AP-q3N"/>
                         <outlet property="useWeightSwitch" destination="3Dc-gH-DcE" id="J07-tH-H8W"/>
+                        <segue destination="sfj-TU-sld" kind="modal" identifier="About" id="MAu-zD-KOd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIj-A0-EHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-250" y="173"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FTN-SW-r0R">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="sfj-TU-sld" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q3q-EQ-jB6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="05Q-fB-GyR" kind="relationship" relationship="rootViewController" id="OMI-dm-zEy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9I-nL-Y4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148" y="161"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gvK-lD-rLe">
+            <objects>
+                <viewController id="05Q-fB-GyR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MEN-qH-xNg"/>
+                        <viewControllerLayoutGuide type="bottom" id="jp5-Z2-sXt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bcJ-6I-rC9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqx-DU-nb3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Uxh-HO-nX4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5m2-2I-HEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690" y="173"/>
         </scene>
         <!--RatioVC-->
         <scene sceneID="kxa-qR-NaA">

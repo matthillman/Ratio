@@ -1,0 +1,44 @@
+body {
+	font-family: Avenir;
+	font-size: 14px;
+    font-weight: light;
+	color: #4D4D4D;
+	margin: 10px;
+	padding: 0;
+}
+
+img {
+	margin: 3px 10px;
+	float: right;
+}
+
+h1 a {
+    color: #4d4d4d;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+h3 {
+	font-size: 14px;
+}
+
+p a {
+    color: #cc0000;
+	text-decoration: none;
+}
+
+ul {
+    margin-left: 0px;
+    padding-left: 18px;
+}
+
+li {
+    margin-bottom: 8px;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+li a {
+    color: #cc0000;
+	text-decoration: none;
+}

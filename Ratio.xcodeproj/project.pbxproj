@@ -27,7 +27,6 @@
 		C94CAA5417EE33F100F77C03 /* RTORatioVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA5317EE33F100F77C03 /* RTORatioVC.m */; };
 		C94CAA5717EE366700F77C03 /* RTORatioCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA5617EE366700F77C03 /* RTORatioCVC.m */; };
 		C94CAA5A17EE367B00F77C03 /* RTOListCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA5917EE367B00F77C03 /* RTOListCVC.m */; };
-		C94CAA5F17EE9D0700F77C03 /* ratiosxml in Resources */ = {isa = PBXBuildFile; fileRef = C94CAA5E17EE9D0700F77C03 /* ratiosxml */; };
 		C94CAA6217EEA11300F77C03 /* RTOAllRatiosCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA6117EEA11300F77C03 /* RTOAllRatiosCVC.m */; };
 		C94CAA6517EFC06D00F77C03 /* RTORatioListHeadCRV.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA6417EFC06D00F77C03 /* RTORatioListHeadCRV.m */; };
 		C9712D9D17FDD1F6002C5E6A /* BouncingViewBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C9712D9C17FDD1F6002C5E6A /* BouncingViewBehavior.m */; };
@@ -42,6 +41,10 @@
 		C9A4F74917F4928B008BCC2C /* RTOUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4F74817F4928B008BCC2C /* RTOUnitConverter.m */; };
 		C9C408751804B83800E3D9FE /* RTOSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C408741804B83800E3D9FE /* RTOSettingsVC.m */; };
 		C9C408781804F50A00E3D9FE /* RTOSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C408771804F50A00E3D9FE /* RTOSettings.m */; };
+		C9C4087B1807254600E3D9FE /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = C9C4087A1807254600E3D9FE /* style.css */; };
+		C9C4087D1807255D00E3D9FE /* book.html in Resources */ = {isa = PBXBuildFile; fileRef = C9C4087C1807255D00E3D9FE /* book.html */; };
+		C9C4087F1807258C00E3D9FE /* scale.html in Resources */ = {isa = PBXBuildFile; fileRef = C9C4087E1807258C00E3D9FE /* scale.html */; };
+		C9C408811807265400E3D9FE /* ruhlman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9C408801807265400E3D9FE /* ruhlman.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +89,6 @@
 		C94CAA5617EE366700F77C03 /* RTORatioCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTORatioCVC.m; sourceTree = "<group>"; };
 		C94CAA5817EE367B00F77C03 /* RTOListCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOListCVC.h; sourceTree = "<group>"; };
 		C94CAA5917EE367B00F77C03 /* RTOListCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOListCVC.m; sourceTree = "<group>"; };
-		C94CAA5E17EE9D0700F77C03 /* ratiosxml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ratiosxml; sourceTree = "<group>"; };
 		C94CAA6017EEA11300F77C03 /* RTOAllRatiosCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOAllRatiosCVC.h; sourceTree = "<group>"; };
 		C94CAA6117EEA11300F77C03 /* RTOAllRatiosCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOAllRatiosCVC.m; sourceTree = "<group>"; };
 		C94CAA6317EFC06D00F77C03 /* RTORatioListHeadCRV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTORatioListHeadCRV.h; sourceTree = "<group>"; };
@@ -112,6 +114,10 @@
 		C9C408741804B83800E3D9FE /* RTOSettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOSettingsVC.m; sourceTree = "<group>"; };
 		C9C408761804F50A00E3D9FE /* RTOSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOSettings.h; sourceTree = "<group>"; };
 		C9C408771804F50A00E3D9FE /* RTOSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOSettings.m; sourceTree = "<group>"; };
+		C9C4087A1807254600E3D9FE /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		C9C4087C1807255D00E3D9FE /* book.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = book.html; sourceTree = "<group>"; };
+		C9C4087E1807258C00E3D9FE /* scale.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = scale.html; sourceTree = "<group>"; };
+		C9C408801807265400E3D9FE /* ruhlman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ruhlman.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,7 @@
 				C9A4C04917F06B6800C68E92 /* Collection Sub-views */,
 				C94CAA1417ED132C00F77C03 /* Supporting Files */,
 				C94CAA4B17EE21AC00F77C03 /* Model */,
+				C9C40879180724D200E3D9FE /* Info Pages */,
 			);
 			path = Ratio;
 			sourceTree = "<group>";
@@ -234,7 +241,6 @@
 				C9A4F74517F48D1A008BCC2C /* units.plist */,
 				C9A4C04A17F073D900C68E92 /* menus.plist */,
 				C9A4C04B17F073D900C68E92 /* ratios.plist */,
-				C94CAA5E17EE9D0700F77C03 /* ratiosxml */,
 				C94CAA4817EE21A500F77C03 /* RTORatio.h */,
 				C94CAA4917EE21A500F77C03 /* RTORatio.m */,
 				C94CAA4C17EE23B200F77C03 /* RTOIngredient.h */,
@@ -271,6 +277,17 @@
 				C9712D9F17FDEDEB002C5E6A /* ModalTransitionDelegate.m */,
 			);
 			name = Transitions;
+			sourceTree = "<group>";
+		};
+		C9C40879180724D200E3D9FE /* Info Pages */ = {
+			isa = PBXGroup;
+			children = (
+				C9C408801807265400E3D9FE /* ruhlman.jpg */,
+				C9C4087A1807254600E3D9FE /* style.css */,
+				C9C4087C1807255D00E3D9FE /* book.html */,
+				C9C4087E1807258C00E3D9FE /* scale.html */,
+			);
+			name = "Info Pages";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,13 +367,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C94CAA5F17EE9D0700F77C03 /* ratiosxml in Resources */,
 				C94CAA2617ED132C00F77C03 /* Images.xcassets in Resources */,
 				C9A4C04D17F073D900C68E92 /* ratios.plist in Resources */,
+				C9C4087B1807254600E3D9FE /* style.css in Resources */,
 				C9A4C04C17F073D900C68E92 /* menus.plist in Resources */,
 				C94CAA1817ED132C00F77C03 /* InfoPlist.strings in Resources */,
 				C94CAA2117ED132C00F77C03 /* Main.storyboard in Resources */,
+				C9C4087F1807258C00E3D9FE /* scale.html in Resources */,
+				C9C408811807265400E3D9FE /* ruhlman.jpg in Resources */,
 				C9A4F74617F48D1A008BCC2C /* units.plist in Resources */,
+				C9C4087D1807255D00E3D9FE /* book.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
