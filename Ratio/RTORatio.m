@@ -68,7 +68,7 @@
         NSArray *includedIngredients = [self.total[@"ingredient"] isEqualToString:@"all"] ? self.ingredients : @[[self ingredientWithName:self.total[@"ingredient"]]];
 
         NSString *label = self.total[@"label"];
-        NSString *firstItemUnit = [[(RTOIngredient *)includedIngredients[0] amountInRecipe] unit];
+        NSString *firstItemUnit = [[[(RTOIngredient *)includedIngredients[0] amountInRecipe] unit] mutableCopy];
         
         if ([label isEqualToString:@"weight"] || [label isEqualToString:@"<same>"]) {
             label = firstItemUnit;
@@ -85,7 +85,9 @@
             total = [[RTOUnitConverter formatterForUnit:firstItemUnit] stringFromNumber:[[NSNumber alloc] initWithFloat:t]];
         } else {
             NSString *measure = self.total[@"measure"];
-            RTOAmount *a = [[(RTOIngredient *)includedIngredients[0] amountInRecipe] convertAmountOf:includedIngredients[0] toUnit:measure];
+            RTOAmount *ra = [(RTOIngredient *)includedIngredients[0] amountInRecipe];
+            RTOAmount *a = [[RTOAmount alloc] initWithQuantity:ra.quantity unit:ra.unit];
+            a = [a convertAmountOf:includedIngredients[0] toUnit:measure];
             a.quantity = [NSNumber numberWithFloat:[a.quantity floatValue] / [amount floatValue]];
             NSNumberFormatter *f = nil;
             if ([label isEqualToString:firstItemUnit]) {

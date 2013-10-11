@@ -11,6 +11,7 @@
 @interface ModalTransitionDelegate : NSObject <UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) NSString *storyboardViewId;
 @property (nonatomic, strong) UIViewController *controllerToPresent; // either id or view controller
+@property (nonatomic, strong) UIView *snapshot;
 - (instancetype)initWithSender:(UIViewController *)sender storyboardViewControlerToPresent:(NSString *)name callback:(void (^)(void))callback;
 - (instancetype)initWithSender:(UIViewController *)sender viewControlerToPresent:(UIViewController *)controller callback:(void (^)(void))callback;
 -(void)presentMenu;

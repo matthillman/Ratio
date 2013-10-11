@@ -1,30 +1,31 @@
 body {
-	font-family: Avenir;
-	font-size: 14px;
-    font-weight: light;
-	color: #4D4D4D;
-	margin: 10px;
-	padding: 0;
+    font-family: Avenir;
+    font-size: 14px;
+    color: black;
+    margin: 10pt;
+    padding: 10pt;
+    text-align: justify;
 }
 
 img {
-	margin: 3px 10px;
-	float: right;
+    margin: 3pt 10pt;
+    float: right;
 }
 
-h1 a {
-    color: #4d4d4d;
-	font-size: 18px;
-	text-decoration: none;
+h1 {
+    color: rgb(255, 102, 103);
+    font-size: 18px;
+    text-align: center;
 }
 
 h3 {
-	font-size: 14px;
+    font-size: 14px;
+    color: rgb(255, 102, 103);
 }
 
-p a {
-    color: #cc0000;
-	text-decoration: none;
+a {
+    color: rgb(255, 102, 103);
+    text-decoration: none;
 }
 
 ul {
@@ -36,9 +37,4 @@ li {
     margin-bottom: 8px;
     margin-left: 0px;
     padding-left: 0px;
-}
-
-li a {
-    color: #cc0000;
-	text-decoration: none;
 }

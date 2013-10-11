@@ -26,7 +26,6 @@
 @property (nonatomic, strong) UIAttachmentBehavior *ab;
 @property (nonatomic, assign) CGPoint lastKnownVelocity;
 
-@property (nonatomic, strong) UIView *snapshot;
 @property (nonatomic, strong) UIView *main;
 @property (nonatomic, strong) UIView *interactiveSettings;
 
@@ -176,7 +175,8 @@
     return 0.75f;
 }
 
-- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
+- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext
+{
     self.transitionContext = transitionContext;
     
     if (self.interactive) {

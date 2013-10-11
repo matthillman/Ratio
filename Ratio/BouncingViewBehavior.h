@@ -11,4 +11,5 @@
 @property (nonatomic, assign) CGPoint anchor;
 - (void)cleanUpAnimation;
 - (BouncingViewBehavior *)initWithItem:(id <UIDynamicItem>)item anchor:(CGPoint)anchor;
+- (BouncingViewBehavior *)initWithItem:(id <UIDynamicItem>)item anchor:(CGPoint)anchor attachedToTop:(BOOL)top;
 @end

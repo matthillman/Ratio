@@ -11,6 +11,7 @@
 #import "RTOListCVC.h"
 #import "RTOCacluationCell.h"
 #import "RTOUnitConverter.h"
+#import "UIColor+RGB.h"
 
 @interface RTORatioVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate, RTOCalculationDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) UIActionSheet *unitsSheet;
@@ -106,6 +107,7 @@
         rcc.quantity.delegate = self;
         [rcc.unitButton setTitle:[ingredient.amountInRecipe.unit capitalizedString] forState:UIControlStateNormal];
         rcc.ingredientLabel.text = [ingredient.name capitalizedString];
+        rcc.ingredientLabel.alpha = [[ingredient.amountInRecipe.unit capitalizedString] isEqualToString:rcc.ingredientLabel.text] ? 0 : 1;
         rcc.ratioPieView.ratio = self.ratio;
         rcc.ratioPieView.indexPath = indexPath;
         rcc.delegate = self;
@@ -132,6 +134,9 @@
     NSIndexPath *indexPath = [self.calculateTableView indexPathForCell:sender];
     RTOIngredient *ingredient = self.ratio.ingredients[indexPath.item-1];
     [ingredient setRecipeUnits:unit];
+    NSMutableArray *ings = [self.ratio.ingredients mutableCopy];
+    ings[indexPath.item-1] = ingredient;
+    self.ratio.ingredients = ings;
     [self.calculateTableView reloadData];
 }
 
@@ -192,16 +197,18 @@
     head.paragraphSpacing = 14;
     NSMutableParagraphStyle *body = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     body.paragraphSpacing = 14;
-    body.lineSpacing = 7;
+    body.lineSpacing = 3.5;
     
-    NSDictionary *headStyle = @{NSFontAttributeName: [UIFont fontWithName:@"Avenir Black Oblique" size:17],
+    NSDictionary *headStyle = @{NSFontAttributeName: [UIFont fontWithName:@"Avenir Black Oblique" size:15],
                                 NSParagraphStyleAttributeName: head,
-                                NSKernAttributeName: [NSNumber numberWithInt:1]};
-    NSDictionary *bodyStyle = @{NSParagraphStyleAttributeName : body};
-    NSMutableAttributedString *instructionsTxt = [[NSMutableAttributedString alloc] initWithString:@"Instructions\n" attributes:headStyle];
+                                NSKernAttributeName: [NSNumber numberWithInt:1],
+                                NSForegroundColorAttributeName: [UIColor colorForR:255 G:102 B:103 A:1]};
+    NSDictionary *bodyStyle = @{NSParagraphStyleAttributeName : body,
+                                NSFontAttributeName: [UIFont fontWithName:@"Avenir Light" size:14]};
+    NSMutableAttributedString *instructionsTxt = [[NSMutableAttributedString alloc] initWithString:@"INSTRUCTIONS\n" attributes:headStyle];
     NSArray *paragraphs = [self.ratio.instructions componentsSeparatedByString:@"\n"];
     [instructionsTxt appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"•  %@", [paragraphs componentsJoinedByString:@"\n•  "]] attributes:bodyStyle]];
-    [instructionsTxt appendAttributedString:[[NSAttributedString alloc] initWithString:@"\nVariations\n" attributes:headStyle]];
+    [instructionsTxt appendAttributedString:[[NSAttributedString alloc] initWithString:@"\nVARIATIONS\n" attributes:headStyle]];
     paragraphs = [self.ratio.variations componentsSeparatedByString:@"\n"];
     [instructionsTxt appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"•  %@", [paragraphs componentsJoinedByString:@"\n•  "]] attributes:bodyStyle]];
     

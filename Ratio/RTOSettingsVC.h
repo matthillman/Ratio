@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @protocol RTOSettingsDelegate <NSObject>
-
 - (void)defaultsChanged;
-
+- (void)moveOverlapping:(BOOL)hide;
 @end
 
 @interface RTOSettingsVC : UIViewController

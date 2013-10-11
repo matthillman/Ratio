@@ -124,11 +124,6 @@
 
 - (void)settingsTapped
 {
-    [self showSettings];
-}
-
-- (void)showSettings
-{
     [self.td presentMenu];
 }
 
@@ -141,10 +136,22 @@
     }
 }
 
+- (void)moveOverlapping:(BOOL)hide
+{
+    CABasicAnimation *a = [CABasicAnimation animationWithKeyPath:@"transform"];
+    a.autoreverses = NO;
+    a.duration = 0.15f;
+    a.fromValue = [NSValue valueWithCATransform3D:self.td.snapshot.layer.transform];
+    self.td.snapshot.layer.transform = hide ? CATransform3DMakeTranslation(50, 0, 0) : CATransform3DIdentity;
+    a.toValue = [NSValue valueWithCATransform3D:self.td.snapshot.layer.transform];
+    a.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//    a.timeOffset = 0.2f;
+    [self.td.snapshot.layer addAnimation:a forKey:nil];
+}
+
 - (void)setup
 {
     self.navigationController.delegate = self;
-    
     self.title = @"Ratios";
     
     NSString *ratioPath = [[NSBundle mainBundle] pathForResource:@"ratios" ofType:@"plist"];
@@ -171,16 +178,12 @@
     self.ratios = groupedRatios;
     self.orderedSections = sections;
     
-    
     UIButton *arrow = [[BackButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
     arrow.backgroundColor = [UIColor clearColor];
     [arrow addTarget:self action:@selector(settingsTapped) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *btnSettings = [[UIBarButtonItem alloc] initWithCustomView:arrow];
     self.navigationController.topViewController.navigationItem.leftBarButtonItem = btnSettings;
     btnSettings.enabled=TRUE;
-    
-    
-//    self.td = [[ModalTransitionDelegate alloc] initWithSender:self.navigationController storyboardViewControlerToPresent:@"settingstvc" callback:nil];
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     RTOSettingsVC *s = [sb instantiateViewControllerWithIdentifier:@"settingstvc"];
@@ -191,6 +194,7 @@
     gestureRecognizer.edges = UIRectEdgeLeft;
     [self.view addGestureRecognizer:gestureRecognizer];
 }
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

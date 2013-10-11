@@ -39,4 +39,9 @@
 {
     return [_unit lowercaseString];
 }
+
+- (void)setQuantity:(NSNumber *)quantity
+{
+    _quantity = quantity;
+}
 @end
