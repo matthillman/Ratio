@@ -132,11 +132,7 @@
 - (void)calculationRow:(RTOCacluationCell *)sender updatedUnitTo:(NSString *)unit
 {
     NSIndexPath *indexPath = [self.calculateTableView indexPathForCell:sender];
-    RTOIngredient *ingredient = self.ratio.ingredients[indexPath.item-1];
-    [ingredient setRecipeUnits:unit];
-    NSMutableArray *ings = [self.ratio.ingredients mutableCopy];
-    ings[indexPath.item-1] = ingredient;
-    self.ratio.ingredients = ings;
+    [self.ratio.ingredients[indexPath.item-1] setRecipeUnits:unit];
     [self.calculateTableView reloadData];
 }
 
