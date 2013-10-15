@@ -69,9 +69,11 @@
 
         NSString *label = self.total[@"label"];
         NSString *firstItemUnit = [[[(RTOIngredient *)includedIngredients[0] amountInRecipe] unit] mutableCopy];
+        NSInteger step = 1;
         
-        if ([label isEqualToString:@"weight"] || [label isEqualToString:@"<same>"]) {
+        if ([label isEqualToString:@"volume"] || [label isEqualToString:@"weight"] || [label isEqualToString:@"<same>"]) {
             label = firstItemUnit;
+            step = 50;
         }
         NSString *action = self.total[@"action"];
         NSString *total = nil;
@@ -82,9 +84,9 @@
                 RTOAmount *a = [i.amountInRecipe convertAmountOf:i toUnit:firstItemUnit];
                 t += [a.quantity floatValue];
             }
-            total = [[RTOUnitConverter formatterForUnit:firstItemUnit] stringFromNumber:[[NSNumber alloc] initWithFloat:t]];
+            total = [[RTOUnitConverter formatterForUnit:firstItemUnit] stringFromNumber:[[NSNumber alloc] initWithFloat:t + self.totalQuantity * step]];
         } else {
-            NSString *measure = self.total[@"measure"];
+            NSString *measure = [self.total[@"measure"] isEqualToString:@"volume"] ? @"liters" : [self.total[@"measure"] isEqualToString:@"weight"] ? @"grams" : self.total[@"measure"];
             RTOAmount *ra = [(RTOIngredient *)includedIngredients[0] amountInRecipe];
             RTOAmount *a = [[RTOAmount alloc] initWithQuantity:ra.quantity unit:ra.unit];
             a = [a convertAmountOf:includedIngredients[0] toUnit:measure];
@@ -98,7 +100,7 @@
                 [f setRoundingMode:NSNumberFormatterRoundFloor];
                 [f setMaximumFractionDigits:0];
             }
-            total = [f stringFromNumber:a.quantity];
+            total = [f stringFromNumber:[[NSNumber alloc] initWithFloat:[a.quantity floatValue] + self.totalQuantity * step]];
         }
         
         totalString = [NSString stringWithFormat:@"Makes %@ %@", total, label];

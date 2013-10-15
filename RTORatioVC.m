@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIActionSheet *unitsSheet;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipe;
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipe;
+@property (weak, nonatomic) IBOutlet UIView *calculationOuterView;
 @end
 
 @implementation RTORatioVC
@@ -42,8 +43,8 @@
         CABasicAnimation *ta = [CABasicAnimation animationWithKeyPath:@"transform"];
         ta.autoreverses = NO;
         ta.duration = ANIMATION_DURATION;
-        ta.fromValue = [NSValue valueWithCATransform3D:self.calculateTableView.layer.transform];
-        ta.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(self.calculateTableView.layer.bounds.origin.x + dx, dy, 0)];
+        ta.fromValue = [NSValue valueWithCATransform3D:self.calculationOuterView.layer.transform];
+        ta.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(self.calculationOuterView.layer.bounds.origin.x + dx, dy, 0)];
         
         CABasicAnimation *txta = [CABasicAnimation animationWithKeyPath:@"transform"];
         txta.autoreverses = NO;
@@ -52,12 +53,12 @@
         txta.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(self.instructionsTextView.layer.bounds.origin.x + dx, dy, 0)];
         
         [self.ratioCollectionView.layer addAnimation:ra forKey:nil];
-        [self.calculateTableView.layer addAnimation:ta forKey:nil];
+        [self.calculationOuterView.layer addAnimation:ta forKey:nil];
         [self.instructionsTextView.layer addAnimation:txta forKey:nil];
     }
     
     self.ratioCollectionView.layer.transform = CATransform3DMakeTranslation(self.ratioCollectionView.layer.bounds.origin.x + dx, 0, 0);
-    self.calculateTableView.layer.transform = CATransform3DMakeTranslation(self.calculateTableView.layer.bounds.origin.x + dx, 0, 0);
+    self.calculationOuterView.layer.transform = CATransform3DMakeTranslation(self.calculationOuterView.layer.bounds.origin.x + dx, 0, 0);
     self.instructionsTextView.layer.transform = CATransform3DMakeTranslation(self.instructionsTextView.layer.bounds.origin.x + dx, 0, 0);
 }
 
@@ -81,6 +82,11 @@
         [self changeRatioView];
     }
     
+}
+
+- (IBAction)updateTotal:(UIStepper *)sender
+{
+    self.ratio.totalQuantity = sender.value;
 }
 
 #pragma mark Table View
@@ -221,7 +227,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    self.calculateTableView.layer.position = CGPointMake(self.calculateTableView.layer.position.x + self.view.bounds.size.width, self.calculateTableView.layer.position.y);
+    self.calculationOuterView.layer.position = CGPointMake(self.calculationOuterView.layer.position.x + self.view.bounds.size.width, self.calculationOuterView.layer.position.y);
     self.instructionsTextView.layer.position = CGPointMake(self.instructionsTextView.layer.position.x + 2 * self.view.bounds.size.width, self.instructionsTextView.layer.position.y);
     [self changeRatioViewWithIndex:self.viewSelectSegmentedControl.selectedSegmentIndex animated:NO];
 }
@@ -229,7 +235,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];    
-    self.calculateTableView.alpha = 1;
+    self.calculationOuterView.alpha = 1;
     self.instructionsTextView.alpha = 1;
 }
 
@@ -237,7 +243,7 @@
 {
     [super viewWillAppear:animated];
     [self setup];
-    self.calculateTableView.alpha = 0;
+    self.calculationOuterView.alpha = 0;
     self.instructionsTextView.alpha = 0;
     
 }
