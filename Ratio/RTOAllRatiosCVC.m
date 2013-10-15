@@ -142,7 +142,7 @@
     a.autoreverses = NO;
     a.duration = 0.15f;
     a.fromValue = [NSValue valueWithCATransform3D:self.td.snapshot.layer.transform];
-    self.td.snapshot.layer.transform = hide ? CATransform3DMakeTranslation(50, 0, 0) : CATransform3DIdentity;
+    self.td.snapshot.layer.transform = hide ? CATransform3DMakeTranslation(60, 0, 0) : CATransform3DIdentity;
     a.toValue = [NSValue valueWithCATransform3D:self.td.snapshot.layer.transform];
     a.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
 //    a.timeOffset = 0.2f;
