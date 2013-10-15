@@ -70,8 +70,7 @@
 - (void)dismiss
 {
     [self.delegate moveOverlapping:NO];
-    [self dismissViewControllerAnimated:YES completion:^{
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setup
