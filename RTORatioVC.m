@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIActionSheet *unitsSheet;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipe;
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipe;
+@property (weak, nonatomic) IBOutlet UIButton *amountButton;
 @end
 
 @implementation RTORatioVC
@@ -42,8 +43,8 @@
         CABasicAnimation *ta = [CABasicAnimation animationWithKeyPath:@"transform"];
         ta.autoreverses = NO;
         ta.duration = ANIMATION_DURATION;
-        ta.fromValue = [NSValue valueWithCATransform3D:self.calculateTableView.layer.transform];
-        ta.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(self.calculateTableView.layer.bounds.origin.x + dx, dy, 0)];
+        ta.fromValue = [NSValue valueWithCATransform3D:self.calculateView.layer.transform];
+        ta.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(self.calculateView.layer.bounds.origin.x + dx, dy, 0)];
         
         CABasicAnimation *txta = [CABasicAnimation animationWithKeyPath:@"transform"];
         txta.autoreverses = NO;
@@ -52,12 +53,12 @@
         txta.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(self.instructionsTextView.layer.bounds.origin.x + dx, dy, 0)];
         
         [self.ratioCollectionView.layer addAnimation:ra forKey:nil];
-        [self.calculateTableView.layer addAnimation:ta forKey:nil];
+        [self.calculateView.layer addAnimation:ta forKey:nil];
         [self.instructionsTextView.layer addAnimation:txta forKey:nil];
     }
     
     self.ratioCollectionView.layer.transform = CATransform3DMakeTranslation(self.ratioCollectionView.layer.bounds.origin.x + dx, 0, 0);
-    self.calculateTableView.layer.transform = CATransform3DMakeTranslation(self.calculateTableView.layer.bounds.origin.x + dx, 0, 0);
+    self.calculateView.layer.transform = CATransform3DMakeTranslation(self.calculateView.layer.bounds.origin.x + dx, 0, 0);
     self.instructionsTextView.layer.transform = CATransform3DMakeTranslation(self.instructionsTextView.layer.bounds.origin.x + dx, 0, 0);
 }
 
@@ -85,19 +86,36 @@
 
 #pragma mark Table View
 
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    return 2;
+//}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.ratio.ingredients count] + 1;
+    return section == 0 ? [self.ratio.ingredients count] + 1 : 1;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return [self.ratio totalAsString];
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    return section == 0 ? [self.ratio totalAsString] : @"Variations";
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.calculateTableView dequeueReusableCellWithIdentifier:indexPath.item == 0 ? @"calcHeading" : @"calcRow"];
+    NSString *cellIdentifier;
+    if (indexPath.section == 0) {
+        if (indexPath.item == 0) {
+            cellIdentifier = @"calcHeading";
+        } else if (indexPath.item > [self.ratio.ingredients count]) {
+            cellIdentifier = @"saveRow";
+        } else {
+            cellIdentifier = @"calcRow";
+        }
+    } else {
+        cellIdentifier = @"variationRow";
+    }
+    UITableViewCell *cell = [self.calculateTableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if ([cell isKindOfClass:[RTOCacluationCell class]]) {
         RTOCacluationCell *rcc = (RTOCacluationCell *)cell;
         RTOIngredient *ingredient = self.ratio.ingredients[indexPath.item-1];
@@ -111,9 +129,18 @@
         rcc.ratioPieView.ratio = self.ratio;
         rcc.ratioPieView.indexPath = indexPath;
         rcc.delegate = self;
+        if (indexPath.item == [self.ratio.ingredients count]) {
+            rcc.separatorInset = UIEdgeInsetsZero;
+            rcc.indentationLevel = 0;
+        }
     }
     return cell;
 }
+
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+//{
+//    
+//}
 
 - (UIView *)inputAccessoryView:(UITextField *)sender {
     CGRect accessFrame = CGRectMake(0.0, 0.0, self.view.bounds.size.width, 44.0);
@@ -152,6 +179,10 @@
         }
         [self.calculateTableView reloadData];
     }
+}
+
+- (IBAction)saveVariation
+{
 }
 
 #pragma mark Collection View
@@ -198,7 +229,7 @@
     NSDictionary *headStyle = @{NSFontAttributeName: [UIFont fontWithName:@"Avenir Black Oblique" size:15],
                                 NSParagraphStyleAttributeName: head,
                                 NSKernAttributeName: [NSNumber numberWithInt:1],
-                                NSForegroundColorAttributeName: [UIColor colorForR:255 G:102 B:103 A:1]};
+                                NSForegroundColorAttributeName: [UIColor colorForR:255 G:27 B:28 A:1]};
     NSDictionary *bodyStyle = @{NSParagraphStyleAttributeName : body,
                                 NSFontAttributeName: [UIFont fontWithName:@"Avenir Light" size:14]};
     NSMutableAttributedString *instructionsTxt = [[NSMutableAttributedString alloc] initWithString:@"INSTRUCTIONS\n" attributes:headStyle];
@@ -209,6 +240,8 @@
     [instructionsTxt appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"•  %@", [paragraphs componentsJoinedByString:@"\n•  "]] attributes:bodyStyle]];
     
     self.instructionsTextView.attributedText = instructionsTxt;
+    
+    self.amountButton.titleLabel.text = [self.ratio totalAsString];
     
     self.rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(changeViewWithSwipe:)];
     self.rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
@@ -221,7 +254,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    self.calculateTableView.layer.position = CGPointMake(self.calculateTableView.layer.position.x + self.view.bounds.size.width, self.calculateTableView.layer.position.y);
+    self.calculateView.layer.position = CGPointMake(self.calculateView.layer.position.x + self.view.bounds.size.width, self.calculateView.layer.position.y);
     self.instructionsTextView.layer.position = CGPointMake(self.instructionsTextView.layer.position.x + 2 * self.view.bounds.size.width, self.instructionsTextView.layer.position.y);
     [self changeRatioViewWithIndex:self.viewSelectSegmentedControl.selectedSegmentIndex animated:NO];
 }
@@ -229,7 +262,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];    
-    self.calculateTableView.alpha = 1;
+    self.calculateView.alpha = 1;
     self.instructionsTextView.alpha = 1;
 }
 
@@ -237,7 +270,7 @@
 {
     [super viewWillAppear:animated];
     [self setup];
-    self.calculateTableView.alpha = 0;
+    self.calculateView.alpha = 0;
     self.instructionsTextView.alpha = 0;
     
 }

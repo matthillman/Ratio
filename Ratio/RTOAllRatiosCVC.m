@@ -17,10 +17,11 @@
 #import "ModalTransitionDelegate.h"
 #import "BackButton.h"
 #import "RTOSettingsVC.h"
+#import "OrderedDictionary.h"
+#import "OrderedDictionaryDataSource.h"
 
-@interface RTOAllRatiosCVC () <UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, RTOSettingsDelegate>
-@property (nonatomic, strong) NSDictionary *ratios; // of section : NSArray <RTORatio *>
-@property (nonatomic, strong) NSArray *orderedSections; // of NSString *
+@interface RTOAllRatiosCVC () <UICollectionViewDelegate, UINavigationControllerDelegate, RTOSettingsDelegate>
+@property (nonatomic, strong) OrderedDictionary *ratios; // of section : NSArray <RTORatio *>
 @property (nonatomic, strong) UIView *settings;
 @property (nonatomic, strong) UIGestureRecognizer *tgr;
 @property (strong, nonatomic) IBOutlet UICollectionView *list;
@@ -28,10 +29,12 @@
 @property (nonatomic, strong) UIAttachmentBehavior *attachment;
 @property (nonatomic, strong) BouncingViewBehavior *behavior;
 @property (nonatomic, strong) ModalTransitionDelegate *td;
+@property (nonatomic, strong) OrderedDictionaryDataSource *ratioDataSource;
 @end
 
 @implementation RTOAllRatiosCVC
 
+# pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UIViewController *next = [self nextViewControllerAtIndexPath:indexPath];
@@ -43,6 +46,8 @@
     }
     [self.navigationController pushViewController:next animated:YES];
 }
+
+# pragma mark UINavigationControllerDelegate
 
 - (UIViewController *)nextViewControllerAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -67,42 +72,9 @@
     return transitioning;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return [self.orderedSections count];
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return [[self ratiosForSection:section] count];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"RatioList" forIndexPath:indexPath];
-    if ([cell isKindOfClass:[RTORatioCVC class]]) {
-        RTORatioCVC *rcvc = (RTORatioCVC *)cell;
-        rcvc.ratioPieView.ratio = [self ratiosForSection:indexPath.section][indexPath.item];
-        rcvc.ratioTitle.text = rcvc.ratioPieView.ratio.name;        
-        [rcvc.ratioPieView setNeedsDisplay];
-    }
-    return cell;
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionReusableView *rv = [self.collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
-    if ([rv isKindOfClass:[RTORatioListHeadCRV class]]) {
-        RTORatioListHeadCRV *hv = (RTORatioListHeadCRV *)rv;
-        hv.sectionHeading.text = [self keyForSection:indexPath.section];
-    }
-    
-    return rv;
-}
-
 - (NSString *)keyForSection:(NSInteger)section
 {
-    return self.orderedSections[section];
+    return [self.ratios keyAtIndex:section];
 }
 
 - (NSArray *)ratiosForSection:(NSInteger)section
@@ -145,7 +117,6 @@
     self.td.snapshot.layer.transform = hide ? CATransform3DMakeTranslation(60, 0, 0) : CATransform3DIdentity;
     a.toValue = [NSValue valueWithCATransform3D:self.td.snapshot.layer.transform];
     a.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-//    a.timeOffset = 0.2f;
     [self.td.snapshot.layer addAnimation:a forKey:nil];
 }
 
@@ -164,19 +135,31 @@
     
     NSString *menuPath = [[NSBundle mainBundle] pathForResource:@"menus" ofType:@"plist"];
     NSMutableDictionary *categoryPlist = [[NSMutableDictionary alloc] initWithContentsOfFile:menuPath];
-    NSMutableDictionary *groupedRatios = [[NSMutableDictionary alloc] init];
-    NSMutableArray *sections = [[NSMutableArray alloc] init];
+    OrderedDictionary *groupedRatios = [[OrderedDictionary alloc] init];
     for (NSDictionary *menu in categoryPlist[@"menus"]) {
         NSMutableArray *list = [[NSMutableArray alloc] init];
         for (NSDictionary *menuItem in menu[@"itemChildren"]) {
             [list addObject:allRatios[menuItem[@"itemTitle"]]];
         }
         groupedRatios[menu[@"itemTitle"]] = list;
-        [sections addObject:menu[@"itemTitle"]];
     }
     
     self.ratios = groupedRatios;
-    self.orderedSections = sections;
+    
+    self.ratioDataSource = [[OrderedDictionaryDataSource alloc] initWithItems:self.ratios cellIdentifier:@"RatioList" configureCellBlock:^(id cell, id item) {
+        if ([cell isKindOfClass:[RTORatioCVC class]]) {
+            RTORatioCVC *rcvc = (RTORatioCVC *)cell;
+            rcvc.ratioPieView.ratio = item;
+            rcvc.ratioTitle.text = rcvc.ratioPieView.ratio.name;
+            [rcvc.ratioPieView setNeedsDisplay];
+        }
+    } headerIdentifier:@"Header" configureHeaderBlock:^(id cell, id item) {
+        if ([cell isKindOfClass:[RTORatioListHeadCRV class]]) {
+            RTORatioListHeadCRV *hv = (RTORatioListHeadCRV *)cell;
+            hv.sectionHeading.text = item;
+        }
+    }];
+    self.list.dataSource = self.ratioDataSource;
     
     UIButton *arrow = [[BackButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
     arrow.backgroundColor = [UIColor clearColor];

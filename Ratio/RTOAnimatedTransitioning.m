@@ -39,7 +39,7 @@
     } else {
         rvc.view.transform = t;
         rvc.viewSelectSegmentedControl.alpha = 0;
-        rvc.viewSelectSegmentedControl.tintColor = [UIColor colorWithRed:255/255.0 green:102/255.0 blue:103/255.0 alpha:1];
+        rvc.viewSelectSegmentedControl.tintColor = [UIColor colorWithRed:255/255.0 green:27/255.0 blue:28/255.0 alpha:1];
         rvc.view.backgroundColor = [UIColor clearColor];
         
         for (UICollectionViewCell *cell in [rvc.ratioCollectionView visibleCells]) {
@@ -50,7 +50,7 @@
         
         [containter addSubview:toVC.view];
     }
-    rvc.calculateTableView.alpha = 0;
+    rvc.calculateView.alpha = 0;
     rvc.instructionsTextView.alpha = 0;
     
     [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext] delay:0 options:0 animations:^{
@@ -66,7 +66,7 @@
         } else {
             rvc.view.transform = CGAffineTransformIdentity;
             rvc.viewSelectSegmentedControl.alpha = 1;
-            rvc.viewSelectSegmentedControl.tintColor = [UIColor colorWithRed:255/255.0 green:102/255.0 blue:103/255.0 alpha:1];
+            rvc.viewSelectSegmentedControl.tintColor = [UIColor colorWithRed:255/255.0 green:27/255.0 blue:28/255.0 alpha:1];
             rvc.view.backgroundColor = [UIColor whiteColor];
             for (UICollectionViewCell *cell in [rvc.ratioCollectionView visibleCells]) {
                 if ([cell isKindOfClass:[RTOListCVC class]]) {
@@ -76,7 +76,7 @@
         }
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:finished];
-        rvc.calculateTableView.alpha = 1;
+        rvc.calculateView.alpha = 1;
         rvc.instructionsTextView.alpha = 1;
     }];
 }

@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[RTORatioVC tableView:cellForRowAtIndexPath:]:RTORatioVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.item">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[RTOIngredient description]:RTOIngredient.m">
       </ContextState>
       <ContextState
@@ -36,14 +44,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[RTOAllRatiosCVC collectionView:cellForItemAtIndexPath:]:RTOAllRatiosCVC.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[indexPath section]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[RTOAllRatiosCVC collectionView:didSelectItemAtIndexPath:]:RTOAllRatiosCVC.m">
          <PersistentStrings>
             <PersistentString
@@ -56,6 +56,14 @@
          <PersistentStrings>
             <PersistentString
                value = "[f numberFromString:@&quot;234&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RTOAllRatiosCVC collectionView:cellForItemAtIndexPath:]:RTOAllRatiosCVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[indexPath section]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

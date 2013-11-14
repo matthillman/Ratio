@@ -8,6 +8,7 @@
 
 #import "RTOCacluationCell.h"
 #import "RTOUnitConverter.h"
+#import "UIColor+RGB.h"
 
 @interface RTOCacluationCell () <UIActionSheetDelegate>
 @property (nonatomic, strong) UIActionSheet *unitsSheet;
@@ -23,6 +24,7 @@
     }
     [self.unitsSheet addButtonWithTitle:@"Cancel"];
     self.unitsSheet.cancelButtonIndex = self.unitsSheet.numberOfButtons-1;
+    self.unitsSheet.tintColor = [UIColor colorForR:255 G:22 B:23 A:1];
     [self.unitsSheet showInView:self.superview];
 }
 
@@ -31,6 +33,16 @@
     if (buttonIndex != actionSheet.cancelButtonIndex) {
         [self.unitButton setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
         [self.delegate calculationRow:self updatedUnitTo:[actionSheet buttonTitleAtIndex:buttonIndex]];
+    }
+}
+
+- (void)willPresentActionSheet:(UIActionSheet *)actionSheet
+{
+    for (UIView *subView in actionSheet.subviews) {
+        if ([subView isKindOfClass:[UIButton class]]) {
+            UIButton *button = (UIButton *)subView;
+            [button setTitleColor:[UIColor colorForR:255 G:22 B:23 A:1] forState:UIControlStateNormal|UIControlStateSelected|UIControlStateHighlighted];
+        }
     }
 }
 

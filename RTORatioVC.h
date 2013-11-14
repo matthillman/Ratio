@@ -13,6 +13,7 @@
 @property (nonatomic, strong) RTORatio *ratio;
 @property (nonatomic) CGPoint animationCenter;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *viewSelectSegmentedControl;
+@property (weak, nonatomic) IBOutlet UIView *calculateView;
 @property (weak, nonatomic) IBOutlet UICollectionView *ratioCollectionView;
 @property (weak, nonatomic) IBOutlet UITableView *calculateTableView;
 @property (weak, nonatomic) IBOutlet UITextView *instructionsTextView;

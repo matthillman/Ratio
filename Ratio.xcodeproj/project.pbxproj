@@ -32,6 +32,9 @@
 		C94CAA6517EFC06D00F77C03 /* RTORatioListHeadCRV.m in Sources */ = {isa = PBXBuildFile; fileRef = C94CAA6417EFC06D00F77C03 /* RTORatioListHeadCRV.m */; };
 		C9712D9D17FDD1F6002C5E6A /* BouncingViewBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = C9712D9C17FDD1F6002C5E6A /* BouncingViewBehavior.m */; };
 		C9712DA017FDEDEB002C5E6A /* ModalTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9712D9F17FDEDEB002C5E6A /* ModalTransitionDelegate.m */; };
+		C97CB7A41833143D00189420 /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C97CB7A31833143D00189420 /* ArrayDataSource.m */; };
+		C97CB7A718331F4E00189420 /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C97CB7A618331F4E00189420 /* OrderedDictionary.m */; };
+		C97CB7AB183324A100189420 /* OrderedDictionaryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C97CB7AA183324A100189420 /* OrderedDictionaryDataSource.m */; };
 		C9A4C04C17F073D900C68E92 /* menus.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A4C04A17F073D900C68E92 /* menus.plist */; };
 		C9A4C04D17F073D900C68E92 /* ratios.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A4C04B17F073D900C68E92 /* ratios.plist */; };
 		C9A4C05017F09F4E00C68E92 /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A4C04F17F09F4E00C68E92 /* UIColor+RGB.m */; };
@@ -47,6 +50,10 @@
 		C9C4087F1807258C00E3D9FE /* scale.html in Resources */ = {isa = PBXBuildFile; fileRef = C9C4087E1807258C00E3D9FE /* scale.html */; };
 		C9C408811807265400E3D9FE /* ruhlman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9C408801807265400E3D9FE /* ruhlman.jpg */; };
 		C9F63EAB1807306C0051ECFD /* RTOWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F63EAA1807306C0051ECFD /* RTOWebVC.m */; };
+		C9F95AFD1829EB4A00CC8F91 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9F95AFB1829EB4A00CC8F91 /* Model.xcdatamodeld */; };
+		C9F95B58182A75EE00CC8F91 /* Ratio.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F95B57182A75EE00CC8F91 /* Ratio.m */; };
+		C9F95B5B182A75EE00CC8F91 /* Ingredient.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F95B5A182A75EE00CC8F91 /* Ingredient.m */; };
+		C9F95B5E182B009F00CC8F91 /* Ratio+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F95B5D182B009F00CC8F91 /* Ratio+Create.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +108,12 @@
 		C9712D9C17FDD1F6002C5E6A /* BouncingViewBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BouncingViewBehavior.m; sourceTree = "<group>"; };
 		C9712D9E17FDEDEB002C5E6A /* ModalTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalTransitionDelegate.h; sourceTree = "<group>"; };
 		C9712D9F17FDEDEB002C5E6A /* ModalTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalTransitionDelegate.m; sourceTree = "<group>"; };
+		C97CB7A21833143D00189420 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDataSource.h; sourceTree = "<group>"; };
+		C97CB7A31833143D00189420 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
+		C97CB7A518331F4E00189420 /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
+		C97CB7A618331F4E00189420 /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
+		C97CB7A9183324A100189420 /* OrderedDictionaryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionaryDataSource.h; sourceTree = "<group>"; };
+		C97CB7AA183324A100189420 /* OrderedDictionaryDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionaryDataSource.m; sourceTree = "<group>"; };
 		C9A4C04A17F073D900C68E92 /* menus.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = menus.plist; sourceTree = "<group>"; };
 		C9A4C04B17F073D900C68E92 /* ratios.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ratios.plist; sourceTree = "<group>"; };
 		C9A4C04E17F09F4E00C68E92 /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGB.h"; sourceTree = "<group>"; };
@@ -124,6 +137,13 @@
 		C9C408801807265400E3D9FE /* ruhlman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ruhlman.jpg; sourceTree = "<group>"; };
 		C9F63EA91807306C0051ECFD /* RTOWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTOWebVC.h; sourceTree = "<group>"; };
 		C9F63EAA1807306C0051ECFD /* RTOWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTOWebVC.m; sourceTree = "<group>"; };
+		C9F95AFC1829EB4A00CC8F91 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		C9F95B56182A75EE00CC8F91 /* Ratio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ratio.h; sourceTree = "<group>"; };
+		C9F95B57182A75EE00CC8F91 /* Ratio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ratio.m; sourceTree = "<group>"; };
+		C9F95B59182A75EE00CC8F91 /* Ingredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredient.h; sourceTree = "<group>"; };
+		C9F95B5A182A75EE00CC8F91 /* Ingredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingredient.m; sourceTree = "<group>"; };
+		C9F95B5C182B009F00CC8F91 /* Ratio+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Ratio+Create.h"; sourceTree = "<group>"; };
+		C9F95B5D182B009F00CC8F91 /* Ratio+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Ratio+Create.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +214,7 @@
 				C9C408741804B83800E3D9FE /* RTOSettingsVC.m */,
 				C94CAA2517ED132C00F77C03 /* Images.xcassets */,
 				C9A4C05117F0D39A00C68E92 /* Transitions */,
+				C97CB7A818331F6100189420 /* Common Files */,
 				C9A4C04917F06B6800C68E92 /* Collection Sub-views */,
 				C94CAA1417ED132C00F77C03 /* Supporting Files */,
 				C94CAA4B17EE21AC00F77C03 /* Model */,
@@ -209,12 +230,6 @@
 				C9C408771804F50A00E3D9FE /* RTOSettings.m */,
 				C9A4F74717F4928B008BCC2C /* RTOUnitConverter.h */,
 				C9A4F74817F4928B008BCC2C /* RTOUnitConverter.m */,
-				C9A4C04E17F09F4E00C68E92 /* UIColor+RGB.h */,
-				C9A4C04F17F09F4E00C68E92 /* UIColor+RGB.m */,
-				C93A80B218007CB40029502E /* BackButton.h */,
-				C93A80B318007CB40029502E /* BackButton.m */,
-				C9288F3C1808308A00766D11 /* Egg.h */,
-				C9288F3D1808308A00766D11 /* Egg.m */,
 				C94CAA1C17ED132C00F77C03 /* RTOAppDelegate.h */,
 				C94CAA1D17ED132C00F77C03 /* RTOAppDelegate.m */,
 				C94CAA1517ED132C00F77C03 /* Ratio-Info.plist */,
@@ -255,8 +270,34 @@
 				C94CAA4D17EE23B200F77C03 /* RTOIngredient.m */,
 				C9A4F74217F48913008BCC2C /* RTOAmount.h */,
 				C9A4F74317F48913008BCC2C /* RTOAmount.m */,
+				C9F95B5C182B009F00CC8F91 /* Ratio+Create.h */,
+				C9F95B5D182B009F00CC8F91 /* Ratio+Create.m */,
+				C9F95B56182A75EE00CC8F91 /* Ratio.h */,
+				C9F95B59182A75EE00CC8F91 /* Ingredient.h */,
+				C9F95B5A182A75EE00CC8F91 /* Ingredient.m */,
+				C9F95B57182A75EE00CC8F91 /* Ratio.m */,
+				C9F95AFB1829EB4A00CC8F91 /* Model.xcdatamodeld */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		C97CB7A818331F6100189420 /* Common Files */ = {
+			isa = PBXGroup;
+			children = (
+				C97CB7A518331F4E00189420 /* OrderedDictionary.h */,
+				C97CB7A618331F4E00189420 /* OrderedDictionary.m */,
+				C97CB7A21833143D00189420 /* ArrayDataSource.h */,
+				C97CB7A31833143D00189420 /* ArrayDataSource.m */,
+				C97CB7A9183324A100189420 /* OrderedDictionaryDataSource.h */,
+				C97CB7AA183324A100189420 /* OrderedDictionaryDataSource.m */,
+				C9A4C04E17F09F4E00C68E92 /* UIColor+RGB.h */,
+				C9A4C04F17F09F4E00C68E92 /* UIColor+RGB.m */,
+				C93A80B218007CB40029502E /* BackButton.h */,
+				C93A80B318007CB40029502E /* BackButton.m */,
+				C9288F3C1808308A00766D11 /* Egg.h */,
+				C9288F3D1808308A00766D11 /* Egg.m */,
+			);
+			name = "Common Files";
 			sourceTree = "<group>";
 		};
 		C9A4C04917F06B6800C68E92 /* Collection Sub-views */ = {
@@ -406,6 +447,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C94CAA5A17EE367B00F77C03 /* RTOListCVC.m in Sources */,
+				C9F95AFD1829EB4A00CC8F91 /* Model.xcdatamodeld in Sources */,
+				C97CB7AB183324A100189420 /* OrderedDictionaryDataSource.m in Sources */,
 				C9712D9D17FDD1F6002C5E6A /* BouncingViewBehavior.m in Sources */,
 				C9C408781804F50A00E3D9FE /* RTOSettings.m in Sources */,
 				C94CAA5717EE366700F77C03 /* RTORatioCVC.m in Sources */,
@@ -416,15 +459,20 @@
 				C94CAA1E17ED132C00F77C03 /* RTOAppDelegate.m in Sources */,
 				C94CAA4A17EE21A500F77C03 /* RTORatio.m in Sources */,
 				C9C408751804B83800E3D9FE /* RTOSettingsVC.m in Sources */,
+				C9F95B58182A75EE00CC8F91 /* Ratio.m in Sources */,
+				C9F95B5B182A75EE00CC8F91 /* Ingredient.m in Sources */,
 				C9288F3E1808308A00766D11 /* Egg.m in Sources */,
 				C9A4C05017F09F4E00C68E92 /* UIColor+RGB.m in Sources */,
 				C9A4C05A17F1E82B00C68E92 /* RTOCacluationCell.m in Sources */,
 				C94CAA6517EFC06D00F77C03 /* RTORatioListHeadCRV.m in Sources */,
+				C97CB7A41833143D00189420 /* ArrayDataSource.m in Sources */,
 				C94CAA4E17EE23B200F77C03 /* RTOIngredient.m in Sources */,
 				C9712DA017FDEDEB002C5E6A /* ModalTransitionDelegate.m in Sources */,
 				C9A4C05417F0D3DA00C68E92 /* RTOAnimatedTransitioning.m in Sources */,
+				C9F95B5E182B009F00CC8F91 /* Ratio+Create.m in Sources */,
 				C94CAA5417EE33F100F77C03 /* RTORatioVC.m in Sources */,
 				C9F63EAB1807306C0051ECFD /* RTOWebVC.m in Sources */,
+				C97CB7A718331F4E00189420 /* OrderedDictionary.m in Sources */,
 				C94CAA1A17ED132C00F77C03 /* main.m in Sources */,
 				C9A4F74917F4928B008BCC2C /* RTOUnitConverter.m in Sources */,
 			);
@@ -647,6 +695,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C9F95AFB1829EB4A00CC8F91 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C9F95AFC1829EB4A00CC8F91 /* Model.xcdatamodel */,
+			);
+			currentVersion = C9F95AFC1829EB4A00CC8F91 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C94CAA0217ED132C00F77C03 /* Project object */;
 }

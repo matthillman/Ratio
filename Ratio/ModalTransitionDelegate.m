@@ -118,9 +118,9 @@
 -(void)ensureAnimationCompletesWithFrame:(CGRect)endFrame
 {
     id<UIViewControllerContextTransitioning> transitionContext = self.transitionContext;
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+//    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     double delayInSeconds = [self transitionDuration:self.transitionContext];
-    UIView *animating = self.presenting ? self.snapshot : fromViewController.view;
+    UIView *animating =  self.snapshot; //self.presenting ? self.snapshot : fromViewController.view;
     UIView *snapshot = self.snapshot;
     UIView *bottom = self.interactiveSettings;
     BOOL presenting = self.presenting;
@@ -152,7 +152,7 @@
         self.sender.navigationController.topViewController.navigationItem.leftBarButtonItem.enabled = YES;
         [self.snapshot removeFromSuperview];
     } else {
-        UIView *panView = self.snapshot ? self.snapshot : self.sender.view;
+        UIView *panView = self.snapshot;// ? self.snapshot : self.sender.view;
         UIScreenEdgePanGestureRecognizer *pgr = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(userDidPan:)];
         pgr.edges = UIRectEdgeRight;
         [panView addGestureRecognizer:pgr];
@@ -295,7 +295,6 @@
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    
     CGRect frame = [[transitionContext containerView] bounds];
     UIView *animating;
     UIView *bottom;
@@ -363,6 +362,9 @@
 - (void)updateInteractiveTransition:(CGFloat)percentComplete
 {
     self.ab.anchorPoint = CGPointMake(CGRectGetWidth(self.transitionContext.containerView.bounds) * percentComplete, CGRectGetMidY(self.transitionContext.containerView.bounds));
+//    CGRect aFrame = self.transitionContext.containerView.bounds;
+//    aFrame.origin.x = CGRectGetWidth(self.transitionContext.containerView.bounds) * percentComplete;
+//    self.snapshot.frame = aFrame;
     
     CGRect sFrame = self.interactiveSettings.frame;
     sFrame.origin.x = -20 + (20 * percentComplete);

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3400" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Ingredient" representedClassName="Ingredient" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="unit" attributeType="String" syncable="YES"/>
+        <relationship name="makes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ratio" inverseName="ingredients" inverseEntity="Ratio" syncable="YES"/>
+    </entity>
+    <entity name="Ratio" representedClassName="Ratio" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="ratio" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Ingredient" inverseName="makes" inverseEntity="Ingredient" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Ratio" positionX="160" positionY="192" width="128" height="88"/>
+        <element name="Ingredient" positionX="324" positionY="270" width="128" height="103"/>
+    </elements>
+</model>
