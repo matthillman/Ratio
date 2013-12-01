@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) CGFloat ratioTotal;
 @property (nonatomic, strong) NSString *instructions;
 @property (nonatomic, strong) NSString *variations;
+@property (nonatomic) CGFloat totalQuantity;
 
 - (id)initWithRatioDict:(NSDictionary *)dict;
 - (id)initWithTestData;
