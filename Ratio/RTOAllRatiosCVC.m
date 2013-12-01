@@ -125,6 +125,8 @@
     self.navigationController.delegate = self;
     self.title = @"Ratios";
     
+    // Load Model Data
+    
     NSString *ratioPath = [[NSBundle mainBundle] pathForResource:@"ratios" ofType:@"plist"];
     NSMutableDictionary *ratioPlist = [[NSMutableDictionary alloc] initWithContentsOfFile:ratioPath];
     NSMutableDictionary *allRatios = [[NSMutableDictionary alloc] init];
@@ -146,6 +148,8 @@
     
     self.ratios = groupedRatios;
     
+    // Setup Collection View Data Source
+    
     self.ratioDataSource = [[OrderedDictionaryDataSource alloc] initWithItems:self.ratios cellIdentifier:@"RatioList" configureCellBlock:^(id cell, id item) {
         if ([cell isKindOfClass:[RTORatioCVC class]]) {
             RTORatioCVC *rcvc = (RTORatioCVC *)cell;
@@ -161,12 +165,8 @@
     }];
     self.list.dataSource = self.ratioDataSource;
     
-    UIButton *arrow = [[BackButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
-    arrow.backgroundColor = [UIColor clearColor];
-    [arrow addTarget:self action:@selector(settingsTapped) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *btnSettings = [[UIBarButtonItem alloc] initWithCustomView:arrow];
-    self.navigationController.topViewController.navigationItem.leftBarButtonItem = btnSettings;
-    btnSettings.enabled=TRUE;
+    // Set up settings button and transitions to settings view
+    self.navigationController.topViewController.navigationItem.leftBarButtonItem = [BackButton barButtonItemWithTarget:self action:@selector(settingsTapped)];
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     RTOSettingsVC *s = [sb instantiateViewControllerWithIdentifier:@"settingstvc"];

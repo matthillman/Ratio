@@ -58,15 +58,19 @@
     return self;
 }
 
-- (NSString *)totalAsString
+- (BOOL)canSetAmountByTotal
 {
-    NSString *totalString = nil;
+    return [self.total count] && ![self.total[@"action"] isEqualToString:@"sum"];
+}
+
+- (NSArray *)makes
+{
     if ([self.total count]) {
         NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
         NSNumber *amount = [f numberFromString:[NSString stringWithFormat:@"%@", self.total[@"amount"]]];
         NSArray *includedIngredients = [self.total[@"ingredient"] isEqualToString:@"all"] ? self.ingredients : @[[self ingredientWithName:self.total[@"ingredient"]]];
-
+        
         NSString *label = self.total[@"label"];
         NSString *firstItemUnit = [[[(RTOIngredient *)includedIngredients[0] amountInRecipe] unit] mutableCopy];
         
@@ -85,10 +89,8 @@
             total = [[RTOUnitConverter formatterForUnit:firstItemUnit] stringFromNumber:[[NSNumber alloc] initWithFloat:t]];
         } else {
             NSString *measure = self.total[@"measure"];
-            RTOAmount *ra = [(RTOIngredient *)includedIngredients[0] amountInRecipe];
-            RTOAmount *a = [[RTOAmount alloc] initWithQuantity:ra.quantity unit:ra.unit];
-            a = [a convertAmountOf:includedIngredients[0] toUnit:measure];
-            a.quantity = [NSNumber numberWithFloat:[a.quantity floatValue] / [amount floatValue]];
+            RTOAmount *a = [RTOUnitConverter convertAmount:[(RTOIngredient *)includedIngredients[0] amountInRecipe] of:includedIngredients[0] toUnit:measure];
+            NSNumber *amountProduced = [NSNumber numberWithFloat:[a.quantity floatValue] / [amount floatValue]];
             NSNumberFormatter *f = nil;
             if ([label isEqualToString:firstItemUnit]) {
                 f = [RTOUnitConverter formatterForUnit:firstItemUnit];
@@ -98,12 +100,19 @@
                 [f setRoundingMode:NSNumberFormatterRoundFloor];
                 [f setMaximumFractionDigits:0];
             }
-            total = [f stringFromNumber:a.quantity];
+            total = [f stringFromNumber:amountProduced];
         }
         
-        totalString = [NSString stringWithFormat:@"Makes %@ %@", total, label];
+        return @[total, label];
     }
-    return totalString;
+    
+    return nil;
+}
+
+- (NSString *)totalAsString
+{
+    NSArray *components = [self makes];
+    return [components count] ? [NSString stringWithFormat:@"Makes %@", [[self makes] componentsJoinedByString:@" "]] : nil;
 }
 
 @synthesize ratioTotal = _ratioTotal;

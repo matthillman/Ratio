@@ -86,20 +86,10 @@
 
 #pragma mark Table View
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    return 2;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return section == 0 ? [self.ratio.ingredients count] + 1 : 1;
+    return [self.ratio.ingredients count] + 1;
 }
-
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//    return section == 0 ? [self.ratio totalAsString] : @"Variations";
-//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -177,14 +167,38 @@
         for (RTOIngredient *i in self.ratio.ingredients) {
             i.amountInRecipe.quantity = [NSNumber numberWithFloat:[i.amountInRecipe.quantity floatValue] * ratio];
         }
-        [self.calculateTableView reloadData];
+        [self reloadData];
     }
+}
+
+- (void)reloadData
+{
+    [self.calculateTableView reloadData];
+    [self.amountButton setTitle:[[self.ratio totalAsString] uppercaseString] forState:UIControlStateNormal];
 }
 
 - (IBAction)saveVariation
 {
 }
 
+- (IBAction)showChangeAmount
+{
+#define chageHeight 44
+    CGRect frame = CGRectMake(0, CGRectGetMaxX(self.amountButton.bounds), CGRectGetWidth(self.view.bounds), chageHeight);
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+    view.backgroundColor = [UIColor redColor];
+    [self.calculateView insertSubview:view belowSubview:self.amountButton];
+    
+    CATransform3D transform = CATransform3DMakeTranslation(0, chageHeight, 0);
+    
+    CABasicAnimation *ra = [CABasicAnimation animationWithKeyPath:@"transform"];
+    ra.autoreverses = NO;
+    ra.duration = ANIMATION_DURATION;
+    ra.fromValue = [NSValue valueWithCATransform3D:self.calculateTableView.layer.transform];
+    ra.toValue = [NSValue valueWithCATransform3D:transform];
+    [self.calculateTableView.layer addAnimation:ra forKey:nil];
+    self.calculateTableView.layer.transform = transform;
+}
 #pragma mark Collection View
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -219,6 +233,9 @@
 
 - (void)setup
 {
+    
+    // TODO move to view controller for UITextView
+    
     NSMutableParagraphStyle *head = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     head.alignment = NSTextAlignmentCenter;
     head.paragraphSpacing = 14;
@@ -241,8 +258,12 @@
     
     self.instructionsTextView.attributedText = instructionsTxt;
     
-    self.amountButton.titleLabel.text = [self.ratio totalAsString];
     
+    // TODO move to view controller for UITableView
+    [self.amountButton setTitle:[[self.ratio totalAsString] uppercaseString] forState:UIControlStateNormal];
+    self.amountButton.enabled = [self.ratio canSetAmountByTotal];
+    
+    // This has to stay at this level
     self.rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(changeViewWithSwipe:)];
     self.rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
     self.leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(changeViewWithSwipe:)];

@@ -30,4 +30,14 @@
     [backArrow stroke];
 }
 
++ (UIBarButtonItem *)barButtonItemWithTarget:(id)target action:(SEL)action
+{
+    UIButton *arrow = [[BackButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    arrow.backgroundColor = [UIColor clearColor];
+    [arrow addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithCustomView:arrow];
+    bbi.enabled=TRUE;
+    return bbi;
+}
+
 @end

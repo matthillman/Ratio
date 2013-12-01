@@ -17,6 +17,8 @@
 
 - (id)initWithRatioDict:(NSDictionary *)dict;
 - (id)initWithTestData;
+- (BOOL)canSetAmountByTotal;
+- (NSArray *)makes;
 - (NSString *)totalAsString;
 - (UIBezierPath *)sliceForIngredient:(RTOIngredient *)ingredient withCenter:(CGPoint)center andRadius:(CGFloat)radius;
 - (void)resetAmounts;

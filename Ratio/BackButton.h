@@ -10,4 +10,6 @@
 
 @interface BackButton : UIButton
 
++ (UIBarButtonItem *)barButtonItemWithTarget:(id)target action:(SEL)action;
+
 @end
