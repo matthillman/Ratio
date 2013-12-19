@@ -90,17 +90,11 @@
             }
             total = [[RTOUnitConverter formatterForUnit:firstItemUnit] stringFromNumber:[[NSNumber alloc] initWithFloat:t + self.totalQuantity * step]];
         } else {
-<<<<<<< HEAD
-            NSString *measure = self.total[@"measure"];
-            RTOAmount *a = [RTOUnitConverter convertAmount:[(RTOIngredient *)includedIngredients[0] amountInRecipe] of:includedIngredients[0] toUnit:measure];
-            NSNumber *amountProduced = [NSNumber numberWithFloat:[a.quantity floatValue] / [amount floatValue]];
-=======
             NSString *measure = [self.total[@"measure"] isEqualToString:@"volume"] ? @"liters" : [self.total[@"measure"] isEqualToString:@"weight"] ? @"grams" : self.total[@"measure"];
             RTOAmount *ra = [(RTOIngredient *)includedIngredients[0] amountInRecipe];
             RTOAmount *a = [[RTOAmount alloc] initWithQuantity:ra.quantity unit:ra.unit];
             a = [a convertAmountOf:includedIngredients[0] toUnit:measure];
             a.quantity = [NSNumber numberWithFloat:[a.quantity floatValue] / [amount floatValue]];
->>>>>>> 8267f885b646ce404b4846adfe5155b6c6fbad95
             NSNumberFormatter *f = nil;
             if ([label isEqualToString:firstItemUnit]) {
                 f = [RTOUnitConverter formatterForUnit:firstItemUnit];
@@ -110,11 +104,8 @@
                 [f setRoundingMode:NSNumberFormatterRoundFloor];
                 [f setMaximumFractionDigits:0];
             }
-<<<<<<< HEAD
-            total = [f stringFromNumber:amountProduced];
-=======
+
             total = [f stringFromNumber:[[NSNumber alloc] initWithFloat:[a.quantity floatValue] + self.totalQuantity * step]];
->>>>>>> 8267f885b646ce404b4846adfe5155b6c6fbad95
         }
         
         return @[total, label];
