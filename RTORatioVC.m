@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightSwipe;
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftSwipe;
 @property (weak, nonatomic) IBOutlet UIButton *amountButton;
+@property (nonatomic, strong) UIView *changeView;
 @end
 
 @implementation RTORatioVC
@@ -83,11 +84,6 @@
         [self changeRatioView];
     }
     
-}
-
-- (IBAction)updateTotal:(UIStepper *)sender
-{
-    self.ratio.totalQuantity = sender.value;
 }
 
 #pragma mark Table View
@@ -183,28 +179,59 @@
     [self.amountButton setTitle:[[self.ratio totalAsString] uppercaseString] forState:UIControlStateNormal];
 }
 
-- (IBAction)saveVariation
+- (void)changeTotal:(UIStepper *)stepper
 {
+    self.ratio.totalQuantity = stepper.value;
+    [self reloadData];
 }
 
-- (IBAction)showChangeAmount
+- (IBAction)togggleShowChangeAmount
 {
-#define chageHeight 44
-    CGRect frame = CGRectMake(0, CGRectGetMaxX(self.amountButton.bounds), CGRectGetWidth(self.view.bounds), chageHeight);
-    UIView *view = [[UIView alloc] initWithFrame:frame];
-    view.backgroundColor = [UIColor redColor];
-    [self.calculateView insertSubview:view belowSubview:self.amountButton];
-    
-    CATransform3D transform = CATransform3DMakeTranslation(0, chageHeight, 0);
-    
-    CABasicAnimation *ra = [CABasicAnimation animationWithKeyPath:@"transform"];
-    ra.autoreverses = NO;
-    ra.duration = ANIMATION_DURATION;
-    ra.fromValue = [NSValue valueWithCATransform3D:self.calculateTableView.layer.transform];
-    ra.toValue = [NSValue valueWithCATransform3D:transform];
-    [self.calculateTableView.layer addAnimation:ra forKey:nil];
-    self.calculateTableView.layer.transform = transform;
+    if (self.ratio.canSetAmountByTotal) {
+        BOOL show = self.changeView == nil;
+        
+        CATransform3D t1 = CATransform3DIdentity;
+        CATransform3D v1 = CATransform3DIdentity;
+        
+        if (show) {
+            self.changeView = [[UIView alloc] initWithFrame:self.amountButton.bounds];
+            self.changeView.backgroundColor = [UIColor orangeColor];
+            [self.calculateView insertSubview:self.changeView aboveSubview:self.calculateTableView];
+            
+            UIStepper *stepper = [[UIStepper alloc] init];
+            stepper.layer.transform = CATransform3DMakeTranslation(20, 8, 0);
+            stepper.autorepeat = NO;
+            [stepper addTarget:self action:@selector(changeTotal:) forControlEvents:UIControlEventValueChanged];
+            [self.changeView addSubview:stepper];
+            
+            t1 = CATransform3DMakeTranslation(0, CGRectGetHeight(self.amountButton.bounds), 0);
+            v1 = CATransform3DMakeTranslation(0, CGRectGetHeight(self.amountButton.bounds)+20, 0);
+        }
+        CABasicAnimation *ra = [CABasicAnimation animationWithKeyPath:@"transform"];
+        ra.autoreverses = NO;
+        ra.duration = ANIMATION_DURATION;
+        ra.fromValue = [NSValue valueWithCATransform3D:self.calculateTableView.layer.transform];
+        ra.toValue = [NSValue valueWithCATransform3D:t1];
+        
+        CABasicAnimation *na = [ra mutableCopy];
+        na.fromValue = [NSValue valueWithCATransform3D:self.changeView.layer.transform];
+        na.toValue = [NSValue valueWithCATransform3D:v1];
+        
+        [self.calculateTableView.layer addAnimation:ra forKey:nil];
+        [self.changeView.layer addAnimation:na forKey:nil];
+        self.calculateTableView.layer.transform = t1;
+        self.changeView.layer.transform = v1;
+        
+        if (show) {
+            UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(togggleShowChangeAmount)];
+            [self.changeView addGestureRecognizer:tgr];
+        } else {
+            [self.changeView removeFromSuperview];
+            self.changeView = nil;
+        }
+    }
 }
+
 #pragma mark Collection View
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath

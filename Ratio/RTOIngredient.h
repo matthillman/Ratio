@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSNumber *amount;
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, strong) RTOAmount *amountInRecipe;
+@property (nonatomic, strong) NSNumber *defaultAmount;
 
 - (id)initWithIngredientDict:(NSDictionary *)dict;
 - (void)setRecipeUnits:(NSString *)units;

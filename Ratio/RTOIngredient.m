@@ -12,7 +12,6 @@
 #import "RTOSettings.h"
 
 @interface RTOIngredient()
-@property (nonatomic, strong) NSNumber *defaultAmount;
 @property (nonatomic, strong) NSString *defaultUnits;
 @end
 

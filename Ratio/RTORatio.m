@@ -71,13 +71,12 @@
         NSNumber *amount = [f numberFromString:[NSString stringWithFormat:@"%@", self.total[@"amount"]]];
         NSArray *includedIngredients = [self.total[@"ingredient"] isEqualToString:@"all"] ? self.ingredients : @[[self ingredientWithName:self.total[@"ingredient"]]];
         
-        NSString *label = self.total[@"label"];
-        NSString *firstItemUnit = [[[(RTOIngredient *)includedIngredients[0] amountInRecipe] unit] mutableCopy];
-        NSInteger step = 1;
+        NSDictionary *it = [self getLabelUnitForDisplay];
+        NSString *label = it[@"label"];
+        NSString *firstItemUnit = it[@"firstItemUnit"];
         
         if ([label isEqualToString:@"volume"] || [label isEqualToString:@"weight"] || [label isEqualToString:@"<same>"]) {
             label = firstItemUnit;
-            step = 50;
         }
         NSString *action = self.total[@"action"];
         NSString *total = nil;
@@ -88,7 +87,7 @@
                 RTOAmount *a = [i.amountInRecipe convertAmountOf:i toUnit:firstItemUnit];
                 t += [a.quantity floatValue];
             }
-            total = [[RTOUnitConverter formatterForUnit:firstItemUnit] stringFromNumber:[[NSNumber alloc] initWithFloat:t + self.totalQuantity * step]];
+            total = [[RTOUnitConverter formatterForUnit:firstItemUnit] stringFromNumber:[[NSNumber alloc] initWithFloat:t]];
         } else {
             NSString *measure = [self.total[@"measure"] isEqualToString:@"volume"] ? @"liters" : [self.total[@"measure"] isEqualToString:@"weight"] ? @"grams" : self.total[@"measure"];
             RTOAmount *ra = [(RTOIngredient *)includedIngredients[0] amountInRecipe];
@@ -105,13 +104,42 @@
                 [f setMaximumFractionDigits:0];
             }
 
-            total = [f stringFromNumber:[[NSNumber alloc] initWithFloat:[a.quantity floatValue] + self.totalQuantity * step]];
+            total = [f stringFromNumber:[[NSNumber alloc] initWithFloat:[a.quantity floatValue]]];
         }
         
         return @[total, label];
     }
     
     return nil;
+}
+
+- (NSDictionary *)getLabelUnitForDisplay
+{
+    NSArray *includedIngredients = [self.total[@"ingredient"] isEqualToString:@"all"] ? self.ingredients : @[[self ingredientWithName:self.total[@"ingredient"]]];
+    NSString *label = self.total[@"label"];
+    NSString *firstItemUnit = [[[(RTOIngredient *)includedIngredients[0] amountInRecipe] unit] mutableCopy];
+    NSNumber *firstItemQuantity = [[(RTOIngredient *)includedIngredients[0] defaultAmount] mutableCopy];
+    NSInteger step = 1;
+    
+    if ([label isEqualToString:@"volume"] || [label isEqualToString:@"weight"] || [label isEqualToString:@"<same>"]) {
+        label = firstItemUnit;
+        step = 50;
+    }
+    
+    return @{@"label": label, @"firstItemUnit": firstItemUnit, @"step": [NSNumber numberWithInt:step], @"quantity": firstItemQuantity};
+}
+
+- (void)setTotalQuantity:(CGFloat)totalQuantity
+{
+    _totalQuantity = totalQuantity;
+    NSString *action = self.total[@"action"];
+    NSDictionary *items = [self getLabelUnitForDisplay];
+    
+    if ([action isEqualToString:@"sum"]) {
+        
+    } else {
+        
+    }
 }
 
 - (NSString *)totalAsString
@@ -140,7 +168,6 @@
     
     for (RTOIngredient *ing in self.ingredients) {
         CGFloat endAngle = startAngle + (2*M_PI * [ing.amount floatValue] / self.ratioTotal);
-        
         if ([ing.name isEqualToString:ingredient.name] && [ing.amount floatValue] > 0) {
             slice = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
             [slice addLineToPoint:center];
