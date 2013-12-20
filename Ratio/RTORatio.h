@@ -23,4 +23,5 @@
 - (NSString *)totalAsString;
 - (UIBezierPath *)sliceForIngredient:(RTOIngredient *)ingredient withCenter:(CGPoint)center andRadius:(CGFloat)radius;
 - (void)resetAmounts;
+- (NSInteger)step;
 @end

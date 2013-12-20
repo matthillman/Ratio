@@ -57,13 +57,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ratio/ModalTransitionDelegate.m"
-            timestampString = "405910500.905294"
+            filePath = "Ratio/RTORatio.m"
+            timestampString = "409259721.484086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "-ensureAnimationCompletesWithFrame:"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-initWithRatioDict:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ratio/RTORatio.m"
+            timestampString = "409260244.593627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-initWithRatioDict:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

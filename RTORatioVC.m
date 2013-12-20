@@ -195,12 +195,27 @@
         
         if (show) {
             self.changeView = [[UIView alloc] initWithFrame:self.amountButton.bounds];
-            self.changeView.backgroundColor = [UIColor orangeColor];
+            self.changeView.backgroundColor = [UIColor colorForR:248 G:248 B:248 A:1];
+            
+//            CGRect shadowRect = self.changeView.bounds;
+//            shadowRect.origin.x -= 10;
+//            shadowRect.size.width += 20;
+//            UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:shadowRect];
+////            animating.layer.masksToBounds = NO;
+//            self.changeView.layer.shadowColor = [UIColor blackColor].CGColor;
+//            self.changeView.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
+//            self.changeView.layer.shadowOpacity = 0.5f;
+//            self.changeView.layer.shadowPath = shadowPath.CGPath;
+            
             [self.calculateView insertSubview:self.changeView aboveSubview:self.calculateTableView];
             
             UIStepper *stepper = [[UIStepper alloc] init];
             stepper.layer.transform = CATransform3DMakeTranslation(20, 8, 0);
             stepper.autorepeat = NO;
+            stepper.stepValue = [self.ratio step];
+            stepper.minimumValue = 1;
+            stepper.maximumValue = 100 * stepper.stepValue;
+            stepper.value = self.ratio.totalQuantity - fmodf(self.ratio.totalQuantity, [self.ratio step]);
             [stepper addTarget:self action:@selector(changeTotal:) forControlEvents:UIControlEventValueChanged];
             [self.changeView addSubview:stepper];
             
